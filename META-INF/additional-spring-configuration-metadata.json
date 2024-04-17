@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "tu.api.url",
+    "type": "java.lang.String",
+    "description": "URL for the TU API"
+  },
+  {
+    "name": "tu.api.token",
+    "type": "java.lang.String",
+    "description": "Token for the TU API"
+  }
+]}

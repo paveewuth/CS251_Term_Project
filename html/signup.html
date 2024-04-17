@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+    <link rel="stylesheet" href="../static/css/signup.css">
+    <!-- เพิ่มฟอนต์ Roboto จาก Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <style>
+        body {
+            font-family:ฤฉ 'Roboto', sans-serif; /* กำหนดให้ใช้ฟอนต์ Roboto สำหรับเนื้อหาในเว็บ */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="../logo/CS251_Logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="container">
+        <h1><br /> <br /> Abdul's Literary Lendings</h1>
+        <h2>Sign Up for Staff</h2>
+        <br /> 
+        <!--ตรงบรรทัดล่างนี้แก้ได้เลยน้า เราตั้งไว้เผื่อให้ข้อมูลเซฟอันนี้จะค่ของ js แต่ถ้าเพื่อนทำ php เปลี่ยนตรงนี้ได้เยยน้าา-->
+        <form action="process_signup.php" method="POST" onsubmit="return validatePasswordMatch();">
+
+            <div class="form-group">
+                <label for="firstName">Firstname</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Firstname" required>
+                
+                <label for="lastName">Lastname</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Lastname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                
+                <label for="gender">Gender</label>
+                <input type="text" id="gender" name="gender" placeholder="Gender" required>
+            </div>
+            <div class="form-group">
+                <label for="birthday">Birthday</label>
+                <input type="date" id="birthday" name="birthday" class="form-control" placeholder="Birthday" required>
+                
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" name="phoneNumber" class="form-control" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+                <label for="houseNumber">House Number</label>
+                <input type="text" id="houseNumber" name="houseNumber" class="form-control" placeholder="House Number" required>
+                
+                <label for="street">Street</label>
+                <input type="text" id="street" name="street" class="form-control" placeholder="Street" required>
+            </div>
+            <div class="form-group">
+                <label for="district">District</label>
+                <input type="text" id="district" name="district" class="form-control" placeholder="District" required>
+                
+                <label for="subdistrict">Subdistrict</label>
+                <input type="text" id="subdistrict" name="subdistrict" class="form-control" placeholder="Subdistrict" required>
+            </div>
+            <div class="form-group">
+                <label for="province">Province</label>
+                <input type="text" id="province" name="province" class="form-control" placeholder="Province" required>
+                
+                <label for="zipcode">Zipcode</label>
+                <input type="text" id="zipcode" name="zipcode" class="form-control" placeholder="Zipcode" required>
+                <br /> <br />
+                <label for="salary">Salary</label>
+                <input type="text" id="salary" name="salary" class="form-control" placeholder="Salary" required>
+            </div>
+ 
+            
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary" >Create Account</button>
+            </div>
+        </form>
+        <p><br />Already have an account? <a href="../html/signin.html">Sign In</a></p>
+    </div>
+    <script src="../static/js/signup.js"></script>
+    <script>
+        function validatePasswordMatch() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            if (password != confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return false;
+            }
+            // หากรหัสผ่านตรงกัน ให้ทำการบันทึกข้อมูลและเปลี่ยนเส้นทาง URL
+            else {
+                // บันทึกข้อมูล (แทนที่ด้วยรหัสของคุณ)
+                var userData = {
+                    firstName: document.getElementById("firstName").value,
+                    lastName: document.getElementById("lastName").value,
+                    email: document.getElementById("email").value,
+                    password: password,
+                    gender: document.getElementById("gender").value,
+                    birthday: document.getElementById("birthday").value,
+                    phoneNumber: document.getElementById("phoneNumber").value,
+                    houseNumber: document.getElementById("houseNumber").value,
+                    street: document.getElementById("street").value,
+                    district: document.getElementById("district").value,
+                    subdistrict: document.getElementById("subdistrict").value,
+                    province: document.getElementById("province").value,
+                    zipcode: document.getElementById("zipcode").value,
+                    salary: document.getElementById("salary").value
+                };
+                // เปลี่ยนเส้นทาง URL (สามารถแก้ไข URL ตามที่คุณต้องการได้)
+                window.location.href = "mainshop.html";
+
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

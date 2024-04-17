@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="..\static\css\signin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* กำหนดให้ใช้ฟอนต์ Roboto สำหรับเนื้อหาในเว็บ */
+        }
+        
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="header">
+        <img src="../logo/CS251_Logo.png" alt="Logo" class="logo">
+      
+    
+    </div>
+
+
+    <div class="container">
+        <h1><br />  Abdul's Literary Lendings</h1>
+        <h2>Sign in</h2>
+        <form action="process_login.php" method="POST">
+            <div class="form-group">
+                <input type="text" id="userID" name="userID" class="form-control" placeholder="User ID" required>
+              </div>
+    
+            <div class="form-group">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="btn btn-primary">Log in</button>
+            </div>
+        </form>
+        <p> <br /> Not have an account? <a href="signup.html">Register now</a></p>
+    </div>
+    
+
+
+  
+
+
+    <script src="../static/js/login.js"></script>
+</body>
+</html>

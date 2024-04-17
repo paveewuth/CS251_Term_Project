@@ -1,0 +1,136 @@
+.logo {
+    position: absolute;
+    top: 10%; /* ย้ายจุดมุมบนของ .logo ไปที่ 50% ของหน้าจอ */
+    left: 50%; /* ย้ายจุดมุมซ้ายของ .logo ไปที่ 50% ของหน้าจอ */
+    transform: translate(-50%, -50%); /* ใช้ transform เพื่อย้าย .logo กลับไปที่ตำแหน่งที่ต้องการ คือ กลางของหน้าจอ */
+    max-width: 80px; /* ปรับขนาดตามต้องการ */
+    z-index: 1; /* ให้มีลำดับการแสดงผลเหนือส่วนอื่น */
+  }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #E6E1DD; /* Primary background color */
+}
+
+.container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 24px;
+    color: #304F6D; /* Title color */
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #E07D54; /* Title color */
+}
+
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ลดระยะห่างระหว่าง label และ input ในบรรทัดเดียวกัน */
+.form-group label,
+.form-group input {
+    margin-right: 0px; /* ปรับค่าตามที่ต้องการ */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #304F6D;
+    font-weight: bold;
+    flex-basis: calc(50% - 10px);
+    margin-left: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: calc(50% - 10px);
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* เพิ่มความกว้างของ label เพื่อให้ติดกันในบรรทัดเดียวกัน */
+label {
+    width: 48%;
+}
+
+/* ปรับความกว้างของ input เพื่อให้ติดกันในบรรทัดเดียวกัน */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 48%;
+}
+
+
+
+.btn {
+    background-image: linear-gradient(to right, #E07D54, #304f6d);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: auto; /* ปรับความกว้างให้เป็นขนาดเท่ากับเนื้อหาภายใน */
+}
+.button-container {
+    display: flex;
+    justify-content: center; /* จัดให้ปุ่มอยู่ตรงกลาง */
+    margin-top: 20px; /* เพิ่มระยะห่างด้านบนของปุ่ม */
+}
+
+
+
+.btn:hover {
+    background-image: linear-gradient(to right, #af8672, #1b3045); /* Darker gradient on hover */
+    color: #fff;
+}
+
+.btn:active {
+    background-color: #98573C; /* Button active color (even darker shade of secondary) */
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #333;
+}
+
+.login-link a {
+    color: #304F6D; /* Text color for links (highlight color 1) */
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+    color: #899481; /* Link hover color (highlight color 2) */
+}

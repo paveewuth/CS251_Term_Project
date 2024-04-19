@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap">
     <style>
         body {
-            font-family:ฤฉ 'Roboto', sans-serif; /* กำหนดให้ใช้ฟอนต์ Roboto สำหรับเนื้อหาในเว็บ */
+            font-family: 'Roboto', sans-serif; /* กำหนดให้ใช้ฟอนต์ Roboto สำหรับเนื้อหาในเว็บ */
         }
     </style>
 </head>
@@ -22,7 +22,7 @@
         <h2>Sign Up for Staff</h2>
         <br /> 
         <!--ตรงบรรทัดล่างนี้แก้ได้เลยน้า เราตั้งไว้เผื่อให้ข้อมูลเซฟอันนี้จะค่ของ js แต่ถ้าเพื่อนทำ php เปลี่ยนตรงนี้ได้เยยน้าา-->
-        <form action="process_signup.php" method="POST" onsubmit="return validatePasswordMatch();">
+        <form action="../php/signup.php" method="POST" onsubmit="return validatePasswordMatch();">
 
             <div class="form-group">
                 <label for="firstName">Firstname</label>
@@ -84,7 +84,7 @@
         </form>
         <p><br />Already have an account? <a href="../html/signin.html">Sign In</a></p>
     </div>
-    <script src="../static/js/signup.js"></script>
+    <!-- <script src="../static/js/signup.js"></script>
     <script>
         function validatePasswordMatch() {
             var password = document.getElementById("password").value;
@@ -118,6 +118,6 @@
                 return true;
             }
         }
-    </script>
+    </script> -->
 </body>
 </html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Abdul's Literary Lendings"</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="style.css">
+    <!-- ======= boxicons ====== -->
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+    <!-- =============== Sidebar ================ -->
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img src="CS251_Logo.png" alt="" class="logo-img">
+                        </span>
+                        <span class="title">"Abdul's Literary Lendings"</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#home" onclick="showPage('home')">
+                        <span class="icon">
+                            <i class="bx bxs-home"></i>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" onclick="showPage('books')">
+                        <span class="icon">
+                            <i class="bx bxs-book"></i>
+                        </span>
+                        <span class="title">Books</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#lending" onclick="showPage('Lendings')">
+                        <span class="icon">
+                            <i class="bx bxs-book-reader"></i>
+                        </span>
+                        <span class="title">Lendings</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#customer" onclick="showPage('Customers')">
+                        <span class="icon">
+                            <i class="bx bx-body"></i>
+                        </span>
+                        <span class="title">Customers</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#static" onclick="showPage('Statics')">
+                        <span class="icon">
+                           <i class="bx bx-stats"></i>
+                        </span>
+                        <span class="title">Statics</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="bx bx-menu" id="btn"></i>
+                </div>
+    
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <i class="bx bx-search"></i>
+                    </label>
+                </div>    
+                    <!-- ========================= Profile Dropdown  ==================== -->
+                <div class="user">
+                    <img src="logo.png" alt="" class="profile-dropdown" onclick="toggleMenu()">
+                </div>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="submenu">
+                        <div class="user-info">
+                            <img src="logo.png" alt="">
+                            <h3>Lio Ronaldo<br>Manager</h3>
+
+                        </div>
+                        <hr>
+                        <a href="#profile" class="sub-menu-link" onclick="showPage('profile')">
+                            <i class="bx bx-profile"></i>
+                            <p>Profile</p>
+                            <span>></span>
+                        </a>
+                        <a href="#addbook" class="sub-menu-link" onclick="showPage('Addbook')">
+                            <i class="bx bx-book"></i>
+                            <p>Addbook</p>
+                            <span>></span>
+                        </a>
+                        <a href="" class="sub-menu-link" >
+                            <i class="bx bx-log-out"></i>
+                            <p>Logout</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="content">
+                <!-- ======================== Home ======================  -->
+                    <div id="home">
+                <h1>Home</h1>
+             </div>
+
+                <!-- ======================== Book ======================  -->
+                <div class="details" id="books">
+                    <div class="bookOrders">
+                        <div class="cardBooks">
+                            <h2>Books</h2>
+                            <a href="#" class="btn">View All</a>
+                        </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Name</td>
+                                <td>Book Type</td>
+                                <td>Book Shelf</td>
+                                <td>Status</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                                <tr>
+                                    <td>BookName</td>
+                                    <td>Action</td>
+                                    <td>ShelfID:12345</td>
+                                    <td><span class="status delivered">Delivered</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>BookName</td>
+                                    <td>Action</td>
+                                    <td>ShelfID:12345</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>BookName</td>
+                                    <td>Action</td>
+                                    <td>ShelfID:12345</td>
+                                    <td><span class="status return">Return</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>BookName</td>
+                                    <td>Action</td>
+                                    <td>ShelfID:12345</td>
+                                    <td><span class="status inProgress">In Progress</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>BookName</td>
+                                    <td>Action</td>
+                                    <td>ShelfID:12345</td>
+                                    <td><span class="status delivered">Delivered</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>BookName</td>
+                                    <td>Action</td>
+                                    <td>ShelfID:12345</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>BookName</td>
+                                    <td>Action</td>
+                                    <td>ShelfID:12345</td>
+                                    <td><span class="status return">Return</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>BookName</td>
+                                    <td>Action</td>
+                                    <td>ShelfID:12345</td>
+                                    <td><span class="status inProgress">In Progress</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>BookName</td>
+                                    <td>Action</td>
+                                    <td>ShelfID:12345</td>
+                                    <td><span class="status return">Return</span></td>
+                                </tr>
+
+                                <tr>
+                                    <td>BookName</td>
+                                    <td>Action</td>
+                                    <td>ShelfID:12345</td>
+                                    <td><span class="status return">Return</span></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+             <!-- ======================== Customers ======================  -->
+             <div id="Customers">
+                <h5>Customers</h5>
+                <h5>Customers</h5> 
+                <h5>Customers</h5> 
+                <h5>Customers</h5> 
+                <h5>Customers</h5>
+             </div>
+            <!-- ======================== Lendings ======================  -->
+            <div id="Lendings">
+                <h6>Lendings</h6>
+                <h6>Lendings</h6>
+                <h6>Lendings</h6>
+                <h6>Lendings</h6>
+               
+             </div>
+             <!-- ======================== Lendings ======================  -->
+            <div id="Statics">
+                <h3>Statics</h3>
+                <h3>Statics</h3>
+            </div>
+           <!-- ======================== Profile ======================  -->
+            <div id="profile">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae illum repellat autem perspiciatis tenetur ipsa porro voluptatum dolor fuga accusantium.</p>
+                <p>book</p>
+            </div>
+            <!-- ======================== Addbook ======================  -->
+            <div id="Addbook">
+                <h3>book</h3>
+                <h3>book</h3>
+            </div>
+            <!-- ======================================= End =============================================  -->
+        </div>
+    </div>
+
+
+    <!-- =========== Scripts =========  -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>

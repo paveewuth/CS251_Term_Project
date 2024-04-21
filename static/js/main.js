@@ -163,3 +163,29 @@ document.addEventListener('keydown', function(event) {
       nextImage(); // เรียกใช้ฟังก์ชันเปลี่ยนภาพไปยังภาพถัดไป
   }
 });
+
+
+// ========================= ส่วน LENDING ===========================
+// ฟังก์ชันเปิดป๊อปอัพ ซึ่งจะแสดงป๊อปอัพสำหรับสถานะ "success" หรือ "failure"
+function openPopup(status) {
+  if (status === "success") {
+      // แสดงป๊อปอัพสำหรับสถานะ "success"
+      document.getElementById("successPopup").style.display = "block";
+      // แสดง overlay เพื่อบังคับให้ผู้ใช้ใช้ป๊อปอัพเท่านั้น
+      document.getElementById("overlay").style.display = "block";
+  } else if (status === "failure") {
+      // แสดงป๊อปอัพสำหรับสถานะ "failure"
+      document.getElementById("failurePopup").style.display = "block";
+      // แสดง overlay เพื่อบังคับให้ผู้ใช้ใช้ป๊อปอัพเท่านั้น
+      document.getElementById("overlay").style.display = "block";
+  }
+}
+
+// ฟังก์ชันปิดป๊อปอัพ
+function closePopup() {
+  // ซ่อนป๊อปอัพทั้งหมด
+  document.getElementById("successPopup").style.display = "none";
+  document.getElementById("failurePopup").style.display = "none";
+  // ซ่อน overlay
+  document.getElementById("overlay").style.display = "none";
+} 

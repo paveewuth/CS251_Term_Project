@@ -337,13 +337,49 @@
                 
             </div>
             <!-- ======================== Lendings ======================  -->
-            <div id="Lendings">
-                <h6>Lendings</h6>
-                <h6>Lendings</h6>
-                <h6>Lendings</h6>
-                <h6>Lendings</h6>
-               
-             </div>
+            <div class="Lending" id="Lendings">
+                <h2>Lendings information</h2><br>
+                <div class="form-group">
+                    <label for="book_id"> <b>Book ID:</b> <input type="text" placeholder="Input Book ID"></label>
+                    <label for="book_price"> <b>Book Price:</b>  <input type="text" placeholder="Input Book price"></label>
+                </div>
+
+                <div class="form-group">
+                    <label for="customer_name"> <b>Customer Name:</b> <input type="text" placeholder="Input Customer name"></label>
+                    <label for="citizen_id"> <b>Customer Citizen ID:</b>  <input type="text" placeholder="Input Customer citizen id"></label>
+                </div>
+    
+                <div class="form-group">
+                    <label for="phone"> <b>Customer Phone no:</b>  <input type="text" placeholder="Input Customer phone no."></label>
+                    <label for="start_date"> <b>Start Date:</b>  <input type="date" placeholder=""></label>
+                </div>
+    
+                <div class="form-group">
+                    <label for="phone"> <b>Customer Phone no:</b>  <input type="text" placeholder="Input PhoneNumber"></label>
+                    <label for="return_date"> <b>return Date:</b>  <input type="date" placeholder=""></label>
+                </div>
+
+                <div class="form-group">
+                    <label for="email"> <b>Customer E-mail:</b>  <input type="email" placeholder="Input E-mail"></label>
+                    <label for="total_price"> <b>total price:</b>  <input type="text" placeholder="Total price"></label>
+                </div>
+
+                    <div class="button-container">
+                        <button type="button" class="btn" onclick="openPopup('success')">Confirm Payment</button>
+                        <div id="successPopup" class="popup">
+                            <img src="../logo/checkmark.png" alt="">
+                            <h2>Payment Successful</h2>
+                            <p>Money transfer has been completed!</p>
+                            <button type="button" class="btn1" onclick="closePopup()">OK</button>
+                        </div>
+                        <div id="failurePopup" class="popup">
+                            <h2>Payment Failed</h2>
+                            <p>Something went wrong!</p>
+                            <button type="button" class="btn1" onclick="closePopup()">OK</button>
+                        </div>
+                        <div id="overlay" class="overlay"></div>
+                    </div>
+            </div>
              <!-- ======================== Static ======================  -->
             <div id="Statics">
                 <h3>Statics</h3>

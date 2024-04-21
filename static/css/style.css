@@ -514,7 +514,127 @@ color: #899481;
 
 
 /* ============================== Lendings ============================= */
+.Lending {
+  background-color: var(--color-white);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 0 auto;
+}
 
+.Lending h2 {
+  color:var(--color-blue) ;
+}
+
+.Lending .form-group {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+}
+
+.form-group label,
+.form-group input {
+  margin-right: 0px; 
+}
+
+.Lending .form-group input[type="text"],
+.Lending .form-group input[type="date"],
+.Lending .form-group input[type="email"],
+.Lending .form-group input[type="member"] {
+  width: calc(50% - 10px);
+  padding: 12px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.Lending .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  flex-basis: calc(50% - 10px);
+  margin-left: 10px;
+}
+
+.Lending .form-group label {
+  width: 50%;
+}
+
+.Lending .form-group input[type="text"],
+.Lending .form-group input[type="date"],
+.Lending .form-group input[type="email"],
+.Lending .form-group input[type="member"]{
+  width: 50%;
+}
+
+.popup {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-white);
+  padding: 20px;
+  border: 2px solid var(--color-whitee);
+  border-radius: 5px;
+  z-index: 9999;
+}
+
+.popup img {
+    width: 100px;
+    height: 100px; /* เพิ่มความสูงให้รูปภาพ */
+    display: block;
+    margin: 10px auto; /* ย้ายรูปภาพไปตรงกลาง */
+    border-radius: 50px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+
+.popup h2 {
+  font-size: 38px;
+  font-weight: 400;
+  margin: 20px 10px 10px;
+  text-align: center;
+}
+
+.popup p {
+  margin: 10px 10px 10px;
+  text-align: center;
+}
+
+.popup .btn1 {
+  width: 20%;
+  display: block;
+  position: absolute;
+  bottom: 2.5px; /* ระยะห่างจากด้านล่างของ Popup */
+  left: 50%; /* จัดตำแหน่งให้อยู่ตรงกลางแนวนอน */
+  transform: translate(-50%, -50%); /* ย้ายปุ่มไปที่ตรงกลางทั้งแนวนอนและแนวตั้ง */
+  border-radius: 25px;
+  color: var(--color-blue);
+  text-align: center;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+
+
+.overlay {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
 /* ============================== Customers ============================= */
 .customer-search {
   display: flex;

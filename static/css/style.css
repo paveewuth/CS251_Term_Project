@@ -362,7 +362,115 @@ h1 {
 /* ============================== Lendings ============================= */
 
 /* ============================== Customers ============================= */
+.customer-search {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  width: 50%; 
+  margin: 10px auto; 
+}
 
+.customer-search label {
+  position: relative;
+  width: 45%; 
+  margin-bottom: 10px; 
+}
+
+.customer-search label input {
+  width: 100%;
+  height: 30px; 
+  background: #eee;
+  border-radius: 30px; 
+  padding: 5px 20px;
+  padding-left: 30px; 
+  font-size: 14px; 
+  outline: none;
+  border: none;
+}
+
+.btn {
+  background-image: linear-gradient(to right, #E07D54, #304f6d); /* Linear gradient */
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px; /* Increase border-radius for more curvature */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add box-shadow for depth */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  background-image: linear-gradient(to right, #af8672, #1b3045); /* Darker gradient on hover */
+  color: #fff;
+}
+
+.btn:active {
+  background-color: #98573C; /* Button active color (even darker shade of secondary) */
+}
+
+.button-container {
+  width: 100%; /* เพิ่มเพื่อปรับความกว้างของ container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.information-container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  margin: 0 auto;
+  
+}
+
+.information-container img {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.info-group {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+}
+
+/* ลดระยะห่างระหว่าง label และ input ในบรรทัดเดียวกัน */
+.info-group label,
+.info-group input {
+  margin-right: 0px; /* ปรับค่าตามที่ต้องการ */
+}
+.info-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  flex-basis: calc(50% - 10px);
+  margin-left: 10px;
+}
+.info-group input[type="text"],
+.info-group input[type="number"]
+ {
+    width: calc(50% - 10px);
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* เพิ่มความกว้างของ label เพื่อให้ติดกันในบรรทัดเดียวกัน */
+.info-group label {
+    width: 50%;
+}
+
+/* ปรับความกว้างของ input เพื่อให้ติดกันในบรรทัดเดียวกัน */
+.info-group input[type="text"],
+.info-group input[type="number"]{
+    width: 50%;
+}
 /* ============================== Statics ============================= */
 
 /* ============================== profile ============================= */

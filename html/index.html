@@ -245,12 +245,50 @@
                 </div>
              <!-- ======================== Customers ======================  -->
              <div id="Customers">
-                <h5>Customers</h5>
-                <h5>Customers</h5> 
-                <h5>Customers</h5> 
-                <h5>Customers</h5> 
-                <h5>Customers</h5>
-             </div>
+                <div class="customer-search">
+                    <label>
+                        <input type="text" id="firstName" placeholder="Enter name">
+                    </label>
+                    <label>
+                        <input type="text" id="lastName" placeholder="Enter last name">
+                        
+                    </label>
+                    <label>
+                        <input type="text" id="customerID" placeholder="Enter customer ID">
+                       
+                    </label>
+                    <label>
+                        <input type="text" id="citizenID" placeholder="Enter citizen ID">
+                        
+                    </label>
+                    <div class="button-container">
+                        <button type="submit" class="btn btn-primary">Enter</button>
+                    </div>
+                </div>
+                
+                <div class = "information-container">
+                    <div style="text-align: center;">
+                    <h2>Information</h2> 
+                    <img src="..\customer_profile\icon.jpg" style="width:160px;height:220px;"> <!-- แปะรูปพนักงาน -->
+                    </div>
+
+                    <div class="info-group">
+                        <label for="firstName"> <b>First name:</b> <input type="text" placeholder="#Customer name"></label>
+                        <label for="lastName"> <b>Last name:</b>  <input type="text" placeholder="#Customer lastname"></label>
+                    </div>
+
+                    <div class="info-group">
+                        <label for="citizen_id"> <b>Citizen ID:</b>  <input type="text" placeholder="#citizenId"></label>
+                        <label for="customer_id"> <b>Customer ID:</b>  <input type="text" placeholder="#customerId"></label>
+                    </div>
+
+                    <div class="info-group">
+                        <label for="phone"> <b>Phone number:</b>  <input type="text" placeholder="#PhoneNumber"></label>
+                        <label for="balance"> <b>Balance:</b>  <input type="text" placeholder="#Balance"></label>
+                    </div>
+                </div>
+                
+            </div>
             <!-- ======================== Lendings ======================  -->
             <div id="Lendings">
                 <h6>Lendings</h6>
@@ -259,7 +297,7 @@
                 <h6>Lendings</h6>
                
              </div>
-             <!-- ======================== Lendings ======================  -->
+             <!-- ======================== Static ======================  -->
             <div id="Statics">
                 <h3>Statics</h3>
                 <h3>Statics</h3>

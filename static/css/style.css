@@ -277,10 +277,164 @@ body {
 }
 
 /* ============================== Home ============================= */
-
-h1 {
+/* Styles for Home Page */
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 50px 0;
 }
+
+#home h6 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(to right, #fe704c, #feb47b, #ffdf8e); /* สร้างพื้นหลังไล่สี */
+  -webkit-background-clip: text; /* ใช้พื้นหลังเป็นเท็กซ์ */
+  background-clip: text;
+  color: transparent; /* ทำให้เนื้อหาใน <h6> มองไม่เห็น */
+}
+
+
+/* Styles for Announcement Section */
+.announcement-section {
+  margin-top: 30px;
+}
+
+.announcement-section h2 {
+  font-size: 24px;
+  color: #304f6d;
+}
+
+
+.announcement-box p {
+  margin-bottom: 10px;
+}
+
+
+/* Styles for Announcement Box */
+.announcement-box {
+  position: relative; /* เพื่อให้เป็นตำแหน่งอ้างอิงของลูกศร */
+  height: 400px;
+  
+  background-color: #e2f3fd;
+  padding: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative; /* เพื่อให้เป็นตำแหน่งอ้างอิงของลูกศร */
+}
+
+/* Styles for Left Arrow */
+.left-arrow {
+  position: absolute;
+  top: 50%; /* ปรับตำแหน่ง Y เพื่อขยับลูกศรให้อยู่กลาง .announcement-image */
+  left: 10px; /* กำหนดระยะห่างจากขอบซ้ายของ .announcement-box */
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  font-size: 40px; /* ปรับขนาดลูกศรใหญ่ขึ้น */
+  color: #333; /* กำหนดสีของลูกศร */
+}
+
+/* Styles for Right Arrow */
+.right-arrow {
+  position: absolute;
+  top: 50%; /* ปรับตำแหน่ง Y เพื่อขยับลูกศรให้อยู่กลาง .announcement-image */
+  right: 10px; /* กำหนดระยะห่างจากขอบขวาของ .announcement-box */
+  transform: translate(50%, -50%);
+  cursor: pointer;
+  font-size: 40px; /* ปรับขนาดลูกศรใหญ่ขึ้น */
+  color: #333; /* กำหนดสีของลูกศร */
+}
+
+
+
+.announcement-image {
+  position: absolute;
+  top: 50%; /* ย้ายจุดมุมบนของ .announcement-image ไปที่ 50% ของ .announcement-box */
+  left: 50%; /* ย้ายจุดมุมซ้ายของ .announcement-image ไปที่ 50% ของ .announcement-box */
+  transform: translate(-50%, -50%); /* ใช้ transform เพื่อย้าย .announcement-image กลับไปที่ตำแหน่งที่ต้องการ คือ กลางของ .announcement-box */
+  width: 100%; /* กำหนดความกว้างของ .announcement-image */
+  height: 100%; /* กำหนดความสูงของ .announcement-image */
+  max-width: 95%; /* ไม่ให้ .announcement-image เกินขอบพื้นที่ที่กำหนด */
+  max-height: 90%; /* ไม่ให้ .announcement-image เกินขอบพื้นที่ที่กำหนด */
+  
+}
+
+
+
+
+
+/* Styles for Featured Books Section */
+.featured-books-section {
+margin-top: 50px;
+}
+
+.featured-books-section h2 {
+font-size: 24px;
+color: #304f6d;
+}
+
+.featured-books-container {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+}
+
+.book-card {
+width: 30%;
+height: 80%;
+background-color: #e2f3fd;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+width: 80%;
+border-radius: 5px;
+margin-bottom: 10px;
+}
+
+.book-card h3 {
+font-size: 18px;
+color: #304f6d;
+margin-bottom: 5px;
+}
+
+.book-card p {
+font-size: 14px;
+color: #899481;
+}
+
+@keyframes slideshow {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.announcement-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: slideshow 40s infinite;
+}
+
+.announcement-box img:nth-child(2) {
+  animation-delay: 10s; /* เริ่มเล่นภาพถัดไปหลังจาก 10 วินาที */
+}
+
+.announcement-box img:nth-child(3) {
+  animation-delay: 20s; /* เริ่มเล่นภาพถัดไปหลังจาก 20 วินาที */
+}
+
+
+
+
+
 
 
 

@@ -97,3 +97,69 @@ let zipcode = document.getElementById("zipcode");
 zipcode.value = "#Zipcode#";
 
 showPage('home');  //  แสดงหน้าแรก ("home") ตั้งแต่เริ่มต้น
+
+
+//========  ตรงนี้คือส่วนน Home ค้าบ======================
+// JavaScript Code
+let images = [
+  '../logo/announcement1.jpg',
+  '../logo/announcement2.jpg',
+  '../logo/announcement3.jpg'
+];
+
+let currentImageIndex = 0;
+let announcementImages = document.querySelectorAll('.announcement-box img');
+
+// เพิ่มฟังก์ชันเพื่อเปลี่ยนภาพไปยังภาพถัดไป
+function nextImage() {
+  currentImageIndex = (currentImageIndex + 1) % images.length;
+  updateImage();
+}
+
+// เพิ่มฟังก์ชันเพื่อเปลี่ยนภาพไปยังภาพก่อนหน้า
+function prevImage() {
+  currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+  updateImage();
+}
+
+// เพิ่มฟังก์ชันเพื่ออัพเดตรูปภาพที่แสดงบนหน้าเว็บ
+function updateImage() {
+  announcementImages.forEach(function(image, index) {
+      if (index === currentImageIndex) {
+          image.style.display = 'block'; // แสดงรูปภาพที่ต้องการ
+      } else {
+          image.style.display = 'none'; // ซ่อนรูปภาพที่ไม่ได้แสดง
+      }
+  });
+}
+
+// เพิ่มเมื่อหน้าเว็บโหลดเสร็จ
+window.addEventListener('load', function() {
+  // แสดงรูปภาพแรกเมื่อหน้าเว็บโหลดเสร็จ
+  updateImage();
+
+  // เมื่อผู้ใช้เลื่อนเมาส์ไปชี้ไปยังภาพประกาศ
+  announcementImages.forEach(function(image) {
+      image.addEventListener('mouseenter', function() {
+          // หยุดการเปลี่ยนภาพ
+          clearInterval(imageInterval);
+      });
+
+      image.addEventListener('mouseleave', function() {
+          // เริ่มการเปลี่ยนภาพอีกครั้งหลังจากผู้ใช้เลื่อนเมาส์ออกจากภาพ
+          imageInterval = setInterval(changeImage, 2000);
+      });
+  });
+});
+
+// เพิ่มเหตุการณ์กดปุ่มบนคีย์บอร์ด
+document.addEventListener('keydown', function(event) {
+  // ถ้ากดลูกศรซ้าย
+  if (event.keyCode === 37) {
+      prevImage(); // เรียกใช้ฟังก์ชันเปลี่ยนภาพไปยังภาพก่อนหน้า
+  }
+  // ถ้ากดลูกศรขวา
+  else if (event.keyCode === 39) {
+      nextImage(); // เรียกใช้ฟังก์ชันเปลี่ยนภาพไปยังภาพถัดไป
+  }
+});

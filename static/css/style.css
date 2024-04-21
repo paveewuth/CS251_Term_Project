@@ -275,6 +275,7 @@ body {
 .sub-menu-link:hover p {
   font-weight: 600;
 }
+
 /* ============================== Home ============================= */
 
 h1 {
@@ -284,84 +285,79 @@ h1 {
 
 
 /* ============================== BOOK ============================= */
-
-
-.details {
-  position: relative;
-  width: 100%;
-  padding: 40px;
-  display: grid;
-  grid-template-columns: 1140px 100px; /*ความกว้างตาราง*/
-  grid-gap: 30px; /*ระยะห่างตารางแนวนอนและแนวตั้ง*/
-}
-
-.details .bookOrders {
-  position: relative;
-  display: grid;
-  min-height: 250px;
-  background: var(--color-white);
-  padding: 20px;
-  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-}
-
-.details .cardBooks {
+.container {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.cardBooks h2 {
-  font-weight: 600;
-  color: var(--color-blue);
-}
-.cardBooks .btn {
-  position: relative;
-  padding: 5px 10px;
-  background: var(--color-orange);
-  text-decoration: none;
-  color: var(--white);
-  border-radius: 6px;
+  flex-wrap: wrap;
+  gap: 20px; /* ระยะห่างระหว่าง .book */
 }
 
-.details table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-.details table thead td {
-  font-weight: 600;
-}
-
-.details .bookOrders table tr {
-  color: var(--color-black);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.details .bookOrders table tr:last-child {
-  border-bottom: none; /*ทำให้คอลัมสุดท้ายไม่มีขีด*/
-}
-
-.details .bookOrders table tbody tr:hover {
-  background: var(--color-lightgrey);
-  color: var(--color-blue);
-}
-
-.details .bookOrders table tr td {
+.book {
+  width: 300px; /* กำหนดขนาดคงที่ของ .book */
+  display: flex;
+  align-items: center;
+  border: 2px solid #ffffff; /* เพิ่มเส้นขอบ */
   padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px; /* เพิ่มขอบมน */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
 }
 
-.details .bookOrders table tr td:last-child {
-  text-align: end;
+.book img {
+  width: 120px; /* ปรับขนาดของรูป */
+  margin-right: 30px; /* ระยะห่างระหว่างรูปและข้อมูล */
+  box-shadow: 0 4px 6px rgba(1, 1, 1, 1); /* เพิ่มเงา */
 }
 
-.details .bookOrders table tr td:nth-child(2) {
-  text-align: end;
+.book-info {
+  flex-grow: 1; /* ขยายข้อมูลเต็มพื้นที่ */
 }
 
-.details .bookOrders table tr td:nth-child(3) {
+.book-info h2 {
+  margin-top: 0; /* ไม่มีช่องว่างด้านบน */
+}
+
+.book-info p {
+  margin: 5px 0; /* ระยะห่างของข้อมูล */
+}
+/* สไตล์สำหรับปุ่ม "ข้อมูลเพิ่มเติม" */
+.more-info-btn {
+  background-color: #304f6d;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none; /* ลบขีดเส้นใต้ข้อความ */
+  display: inline-block;
+  transition: background-color 0.3s; /* เพิ่มเอฟเฟคการเปลี่ยนสี */
+  position: relative; /* เพิ่ม */
+  box-shadow: 0 4px 6px rgba(35, 35, 35, 0.1); /* เพิ่มเงา */
+}
+/* เมื่อโฮเวอร์ที่ปุ่ม "ข้อมูลเพิ่มเติม" */
+.more-info-btn:hover {
+  background-color: #304f6d; /* เปลี่ยนสีเมื่อโฮเวอร์ */
+}
+/*ปุ่มกดไปต่อ ถอยหลัง และเลขหน้าปัจจุบัน*/
+.pagination {
   text-align: center;
+  margin-top: 20px;
 }
+
+.pagination a {
+  padding: 10px 20px;
+  background-color: #304f6d;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
+.current-page {
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  color: #000;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
 
 /* ============================== Lendings ============================= */
 
@@ -370,6 +366,80 @@ h1 {
 /* ============================== Statics ============================= */
 
 /* ============================== profile ============================= */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.profile {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 700px;
+  padding: 20px;
+  margin: 0 auto; /* เพิ่มบรรทัดนี้ */
+}
+.profile header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.profilePicture {
+  text-align: center;
+  width: 150px; /* กำหนดความกว้างของภาพ */
+  height: 150px; /* กำหนดความสูงของภาพ */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+  margin-bottom: 20px;
+  border-radius: 10%; /* กำหนดมุมของภาพให้เป็นวงกลม */
+}
+.profilePicture img {
+  width: 150px; /* กำหนดความกว้างของภาพ */
+  height: 150px; /* กำหนดความสูงของภาพ */
+  border-radius: 10%; /* กำหนดมุมของภาพให้เป็นวงกลม */
+}
 
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.information-group {
+  margin-bottom: 0px;
+  display: flex;
+  justify-self: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.bold-text {
+  font-weight: bold;
+  margin-right: 5px;
+}
+.dataProfile {
+  width: 200px; /* กำหนดความกว้าง */
+  height: 25px; /* กำหนดความสูง */
+  font-size: 12px; /* กำหนดขนาดตัวอักษร */
+  padding: 8px; /* กำหนดการเสริม */
+  border-radius: 0px; /* กำหนดรูปร่างของมุม */
+  border: 1px solid #ccc; /* กำหนดเส้นขอบ */
+  margin-right: 5%;
+  /* อื่นๆ ที่คุณต้องการกำหนด */
+}
+
+.profile-actions {
+  text-align: center;
+}
+
+.editProfile-botton{
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #000000;
+}
 /* ============================== addbook ============================= */
 

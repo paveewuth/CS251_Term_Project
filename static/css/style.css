@@ -755,6 +755,419 @@ color: #899481;
     width: 50%;
 }
 /* ============================== Statics ============================= */
+.box1 {
+  background: #E6E1DD;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 1.2rem;
+  border-radius: 10px;
+  width: 250px;
+  height: 100px;
+  margin-top: 100px;
+  margin-left: 150px;
+  position: absolute;
+  box-sizing: content-box;
+  
+}
+.box2 {
+  background: #E6E1DD;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 1.2rem;
+  border-radius: 10px;
+  width: 250px;
+  height: 100px;
+  margin-top: 100px;
+  margin-left: 450px;
+  position: absolute;
+  box-sizing: content-box;
+  
+}
+.box3 {
+  background: #E6E1DD;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 1.2rem;
+  border-radius: 10px;
+  width: 250px;
+  height: 100px;
+  margin-top: 100px;
+  margin-left: 750px;
+  position: absolute;
+  box-sizing: content-box;
+  
+}
+.box4 {
+  background: #E6E1DD;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 1.2rem;
+  border-radius: 10px;
+  width: 250px;
+  height: 100px;
+  margin-top: 100px;
+  margin-left: 1050px;
+  position: absolute;
+  box-sizing: content-box;
+  
+}
+.box5 {
+  background: #E6E1DD;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 1.2rem;
+  border-radius: 10px;
+  width: 550px;
+  height: 300px;
+  margin-top: 250px;
+  margin-left: 150px;
+  position: absolute;
+  box-sizing: content-box;
+  
+}
+.box6 {
+  background: #E6E1DD;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 1.2rem;
+  border-radius: 10px;
+  width: 550px;
+  height: 300px;
+  margin-top: 250px;
+  margin-left: 750px;
+  position: absolute;
+  box-sizing: content-box;
+  
+}
+
+
+
+.newcustomer {
+  font-size: 12px;
+}
+
+.onlineorder{
+  font-size: 12px;
+}
+
+.revenue{
+  font-size: 12px;
+}
+.dailyaverage{
+  font-size: 12px;
+}
+.selecttime {
+  font-weight: 200;
+  color: gray;
+  padding-left: 75%;
+  margin-top: -2px;
+  font-size: 8px;
+  display: flex;
+}
+
+.count {
+  display: flex;
+  padding-left: 75%;
+  padding-top: 10%;
+  font-size: 25px;
+}
+
+.chartpercentage{
+  position: absolute;
+  top : 60%;
+  right: 73%;
+}
+
+
+.chart1{
+  width: 60px;
+  height: 60px;
+  /* background: cornflowerblue; */
+  margin-bottom: 1px;
+  display: flex;
+  position: absolute;
+  top: 100%;
+}
+
+.customercircle{
+  fill: none;
+  stroke: rgb(233, 107, 113);
+  stroke-width: 5px;
+  stroke-dasharray: 238;
+  stroke-dashoffset: 238;
+  animation: anim1 2s linear forwards;
+}
+.chartcustomer{
+  position: absolute;
+  top : 30%;
+  
+}
+
+.ordercircle{
+  fill: none;
+  stroke: rgb(71, 82, 240);
+  stroke-width: 5px;
+  stroke-dasharray: 238;
+  stroke-dashoffset: 238;
+  animation: anim2 2s linear forwards;
+}
+.chartorder{
+  position: absolute;
+  top : 30%;
+  
+}
+
+.revenuecircle{
+  fill: none;
+  stroke: rgb(91, 235, 146);
+  stroke-width: 5px;
+  stroke-dasharray: 238;
+  stroke-dashoffset: 238;
+  animation: anim3 2s linear forwards;
+}
+.chartrevenue{
+  position: absolute;
+  top : 30%;
+  
+}
+.averagecircle{
+  fill: none;
+  stroke: rgb(243, 190, 92);
+  stroke-width: 5px;
+  stroke-dasharray: 238;
+  stroke-dashoffset: 238;
+  animation: anim4 2s linear forwards;
+}
+.chartaverage{
+  position: absolute;
+  top : 30%;
+  
+}
+.backgroundcircle{
+  fill: none;
+  stroke: rgb(221, 221, 221);
+  stroke-width: 5px;
+  stroke-dasharray: 238;
+  
+  
+}
+.backgroundchart{
+  position: absolute;
+  top : 30%;
+  
+}
+@keyframes anim1{
+  100%{
+      stroke-dashoffset: 99;
+  }
+}
+
+@keyframes anim2{
+  100%{
+      stroke-dashoffset: 47;
+  }
+}
+
+@keyframes anim3{
+  100%{
+      stroke-dashoffset: 54;
+  }
+}
+
+@keyframes anim4{
+  100%{
+      stroke-dashoffset: 154;
+  }
+}
+
+.analytics{
+  font-size: 12px;
+}
+
+.donut{
+  font-size: 12px;
+}
+.barchart{
+  display: block;
+  
+}
+
+.x{
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 100%;
+  display: inline-block;
+  float: left;
+  
+}
+
+.x li{
+  list-style: none;
+  height: 50px;
+  position: relative;
+  bottom: -10px;
+}
+
+.x span{
+  font-size: 12px;
+  font-weight: 600;
+  position: absolute;
+  bottom: 10;
+  right: 10px;
+}
+
+.bars{
+  font-size: 12px;
+  font-weight: 600;
+  background: #ebe7e7;
+  margin : 5;
+  padding: 0;
+  display: inline-block;
+  width: 500px;
+  height: 210px;
+  box-shadow: 0 0 10px 0 #ebe7e7;
+  border-radius: 5px;
+
+}
+
+.bars li{
+  display:table-cell;
+  width: 100px;
+  height: 300px;
+  position: relative;
+}
+
+.bars span{
+  width: 80%;
+  position: absolute;
+  bottom: 70px;
+  left: 15px;
+}
+
+.bars .bar{
+  display: block;
+  background: rgb(114, 217, 243);
+  width: 25px;
+  height: 100px;
+  position: absolute;
+  bottom: 90px;
+  left: -5px;
+  margin-left: 25px;
+  text-align: center;
+  transition: 0.5s;
+  transition-property: background;
+  
+}
+
+.bars .bar:hover{
+  background: #f5a5a5;
+  cursor: pointer;
+}
+
+.bars .bar::before{
+  color: #fff;
+  content: attr(data-percentage) '';
+  position: relative;
+  bottom: 1px;
+
+
+}
+
+.donutchart{
+  width: 250px; 
+  height: 250px;
+  border-radius: 50%;
+  background: red;
+  margin-left: 50px;
+  margin-top: 30px;
+
+  background: conic-gradient(
+      rgb(77, 104, 224) 0deg 120deg,
+      rgb(92, 211, 131) 120deg 250deg,
+      rgb(250, 180, 51) 250deg 280deg,
+      rgb(241, 73, 67) 280deg 360deg
+     
+      
+  );
+}
+
+.donutchart::before{
+  content: "";
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.donutchart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.donutdata{
+  top: 55px;
+  position: absolute;
+  left: 75%;
+ 
+}
+
+.donutdata span{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 12px;
+  margin-right: 88%;
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.segment1{
+  list-style: none;
+  
+  
+  
+}
+
+.segment1 li::before{
+  content: "\2022";
+  color: rgb(77, 104, 224);
+  font-size: 2em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.1em;
+}
+.segment2{
+  list-style: none;
+  
+}
+
+.segment2 li::before{
+  content: "\2022";
+  color: rgb(92, 211, 131);
+  font-size: 2em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.1em;
+}
+.segment3{
+  list-style: none;
+  
+}
+
+.segment3 li::before{
+  content: "\2022";
+  color: rgb(250, 180, 51);
+  font-size: 2em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.1em;
+}
+.segment4{
+  list-style: none;
+  
+}
+
+.segment4 li::before{
+  content: "\2022";
+  color: rgb(241, 73, 67);
+  font-size: 2em;
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.1em;
+}
 
 /* ============================== profile ============================= */
 .profile-container {

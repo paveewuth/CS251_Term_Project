@@ -444,6 +444,15 @@ color: #899481;
   flex-wrap: wrap;
   gap: 20px; /* ระยะห่างระหว่าง .book */
 }
+.list h1{
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(to right, #fe704c, #ffb073, #ffdf8e); /* สร้างพื้นหลังไล่สี */
+  -webkit-background-clip: text; /* ใช้พื้นหลังเป็นเท็กซ์ */
+  background-clip: text;
+  color: transparent; /* ทำให้เนื้อหาใน <h6> มองไม่เห็น */
+}
 
 .book {
   width: 300px; /* กำหนดขนาดคงที่ของ .book */
@@ -525,6 +534,7 @@ color: #899481;
 
 .Lending h2 {
   color:var(--color-blue) ;
+  text-align: center;
 }
 
 .Lending .form-group {
@@ -1170,6 +1180,14 @@ color: #899481;
 }
 
 /* ============================== profile ============================= */
+.profile h1{
+  font-size: 40px;
+  margin-bottom: 20px;
+  background-image: linear-gradient(to right, #fe704c, #feb47b, #ffdf8e); /* สร้างพื้นหลังไล่สี */
+  -webkit-background-clip: text; /* ใช้พื้นหลังเป็นเท็กซ์ */
+  background-clip: text;
+  color: transparent; /* ทำให้เนื้อหาใน <h6> มองไม่เห็น */
+}
 .profile-container {
   display: flex;
   justify-content: center;
@@ -1219,6 +1237,17 @@ select {
   justify-self: space-between;
   align-items: center;
   margin-bottom: 5px;
+  
+
+}
+.information-group label{
+  display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #304F6D;
+    font-weight: bold;
+    flex-basis: calc(50% - 10px);
+    margin-left: 10px;
 }
 .bold-text {
   font-weight: bold;
@@ -1229,10 +1258,15 @@ select {
   height: 25px; /* กำหนดความสูง */
   font-size: 12px; /* กำหนดขนาดตัวอักษร */
   padding: 8px; /* กำหนดการเสริม */
-  border-radius: 0px; /* กำหนดรูปร่างของมุม */
   border: 1px solid #ccc; /* กำหนดเส้นขอบ */
   margin-right: 5%;
   /* อื่นๆ ที่คุณต้องการกำหนด */
+  
+    padding: 10px 20px; /* Add horizontal padding */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: block; /* Make the fields block elements */
+    margin: 2px;
 }
 
 .profile-actions {
@@ -1240,12 +1274,15 @@ select {
 }
 
 .editProfile-botton{
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  background-color: #ffffff;
-  color: #000000;
+  background-image: linear-gradient(to right, #E07D54, #304f6d); /* Linear gradient */
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px; /* Increase border-radius for more curvature */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add box-shadow for depth */
+    cursor: pointer;
+    margin-top: 100px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 /* ============================== addbook ============================= */
 

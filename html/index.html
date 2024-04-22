@@ -91,7 +91,7 @@
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="submenu">
                         <div class="user-info">
-                            <img src="logo.png" alt="">
+                            <img src="..\Photo\Profile.jpg" alt="">
                             <h3>Lio Ronaldo<br>Manager</h3>
 
                         </div>
@@ -340,30 +340,39 @@
             <div class="Lending" id="Lendings">
                 <h2>Lendings information</h2><br>
                 <div class="form-group">
-                    <label for="book_id"> <b>Book ID:</b> <input type="text" placeholder="Input Book ID"></label>
-                    <label for="book_price"> <b>Book Price:</b>  <input type="text" placeholder="Input Book price"></label>
+                    <label for="book_id"> <b>Book ID:</b> 
+                    <input type="text" name="book_id" id="book_id" placeholder="Input Book ID"></label>
+                    <label for="book_price"> <b>Book Price:</b>  
+                    <input type="text" name="book_price" id="book_price" placeholder="Input Book price"></label>
                 </div>
-
+            
                 <div class="form-group">
-                    <label for="customer_name"> <b>Customer Name:</b> <input type="text" placeholder="Input Customer name"></label>
-                    <label for="citizen_id"> <b>Customer Citizen ID:</b>  <input type="text" placeholder="Input Customer citizen id"></label>
+                    <label for="customer_name"> <b>Customer Name:</b> 
+                    <input type="text" name="customer_name" id="customer_name" placeholder="Input Customer name"></label>
+                    <label for="citizen_id"> <b>Customer Citizen ID:</b>  
+                    <input type="text" name="citizen_id" id="citizen_id" placeholder="Input Customer citizen id"></label>
                 </div>
-    
+            
                 <div class="form-group">
-                    <label for="phone"> <b>Customer Phone no:</b>  <input type="text" placeholder="Input Customer phone no."></label>
-                    <label for="start_date"> <b>Start Date:</b>  <input type="date" placeholder=""></label>
+                    <label for="phone"> <b>Customer Phone no:</b> 
+                    <input type="text"  name="phone" id="phone" placeholder="Input Customer phone no."></label>
+                    <label for="start_date"> <b>Start Date:</b>  
+                    <input type="date"  name="start_date" id="start_date" placeholder=""></label>
                 </div>
-    
+            
                 <div class="form-group">
-                    <label for="phone"> <b>Customer Phone no:</b>  <input type="text" placeholder="Input PhoneNumber"></label>
-                    <label for="return_date"> <b>return Date:</b>  <input type="date" placeholder=""></label>
+                    <label for="email"> <b>Customer E-mail:</b>  
+                    <input type="email" name="email" id="email" placeholder="Input Customer Email"></label>
+                    <label for="return_date"> <b>return Date:</b>  
+                    <input type="date"  name="return_date" id="return_date" placeholder=""></label>
                 </div>
-
+            
                 <div class="form-group">
-                    <label for="email"> <b>Customer E-mail:</b>  <input type="email" placeholder="Input E-mail"></label>
-                    <label for="total_price"> <b>total price:</b>  <input type="text" placeholder="Total price"></label>
+                    <label for="member"> <b>Member:</b>  <input type="checkbox" placeholder=""></label>
+                    <label for="total_price"> <b>total price:</b>  
+                    <input type="text" name="total_price" id="total_price" placeholder="Total price"></label>
                 </div>
-
+            
                     <div class="button-container">
                         <button type="button" class="btn" onclick="openPopup('success')">Confirm Payment</button>
                         <div id="successPopup" class="popup">

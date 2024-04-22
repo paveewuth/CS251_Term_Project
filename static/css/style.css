@@ -542,6 +542,7 @@ color: #899481;
 .Lending .form-group input[type="text"],
 .Lending .form-group input[type="date"],
 .Lending .form-group input[type="email"],
+.Lending .form-group input[type="checkbox"],
 .Lending .form-group input[type="member"] {
   width: calc(50% - 10px);
   padding: 12px 20px;
@@ -568,8 +569,16 @@ color: #899481;
 .Lending .form-group input[type="text"],
 .Lending .form-group input[type="date"],
 .Lending .form-group input[type="email"],
+.Lending .form-group input[type="checkbox"],
 .Lending .form-group input[type="member"]{
   width: 50%;
+}
+
+.Lending .form-group input[type="checkbox"] {
+  width: 20px; /* กำหนดขนาดความกว้างของ checkbox */
+  height: 10px; /* กำหนดขนาดความสูงของ checkbox */
+  background-color: #f0f0f0; /* กำหนดสีพื้นหลังของ checkbox */
+  display: inline-block; /* ทำให้ checkbox เรียงต่อเนื่องกับข้อความ */
 }
 
 .popup {
@@ -773,7 +782,9 @@ color: #899481;
   box-shadow: 0 0 10px rgba(0, 0, 0, 1);
   margin-bottom: 20px;
   border-radius: 10%; /* กำหนดมุมของภาพให้เป็นวงกลม */
+  transform: translateX(170%);
 }
+
 .profilePicture img {
   width: 150px; /* กำหนดความกว้างของภาพ */
   height: 150px; /* กำหนดความสูงของภาพ */

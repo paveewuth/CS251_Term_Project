@@ -166,18 +166,34 @@ document.addEventListener('keydown', function(event) {
 
 
 // ========================= ส่วน LENDING ===========================
-// ฟังก์ชันเปิดป๊อปอัพ ซึ่งจะแสดงป๊อปอัพสำหรับสถานะ "success" หรือ "failure"
 function openPopup(status) {
-  if (status === "success") {
+  // ตรวจสอบว่าข้อมูลถูกกรอกครบหรือไม่
+  var bookID = document.querySelector('input[name="book_id"]').value;
+  var bookPrice = document.querySelector('input[name="book_price"]').value;
+  var customerName = document.querySelector('input[name="customer_name"]').value;
+  var citizenID = document.querySelector('input[name="citizen_id"]').value;
+  var phone = document.querySelector('input[name="phone"]').value;
+  var startDate = document.querySelector('input[name="start_date"]').value;
+  var email = document.querySelector('input[name="email"]').value;
+  var returnDate = document.querySelector('input[name="return_date"]').value;
+  var totalPrice = document.querySelector('input[name="total_price"]').value;
+
+  // ตรวจสอบว่ามีข้อมูลทุกอย่างถูกกรอกหรือไม่
+  if (bookID && bookPrice && customerName && citizenID && phone && startDate && email && returnDate && totalPrice) {
+    if (status === "success") {
       // แสดงป๊อปอัพสำหรับสถานะ "success"
       document.getElementById("successPopup").style.display = "block";
       // แสดง overlay เพื่อบังคับให้ผู้ใช้ใช้ป๊อปอัพเท่านั้น
       document.getElementById("overlay").style.display = "block";
-  } else if (status === "failure") {
+    } else if (status === "failure") {
       // แสดงป๊อปอัพสำหรับสถานะ "failure"
       document.getElementById("failurePopup").style.display = "block";
       // แสดง overlay เพื่อบังคับให้ผู้ใช้ใช้ป๊อปอัพเท่านั้น
       document.getElementById("overlay").style.display = "block";
+    }
+  } else {
+    // แจ้งเตือนให้กรอกข้อมูลให้ครบ
+    alert("Please fill in all fields before proceeding.");
   }
 }
 
@@ -189,3 +205,4 @@ function closePopup() {
   // ซ่อน overlay
   document.getElementById("overlay").style.display = "none";
 } 
+

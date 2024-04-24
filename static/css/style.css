@@ -765,6 +765,9 @@ color: #899481;
     width: 50%;
 }
 /* ============================== Statics ============================= */
+.STATIC{
+  transform: translateX(-10%);
+}
 .box1 {
   background: #E6E1DD;
   font-family: 'Ubuntu', sans-serif;
@@ -1285,4 +1288,3 @@ select {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 /* ============================== addbook ============================= */
-

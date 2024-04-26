@@ -205,4 +205,17 @@ function closePopup() {
   // ซ่อน overlay
   document.getElementById("overlay").style.display = "none";
 } 
+function checkPasswords() {
+  const passwordInput = document.getElementById('password');
+  const confirmPasswordInput = document.getElementById('confirm_password');
+  const passwordError = document.getElementById('password_error');
 
+  if (passwordInput.value !== confirmPasswordInput.value) {
+      passwordError.style.display = 'block';
+  } else {
+      passwordError.style.display = 'none';
+  }
+}
+
+const confirmPasswordInput = document.getElementById('confirm_password');
+confirmPasswordInput.addEventListener('input', checkPasswords);

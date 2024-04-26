@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>"Abdul's Literary Lendings"</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="..\static\css\style.css">
+    <!-- ======= boxicons ====== -->
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<style>
+    .transparent-button {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        display: block;
+        width: 100%;
+        display: flex;
+        text-decoration: none;
+        color: var(--color-orange); /* สีของ text */
+        font-size: 16px; /* ขนาดของตัวอักษร */
+    }
+</style>
+<body >
+    <!-- =============== Sidebar ================ -->
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img src="..\logo\CS251_Logo.png" alt="" class="logo-img">
+                        </span>
+                        <span class="title">"Abdul's Literary Lendings"</span>
+                    </a>
+                </li>
+
+                
+                <li>
+                    <a href="home.html">
+                      <span class="icon">
+                        <i class="bx bx-home"></i>
+                      </span>
+                      <button class="title transparent-button">Home</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="book.html">
+                      <span class="icon">
+                        <i class="bx bx-book"></i>
+                      </span>
+                      <button class="title transparent-button">Books</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="lending.html">
+                      <span class="icon">
+                        <i class="bx bx-book-reader"></i>
+                      </span>
+                      <button class="title transparent-button">Lendings</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="addbook.html">
+                        <span class="icon">
+                          <i class='bx bxs-book-add'></i>
+                        </span>
+                        <button class="title transparent-button">Addbook</button>
+                    </a>
+                </li>
+                  <li>
+                    <a href="customer.html">
+                      <span class="icon">
+                        <i class="bx bx-body"></i>
+                      </span>
+                      <button class="title transparent-button">Customers</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="static.html">
+                      <span class="icon">
+                        <i class="bx bx-stats"></i>
+                      </span>
+                      <button class="title transparent-button">Statics</button>
+                    </a>
+                  </li>
+            </ul>
+        </div>
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="bx bx-menu" id="btn"></i>
+                </div>
+    
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <i class="bx bx-search"></i>
+                    </label>
+                </div>    
+                    <!-- ========================= Profile Dropdown  ==================== -->
+                <div class="user">
+                    <img src="..\Photo\Profile.jpg" alt="" class="profile-dropdown" onclick="toggleMenu()">
+                </div>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="submenu">
+                        <div class="user-info">
+                            <img src="logo.png" alt="">
+                            <h3>Lio Ronaldo<br>Manager</h3>
+
+                        </div>
+                        <hr>
+                        <a href="#profile" class="sub-menu-link" onclick="showPage('profile')">
+                            <i class="bx bx-profile"></i>
+                            <p>Profile</p>
+                            <span>></span>
+                        </a>
+                        <a href="#addbook" class="sub-menu-link" onclick="showPage('Addbook')">
+                            <i class="bx bx-book"></i>
+                            <p>Addbook</p>
+                            <span>></span>
+                        </a>
+                        <a href="" class="sub-menu-link" >
+                            <i class="bx bx-log-out"></i>
+                            <p>Logout</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="content">
+                <!-- ======================== Home ======================  -->
+                <div id="home">
+                    <h6 style="background-color: lightblue;">Welcome to Abdul's Literary Lendings</h6>
+                    <section class="announcement-section">
+                        <h2>Announcements</h2>
+                        <br /> 
+                        <div class="announcement-box">
+                            <!-- รูปภาพประกาศ -->
+                            <div class="announcement-image">
+                                <img src="../photo/announcement1.jpg" alt="Announcement 1">
+                            </div>
+                            <div class="announcement-image">
+                                <img src="../photo/announcement2.jpg" alt="Announcement 2">
+                            </div>
+                            <div class="announcement-image">
+                                <img src="../photo/announcement3.jpg" alt="Announcement 3">
+                            </div>
+                    
+                            <!-- เพิ่มลูกศรซ้ายและขวา -->
+                            <div class="arrow left-arrow" onclick="prevImage()">
+                                <i class="bx bx-chevron-left"></i>
+                            </div>
+                            <div class="arrow right-arrow" onclick="nextImage()">
+                                <i class="bx bx-chevron-right"></i>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="featured-books-section">
+                        <h2>Featured Books</h2>
+                        <div class="featured-books-container">
+                            <div class="book-card">
+                                <img src="../photo/book1.jpg" alt="Book 1">
+                                <h3>ONE PIECE วันพีซ เล่ม 96</h3>
+                                <p>Author: EIICHIRO ODA (เออิจิโระ โอดะ)</p>
+                            </div>
+                            <div class="book-card">
+                                <img src="../photo/book2.jpg" alt="Book 2">
+                                <h3>ONE PIECE เล่ม 51 (ฉบับสมบูรณ์)</h3>
+                                <p>Author: EIICHIRO ODA (เออิจิโระ โอดะ)</p>
+                            </div>
+                            <div class="book-card">
+                                <img src="../photo/book3.jpg" alt="Book 3">
+                                <h3>ONE PIECE เล่ม 51 (ฉบับสมบูรณ์)</h3>
+                                <p>Author: EIICHIRO ODA (เออิจิโระ โอดะ)</p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+                
+
+
+                
+             
+            <!-- ======================== Profile of Account ======================  -->
+                <div class="profile" id="profile">
+                    <header>
+                        <h1>Staff Profile</h1>
+                    </header>
+                    <div class="profilePicture">
+                        <img
+                        src="..\Photo\Profile.jpg"
+                        alt="Profile Picture"
+                        id="profile-image"
+                        />
+                    </div>
+                    <main>
+                        <div class="information-group">
+                        <label for="userID" class="bold-text">Staff ID:</label>
+                        <input class="dataProfile" name="userID" id="userID" type="text" />
+                        <label for="position" class="bold-text">Position:</label>
+                        <input class="dataProfile" name="position" id="position" type="text" />
+                        </div>
+                        <div class="information-group">
+                        <label for="firstName" class="bold-text">First Name:</label>
+                        <input class="dataProfile" name="firstName" id="firstName" type="text" autocomplete="given-name"/>
+                        <label for="lastName" class="bold-text">Last Name:</label>
+                        <input class="dataProfile" type="text" id="lastName" value="" />
+                        </div>
+                        <div class="information-group">
+                        <label for="gender" class="bold-text">Gender:</label>
+                        <select class="dataProfile" id="gender">
+                            <option value="select" class="bold-text">Select</option>
+                            <option value="male" class="bold-text">Male</option>
+                            <option value="female" class="bold-text">Female</option>
+                        </select>
+                        <label for="birthday" class="bold-text">Birthday:</label>
+                        <input class="dataProfile" type="date" id="birthday" value="" />
+                        </div>
+                        <div class="information-group">
+                        <label for="password" class="bold-text">Password:</label>
+                        <input class="dataProfile" name="password" id="password" type="password" />
+                        <label for="confirm_password" class="bold-text">Confirm Password:</label>
+                        <input class="dataProfile" name="confirm_password" id="confirm_password" type="password" />
+                        <span id="password_error" style="color: red; font-size: smaller; display: flex; margin-left: 10px; ">  not match!</span>
+                        </div>
+                        <div class="information-group">
+                        <label for="phoneNumber" class="bold-text">Phone Number:</label>
+                        <input class="dataProfile" type="tel" id="phoneNumber" value="" />
+                        <label for="e-mail" class="bold-text">Email:</label>
+                        <input class="dataProfile" type="e-mail" id="e-mail" value="" />
+                        </div>
+                        <div class="information-group">
+                        <label for="houseNumber" class="bold-text">House Number:</label>
+                        <input class="dataProfile" name="houseNumber" id="houseNumber" type="text" />
+                        <label for="street" class="bold-text">Street:</label>
+                        <input class="dataProfile" name="street" id="street" type="text" />
+                        </div>
+                        <div class="information-group">
+                        <label for="subdistrict" class="bold-text">Subdistrict:</label>
+                        <input class="dataProfile" name="subdistrict" id="subdistrict" type="text" />
+                        <label for="district" class="bold-text">District:</label>
+                        <input class="dataProfile" name="district" id="district" type="text" />
+                        </div>
+                        <div class="information-group">
+                        <label for="province" class="bold-text">Province:</label>
+                        <input class="dataProfile" name="province" id="province" type="text" />
+                        <label for="zipcode" class="bold-text">Zipcode:</label>
+                        <input class="dataProfile" name="zipcode" id="zipcode" type="text" />
+                        </div>
+                        <div class="profile-actions">
+                            <br /> <br />
+                            <a href="index.html" class="editProfile-botton">Edit</a> 
+                        </div>
+                        </div>
+                    </main>
+                </div>
+            
+
+
+    <!-- =========== Scripts =========  -->
+    <script src="statistics.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="..\static\js\main.js"></script>
+    <script>
+        $(function(){
+            $('.bars li .bar').each(function(key,bar){
+                var percentage = $(this).data('percentage');
+                $(this).animate({
+                    'height' : percentage + ''
+                },1000);
+            });
+        });
+    </script>
+</body>
+
+</html>

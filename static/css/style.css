@@ -529,7 +529,7 @@ color: #899481;
   border-radius: 10px;
   box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.1);
   width: 80%;
-  margin: 30px auto;
+  margin: 0 auto;
 }
 
 .Lending h2 {
@@ -658,15 +658,17 @@ color: #899481;
 .customer-search {
   display: flex;
   flex-wrap: wrap; 
-  justify-content: space-between; 
   width: 50%; 
   margin: 10px auto; 
+  justify-content: center;
+  align-items: center;
+
 }
 
 .customer-search label {
   position: relative;
   width: 45%; 
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .customer-search label input {
@@ -682,27 +684,27 @@ color: #899481;
 }
 
 .btn {
-  background-image: linear-gradient(to right, #E07D54, #304f6d); /* Linear gradient */
+  background-image: linear-gradient(to right, #E07D54, #304f6d); 
   color: #fff;
   padding: 12px 20px;
   border: none;
-  border-radius: 20px; /* Increase border-radius for more curvature */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add box-shadow for depth */
+  border-radius: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
   cursor: pointer;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn:hover {
-  background-image: linear-gradient(to right, #af8672, #1b3045); /* Darker gradient on hover */
+  background-image: linear-gradient(to right, #af8672, #1b3045); 
   color: #fff;
 }
 
 .btn:active {
-  background-color: #98573C; /* Button active color (even darker shade of secondary) */
+  background-color: #98573C; 
 }
 
 .button-container {
-  width: 100%; /* เพิ่มเพื่อปรับความกว้างของ container */
+  width: 100%; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -765,9 +767,6 @@ color: #899481;
     width: 50%;
 }
 /* ============================== Statics ============================= */
-.STATIC{
-  transform: translateX(-10%);
-}
 .box1 {
   background: #E6E1DD;
   font-family: 'Ubuntu', sans-serif;
@@ -1288,3 +1287,4 @@ select {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 /* ============================== addbook ============================= */
+

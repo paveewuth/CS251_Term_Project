@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>"Abdul's Literary Lendings"</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="..\static\css\style.css">
+    <!-- ======= boxicons ====== -->
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body >
+<!-- =============== Sidebar ================ -->
+<div class="container">
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <img src="..\logo\CS251_Logo.png" alt="" class="logo-img">
+                    </span>
+                    <span class="title">"Abdul's Literary Lendings"</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="home.html" onclick="showPage('home')">
+                    <span class="icon">
+                        <i class="bx bxs-home"></i>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="book.html" onclick="showPage('bookList')">
+                    <span class="icon">
+                        <i class="bx bxs-book"></i>
+                    </span>
+                    <span class="title">Books</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="lending.html" onclick="showPage('Lendings')">
+                    <span class="icon">
+                        <i class="bx bxs-book-reader"></i>
+                    </span>
+                    <span class="title">Lendings</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" onclick="showPage('Addbook')">
+                    <span class="icon">
+                      <i class='bx bxs-book-add'></i>
+                    </span>
+                    <span class="title">Addbook</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="customer.html" onclick="showPage('Customers')">
+                    <span class="icon">
+                        <i class="bx bx-body"></i>
+                    </span>
+                    <span class="title">Customers</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="static.html" onclick="showPage('Statics')">
+                    <span class="icon">
+                       <i class="bx bx-stats"></i>
+                    </span>
+                    <span class="title">Statics</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="bx bx-menu" id="btn"></i>
+                </div>
+    
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <i class="bx bx-search"></i>
+                    </label>
+                </div>    
+                                      <!-- ========================= Profile Dropdown  ==================== -->
+                <div class="user">
+                    <img src="..\Photo\Profile.jpg" alt="" class="profile-dropdown" onclick="toggleMenu()">
+                </div>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="submenu">
+                        <div class="user-info">
+                            <img src="..\Photo\Profile.jpg" alt="">
+                            <h3>Lio Ronaldo<br>Manager</h3>
+
+                        </div>
+                        <hr>
+                        <a href="#profile" class="sub-menu-link" onclick="showPage('profile')">
+                            <i class='bx bx-user'></i>
+                            <p>Profile</p>
+                            <span>></span>
+                        </a>
+                        
+                        <a href="" class="sub-menu-link" >
+                            <i class='bx bx-bell'></i>
+                            <p> Notification</p>
+                            <span>></span>
+                        </a>
+                        
+                        <a href="" class="sub-menu-link" >
+                            <i class='bx bx-message-edit' ></i>
+                            <p> Language</p>
+                            <span>></span>
+                        </a>
+                        
+                        <a href="" class="sub-menu-link" >
+                            <i class="bx bx-log-out"></i>
+                            <p> Logout</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+      <!-- ========================= Add book  ==================== -->
+      <br><h1>Add book</h1>
+      <div class="content">
+        <form>
+            <div class="grid">
+                <div class="row">
+                    <div class="col-wd-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                        <p>Book ID</p>
+                        <input type="text" id="bookid" name="bookid" class="form-control" placeholder="Input Bookid" required>
+                        </div>
+                    </div>
+                    <div class="col-wd-5 col-md-5 col-sm-5" style="padding-left: 80px;">
+                        <br>
+                        <div class="form-group">
+                            <p>Book cover</p>
+                            <form action="/action_page.php">
+                                <input type="file" id="myFile" name="filename">
+                            </form>
+                        </div>
+                    </div>
+    
+                </div><br>
+                <div class="row">
+                    <div class="col-wd-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <p>Book Price</p>
+                            <input type="bookprice" id="bookprice" name="bookprice" class="form-control" placeholder="Input Bookprice" required>
+                        </div>
+                    </div>
+                    <div class="col-wd-4 col-md-4 col-sm-4" style="padding-left: 80px;">
+                        <div class="form-group">
+                            <p>Number of page</p>
+                            <input type="number" id="number" name="number" class="form-control" placeholder="Input number of page" required>
+                        </div>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-wd-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <p>Description of this book</p>
+                            <input type="description" id="description" name="description" class="form-control" placeholder="Input Description" required>
+                        </div>
+                    </div>
+                    <div class="col-wd-4 col-md-4 col-sm-4" style="padding-left: 80px;">
+                        <div class="form-group">
+                            <p>Date</p>
+                            <input type="date" id="date" name="date" class="form-control" placeholder="Input date" required>
+                        </div><br>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-wd-6 col-md-6 col-sm-6">
+                        <div class="form-group">
+                            <p>Author</p>
+                            <input type="author" id="author" name="author" class="form-control" placeholder="Input Author" required>
+                        </div>
+                    </div>
+                    <div class="col-wd-4 col-md-4 col-sm-4" style="padding-left: 100px;">
+                        <br>
+                        <div class="button-container">
+                            <button>Next</button>
+                        </div><br>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-wd-6 col-md-6 col-sm-6">
+                        <p>Category</p>
+                        <div class="form-group">
+                                <input type="checkbox" id="romance" name="checkboxGroup" value="romance" />
+                                <label for="romance">Romance</label>
+                                
+                                <input type="checkbox" id="fantasy" name="checkboxGroup" value="fantasy" />
+                                <label for="fantasy">Fantasy</label>
+                                
+                                <input type="checkbox" id="drama" name="checkboxGroup" value="drama" />
+                                <label for="drama">Drama</label>
+
+                                <input type="checkbox" id="horror" name="checkboxGroup" value="horror" />
+                                <label for="horror">Horror</label>
+
+                                <input type="checkbox" id="boyLove" name="checkboxGroup" value="boyLove" />
+                                <label for="boyLove">BoyLove</label>
+
+                                <input type="checkbox" id="girlLove" name="checkboxGroup" value="girlLove" />
+                                <label for="girlLove">GirlLove</label>
+
+                                <input type="checkbox" id="scifi" name="checkboxGroup" value="scifi" />
+                                <label for="scifi">Sci-fi</label>
+
+                                <input type="checkbox" id="detective" name="checkboxGroup" value="detective" />
+                                <label for="detective">Detective</label>
+                        </div>
+                    </div>
+                </div><br>
+            </div>
+        </form>
+        
+    
+           <!-- ======================== Profile of Account ======================  -->
+           <div class="profile" id="profile">
+            <header>
+                <h1>Staff Profile</h1>
+            </header>
+            <div class="profilePicture">
+                <img
+                src="..\Photo\Profile.jpg"
+                alt="Profile Picture"
+                id="profile-image"
+                />
+            </div>
+            <main>
+                <div class="information-group">
+                <label for="userID" class="bold-text">Staff ID:</label>
+                <input class="dataProfile" name="userID" id="userID" type="text" />
+                <label for="position" class="bold-text">Position:</label>
+                <input class="dataProfile" name="position" id="position" type="text" />
+                </div>
+                <div class="information-group">
+                <label for="firstName" class="bold-text">First Name:</label>
+                <input class="dataProfile" name="firstName" id="firstName" type="text" autocomplete="given-name"/>
+                <label for="lastName" class="bold-text">Last Name:</label>
+                <input class="dataProfile" type="text" id="lastName" value="" />
+                </div>
+                <div class="information-group">
+                <label for="gender" class="bold-text">Gender:</label>
+                <select class="dataProfile" id="gender">
+                    <option value="select" class="bold-text">Select</option>
+                    <option value="male" class="bold-text">Male</option>
+                    <option value="female" class="bold-text">Female</option>
+                </select>
+                <label for="birthday" class="bold-text">Birthday:</label>
+                <input class="dataProfile" type="date" id="birthday" value="" />
+                </div>
+                <div class="information-group">
+                <label for="password" class="bold-text">Password:</label>
+                <input class="dataProfile" name="password" id="password" type="password" />
+                <label for="confirm_password" class="bold-text">Confirm Password:</label>
+                <input class="dataProfile" name="confirm_password" id="confirm_password" type="password" />
+                <span id="password_error" style="color: red; font-size: smaller; display: flex; margin-left: 10px; ">  not match!</span>
+                </div>
+                <div class="information-group">
+                <label for="phoneNumber" class="bold-text">Phone Number:</label>
+                <input class="dataProfile" type="tel" id="phoneNumber" value="" />
+                <label for="e-mail" class="bold-text">Email:</label>
+                <input class="dataProfile" type="e-mail" id="e-mail" value="" />
+                </div>
+                <div class="information-group">
+                <label for="houseNumber" class="bold-text">House Number:</label>
+                <input class="dataProfile" name="houseNumber" id="houseNumber" type="text" />
+                <label for="street" class="bold-text">Street:</label>
+                <input class="dataProfile" name="street" id="street" type="text" />
+                </div>
+                <div class="information-group">
+                <label for="subdistrict" class="bold-text">Subdistrict:</label>
+                <input class="dataProfile" name="subdistrict" id="subdistrict" type="text" />
+                <label for="district" class="bold-text">District:</label>
+                <input class="dataProfile" name="district" id="district" type="text" />
+                </div>
+                <div class="information-group">
+                <label for="province" class="bold-text">Province:</label>
+                <input class="dataProfile" name="province" id="province" type="text" />
+                <label for="zipcode" class="bold-text">Zipcode:</label>
+                <input class="dataProfile" name="zipcode" id="zipcode" type="text" />
+                </div>
+                <div class="profile-actions">
+                    <br /> <br />
+                    <a href="index.html" class="editProfile-botton">Edit</a> 
+                </div>
+                </div>
+            </main>
+        </div>
+    
+
+            <!-- ======================== Addbook ======================  -->
+            <div id="Addbook">
+            </div>
+            <!-- ======================================= End =============================================  -->
+        </div>
+    </div>
+
+
+    <!-- =========== Scripts =========  -->
+    <script src="statistics.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="..\static\js\main.js"></script>
+    <script>
+        $(function(){
+            $('.bars li .bar').each(function(key,bar){
+                var percentage = $(this).data('percentage');
+                $(this).animate({
+                    'height' : percentage + ''
+                },1000);
+            });
+        });
+    </script>
+</body>
+
+</html>

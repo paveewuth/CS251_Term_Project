@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>"Abdul's Literary Lendings"</title>
+    <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="..\static\css\style.css">
+    <!-- ======= boxicons ====== -->
+    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<style>
+    .transparent-button {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        display: block;
+        width: 100%;
+        display: flex;
+        text-decoration: none;
+        color: var(--color-orange); /* สีของ text */
+        font-size: 16px; /* ขนาดของตัวอักษร */
+    }
+</style>
+<body >
+<!-- =============== Sidebar ================ -->
+<div class="container">
+    <div class="sidebar">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <img src="..\logo\CS251_Logo.png" alt="" class="logo-img">
+                    </span>
+                    <span class="title">"Abdul's Literary Lendings"</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="home.html" onclick="showPage('home')">
+                    <span class="icon">
+                        <i class="bx bxs-home"></i>
+                    </span>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" onclick="showPage('bookList')">
+                    <span class="icon">
+                        <i class="bx bxs-book"></i>
+                    </span>
+                    <span class="title">Books</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="lending.html" onclick="showPage('Lendings')">
+                    <span class="icon">
+                        <i class="bx bxs-book-reader"></i>
+                    </span>
+                    <span class="title">Lendings</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="addbook.html" onclick="showPage('Addbook')">
+                    <span class="icon">
+                      <i class='bx bxs-book-add'></i>
+                    </span>
+                    <span class="title">Addbook</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="customer.html" onclick="showPage('Customers')">
+                    <span class="icon">
+                        <i class="bx bx-body"></i>
+                    </span>
+                    <span class="title">Customers</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="static.html" onclick="showPage('Statics')">
+                    <span class="icon">
+                       <i class="bx bx-stats"></i>
+                    </span>
+                    <span class="title">Statics</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+        <!-- ========================= Main ==================== -->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <i class="bx bx-menu" id="btn"></i>
+                </div>
+    
+                <div class="search">
+                    <label>
+                        <input type="text" placeholder="Search here">
+                        <i class="bx bx-search"></i>
+                    </label>
+                </div>    
+                                      <!-- ========================= Profile Dropdown  ==================== -->
+                <div class="user">
+                    <img src="..\Photo\Profile.jpg" alt="" class="profile-dropdown" onclick="toggleMenu()">
+                </div>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="submenu">
+                        <div class="user-info">
+                            <img src="..\Photo\Profile.jpg" alt="">
+                            <h3>Lio Ronaldo<br>Manager</h3>
+
+                        </div>
+                        <hr>
+                        <a href="#profile" class="sub-menu-link" onclick="showPage('profile')">
+                            <i class='bx bx-user'></i>
+                            <p>Profile</p>
+                            <span>></span>
+                        </a>
+                        
+                        <a href="" class="sub-menu-link" >
+                            <i class='bx bx-bell'></i>
+                            <p> Notification</p>
+                            <span>></span>
+                        </a>
+                        
+                        <a href="" class="sub-menu-link" >
+                            <i class='bx bx-message-edit' ></i>
+                            <p> Language</p>
+                            <span>></span>
+                        </a>
+                        
+                        <a href="" class="sub-menu-link" >
+                            <i class="bx bx-log-out"></i>
+                            <p> Logout</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="content">
+  <!-- ======================== Book ======================  -->
+  <div class="list" id="bookList">
+    <h1>Book List</h1>
+    <div class="container">
+        <!-- เล่มที่ 1  -->
+        <div class="book">
+            <img src="..\Photo\fairytail1.jpg" alt="หนังสือ 1">
+            <div class="book-info">
+                <h2>Faury Tail 1</h2>
+                <p>Writer : Hiro Mashima</p>
+                <p>Rental : 60 Bath</p>
+                <p>Type    : Fantasi</p>
+                <a href="index.htm" class="more-info-btn">More</a> 
+            </div>
+        </div>
+        <!-- เล่มที่ 2  -->
+        <div class="book">
+            <img src="..\Photo\fairytail11.jpg" alt="หนังสือ 2">
+            <div class="book-info">
+                <h2>Faury Tail 11</h2>
+                <p>Writer : Hiro Mashima</p>
+                <p>Rental : 60 Bath</p>
+                <p>Type    : Fantasi</p>
+                <a href="index.html" class="more-info-btn">More</a> 
+            </div>
+        </div>
+        <!-- เล่มที่ 3  -->
+        <div class="book">
+            <img src="..\Photo\fairytail27.jpg" alt="หนังสือ 3">
+            <div class="book-info">
+                <h2>Faury Tail 27</h2>
+                <p>Writer : Hiro Mashima</p>
+                <p>Rental : 60 Bath</p>
+                <p>Type    : Fantasi</p>
+                <a href="index.html" class="more-info-btn">More</a> 
+            </div>
+        </div>
+        <!-- เล่มที่ 4  -->
+        <div class="book">
+            <img src="..\Photo\fairytail29.jpg" alt="หนังสือ 4">
+            <div class="book-info">
+                <h2>Faury Tail 29</h2>
+                <p>Writer : Hiro Mashima</p>
+                <p>Rental : 60 Bath</p>
+                <p>Type    : Fantasi</p>
+                <a href="index.html" class="more-info-btn">More</a> 
+            </div>
+        </div>
+        <!-- เล่มที่ 5  -->
+        <div class="book">
+            <img src="..\Photo\fairytail33.jpg" alt="หนังสือ 5">
+            <div class="book-info">
+                <h2>Faury Tail 33</h2>
+                <p>Writer : Hiro Mashima</p>
+                <p>Rental : 60 Bath</p>
+                <p>Type    : Fantasi</p>
+                <a href="index.html" class="more-info-btn">More</a> 
+            </div>
+        </div>
+        <!-- เล่มที่ 6  -->
+        <div class="book">
+            <img src="..\Photo\fairytail51.jpg" alt="หนังสือ 6">
+            <div class="book-info">
+                <h2>Faury Tail 51</h2>
+                <p>Writer : Hiro Mashima</p>
+                <p>Rental : 60 Bath</p>
+                <p>Type    : Fantasi</p>
+                <a href="index.html" class="more-info-btn">More</a> 
+            </div>
+        </div>
+        <!-- เล่มที่ 7  -->
+        <div class="book">
+            <img src="..\Photo\fairytail58.jpg" alt="หนังสือ 7">
+            <div class="book-info">
+                <h2>Faury Tail 58</h2>
+                <p>Writer : Hiro Mashima</p>
+                <p>Rental : 60 Bath</p>
+                <p>Type    : Fantasi</p>
+                <a href="index.html" class="more-info-btn">More</a> 
+            </div>
+        </div>
+        <!-- เล่มที่ 8  -->
+        <div class="book">
+            <img src="..\Photo\fairytail59.jpg" alt="หนังสือ 8">
+            <div class="book-info">
+                <h2>Faury Tail 59</h2>
+                <p>Writer : Hiro Mashima</p>
+                <p>Rental : 60 Bath</p>
+                <p>Type    : Fantasi</p>
+                <a href="index.html" class="more-info-btn">More</a> 
+            </div>
+        </div>
+        <!-- เล่มที่ 9  -->
+        <div class="book">
+            <img src="..\Photo\fairytail61.jpg" alt="หนังสือ 9">
+            <div class="book-info">
+                <h2>Faury Tail 61</h2>
+                <p>Writer : Hiro Mashima</p>
+                <p>Rental : 60 Bath</p>
+                <p>Type    : Fantasi</p>
+                <a href="index.html" class="more-info-btn">More</a> 
+            </div>
+        </div>
+        <!-- เล่มที่ 10  -->
+        <div class="book">
+            <img src="..\Photo\fairytail63.jpg" alt="หนังสือ 10">
+            <div class="book-info">
+                <h2>Faury Tail 63</h2>
+                <p>Writer : Hiro Mashima</p>
+                <p>Rental : 60 Bath</p>
+                <p>Type    : Fantasi</p>
+                <a href="index.html" class="more-info-btn">More</a> 
+            </div>
+        </div>
+        <!-- เพิ่มหนังสือเพิ่มเติมตามต้องการ -->
+    </div>
+    <div class="pagination">
+        <a href="#" class="prev-page">หน้าก่อนหน้า</a>
+        <span class="current-page">หน้า 1</span>
+        <a href="#" class="next-page">หน้าถัดไป</a>
+      </div>
+</div>
+           <!-- ======================== Profile of Account ======================  -->
+           <div class="profile" id="profile">
+            <header>
+                <h1>Staff Profile</h1>
+            </header>
+            <div class="profilePicture">
+                <img
+                src="..\Photo\Profile.jpg"
+                alt="Profile Picture"
+                id="profile-image"
+                />
+            </div>
+            <main>
+                <div class="information-group">
+                <label for="userID" class="bold-text">Staff ID:</label>
+                <input class="dataProfile" name="userID" id="userID" type="text" />
+                <label for="position" class="bold-text">Position:</label>
+                <input class="dataProfile" name="position" id="position" type="text" />
+                </div>
+                <div class="information-group">
+                <label for="firstName" class="bold-text">First Name:</label>
+                <input class="dataProfile" name="firstName" id="firstName" type="text" autocomplete="given-name"/>
+                <label for="lastName" class="bold-text">Last Name:</label>
+                <input class="dataProfile" type="text" id="lastName" value="" />
+                </div>
+                <div class="information-group">
+                <label for="gender" class="bold-text">Gender:</label>
+                <select class="dataProfile" id="gender">
+                    <option value="select" class="bold-text">Select</option>
+                    <option value="male" class="bold-text">Male</option>
+                    <option value="female" class="bold-text">Female</option>
+                </select>
+                <label for="birthday" class="bold-text">Birthday:</label>
+                <input class="dataProfile" type="date" id="birthday" value="" />
+                </div>
+                <div class="information-group">
+                <label for="password" class="bold-text">Password:</label>
+                <input class="dataProfile" name="password" id="password" type="password" />
+                <label for="confirm_password" class="bold-text">Confirm Password:</label>
+                <input class="dataProfile" name="confirm_password" id="confirm_password" type="password" />
+                <span id="password_error" style="color: red; font-size: smaller; display: flex; margin-left: 10px; ">  not match!</span>
+                </div>
+                <div class="information-group">
+                <label for="phoneNumber" class="bold-text">Phone Number:</label>
+                <input class="dataProfile" type="tel" id="phoneNumber" value="" />
+                <label for="e-mail" class="bold-text">Email:</label>
+                <input class="dataProfile" type="e-mail" id="e-mail" value="" />
+                </div>
+                <div class="information-group">
+                <label for="houseNumber" class="bold-text">House Number:</label>
+                <input class="dataProfile" name="houseNumber" id="houseNumber" type="text" />
+                <label for="street" class="bold-text">Street:</label>
+                <input class="dataProfile" name="street" id="street" type="text" />
+                </div>
+                <div class="information-group">
+                <label for="subdistrict" class="bold-text">Subdistrict:</label>
+                <input class="dataProfile" name="subdistrict" id="subdistrict" type="text" />
+                <label for="district" class="bold-text">District:</label>
+                <input class="dataProfile" name="district" id="district" type="text" />
+                </div>
+                <div class="information-group">
+                <label for="province" class="bold-text">Province:</label>
+                <input class="dataProfile" name="province" id="province" type="text" />
+                <label for="zipcode" class="bold-text">Zipcode:</label>
+                <input class="dataProfile" name="zipcode" id="zipcode" type="text" />
+                </div>
+                <div class="profile-actions">
+                    <br /> <br />
+                    <a href="index.html" class="editProfile-botton">Edit</a> 
+                </div>
+                </div>
+            </main>
+        </div>
+    
+
+            <!-- ======================== Addbook ======================  -->
+            <div id="Addbook">
+            </div>
+            <!-- ======================================= End =============================================  -->
+        </div>
+    </div>
+
+
+    <!-- =========== Scripts =========  -->
+    <script src="statistics.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="..\static\js\main.js"></script>
+    <script>
+        $(function(){
+            $('.bars li .bar').each(function(key,bar){
+                var percentage = $(this).data('percentage');
+                $(this).animate({
+                    'height' : percentage + ''
+                },1000);
+            });
+        });
+    </script>
+</body>
+
+</html>

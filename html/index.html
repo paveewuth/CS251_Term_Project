@@ -11,7 +11,19 @@
     <!-- ======= boxicons ====== -->
     <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
-
+<style>
+    .transparent-button {
+        background-color: transparent;
+        border: none;
+        position: relative;
+        display: block;
+        width: 100%;
+        display: flex;
+        text-decoration: none;
+        color: var(--color-orange); /* สีของ text */
+        font-size: 16px; /* ขนาดของตัวอักษร */
+    }
+</style>
 <body >
     <!-- =============== Sidebar ================ -->
     <div class="container">
@@ -26,59 +38,55 @@
                     </a>
                 </li>
 
+                
                 <li>
-                    <a href="#home" onclick="showPage('home')">
-                        <span class="icon">
-                            <i class="bx bxs-home"></i>
-                        </span>
-                        <span class="title">Home</span>
+                    <a href="home.html">
+                      <span class="icon">
+                        <i class="bx bx-home"></i>
+                      </span>
+                      <button class="title transparent-button">Home</button>
                     </a>
-                </li>
-
-                <li>
-                    <a href="#" onclick="showPage('bookList')">
-                        <span class="icon">
-                            <i class="bx bxs-book"></i>
-                        </span>
-                        <span class="title">Books</span>
+                  </li>
+                  <li>
+                    <a href="book.html">
+                      <span class="icon">
+                        <i class="bx bx-book"></i>
+                      </span>
+                      <button class="title transparent-button">Books</button>
                     </a>
-                </li>
-
-                <li>
-                    <a href="#lending" onclick="showPage('Lendings')">
-                        <span class="icon">
-                            <i class="bx bxs-book-reader"></i>
-                        </span>
-                        <span class="title">Lendings</span>
+                  </li>
+                  <li>
+                    <a href="lending.html">
+                      <span class="icon">
+                        <i class="bx bx-book-reader"></i>
+                      </span>
+                      <button class="title transparent-button">Lendings</button>
                     </a>
-                </li>
-
-                <li>
-                    <a href="#" onclick="showPage('Addbook')">
+                  </li>
+                  <li>
+                    <a href="addbook.html">
                         <span class="icon">
                           <i class='bx bxs-book-add'></i>
                         </span>
-                        <span class="title">Addbook</span>
+                        <button class="title transparent-button">Addbook</button>
                     </a>
                 </li>
-                
-                <li>
-                    <a href="#customer" onclick="showPage('Customers')">
-                        <span class="icon">
-                            <i class="bx bx-body"></i>
-                        </span>
-                        <span class="title">Customers</span>
+                  <li>
+                    <a href="customer.html">
+                      <span class="icon">
+                        <i class="bx bx-body"></i>
+                      </span>
+                      <button class="title transparent-button">Customers</button>
                     </a>
-                </li>
-
-                <li>
-                    <a href="#static" onclick="showPage('Statics')">
-                        <span class="icon">
-                           <i class="bx bx-stats"></i>
-                        </span>
-                        <span class="title">Statics</span>
+                  </li>
+                  <li>
+                    <a href="static.html">
+                      <span class="icon">
+                        <i class="bx bx-stats"></i>
+                      </span>
+                      <button class="title transparent-button">Statics</button>
                     </a>
-                </li>
+                  </li>
             </ul>
         </div>
         <!-- ========================= Main ==================== -->
@@ -101,32 +109,24 @@
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="submenu">
                         <div class="user-info">
-                            <img src="..\Photo\Profile.jpg" alt="">
+                            <img src="logo.png" alt="">
                             <h3>Lio Ronaldo<br>Manager</h3>
 
                         </div>
                         <hr>
                         <a href="#profile" class="sub-menu-link" onclick="showPage('profile')">
-                            <i class='bx bx-user'></i>
+                            <i class="bx bx-profile"></i>
                             <p>Profile</p>
                             <span>></span>
                         </a>
-                        
-                        <a href="" class="sub-menu-link" >
-                            <i class='bx bx-bell'></i>
-                            <p> Notification</p>
+                        <a href="#addbook" class="sub-menu-link" onclick="showPage('Addbook')">
+                            <i class="bx bx-book"></i>
+                            <p>Addbook</p>
                             <span>></span>
                         </a>
-                        
-                        <a href="" class="sub-menu-link" >
-                            <i class='bx bx-message-edit' ></i>
-                            <p> Language</p>
-                            <span>></span>
-                        </a>
-                        
                         <a href="" class="sub-menu-link" >
                             <i class="bx bx-log-out"></i>
-                            <p> Logout</p>
+                            <p>Logout</p>
                             <span>></span>
                         </a>
                     </div>
@@ -311,21 +311,12 @@
              <!-- ======================== Customers ======================  -->
              <div id="Customers">
                 <div class="customer-search">
-                    <label>
-                        <input type="text" id="firstName" placeholder="Enter name">
-                    </label>
-                    <label>
-                        <input type="text" id="lastName" placeholder="Enter last name">
-                        
-                    </label>
+                    
                     <label>
                         <input type="text" id="customerID" placeholder="Enter customer ID">
                        
                     </label>
-                    <label>
-                        <input type="text" id="citizenID" placeholder="Enter citizen ID">
-                        
-                    </label>
+                    
                     <div class="button-container">
                         <button type="submit" class="btn btn-primary">Enter</button>
                     </div>
@@ -351,6 +342,15 @@
                         <label for="phone"> <b>Phone number:</b>  <input type="text" placeholder="#PhoneNumber"></label>
                         <label for="balance"> <b>Balance:</b>  <input type="text" placeholder="#Balance"></label>
                     </div>
+
+                    <div class="info-group">
+                        <label for="customer_type"> <b>Customer type:</b>  <input type="text" placeholder="#member/not member"></label>
+                    </div>
+
+                    <div class="info-group">
+                        <label for="memStart"> <b>Member start:</b>  <input type="text" placeholder="#Date"></label>
+                        <label for="memExp"> <b>Member end:</b>  <input type="text" placeholder="#Date"></label>
+                    </div>
                 </div>
                 
             </div>
@@ -358,39 +358,30 @@
             <div class="Lending" id="Lendings">
                 <h2>Lendings information</h2><br>
                 <div class="form-group">
-                    <label for="book_id"> <b>Book ID:</b> 
-                    <input type="text" name="book_id" id="book_id" placeholder="Input Book ID"></label>
-                    <label for="book_price"> <b>Book Price:</b>  
-                    <input type="text" name="book_price" id="book_price" placeholder="Input Book price"></label>
+                    <label for="book_id"> <b>Book ID:</b> <input type="text" placeholder="Input Book ID"></label>
+                    <label for="book_price"> <b>Book Price:</b>  <input type="text" placeholder="Input Book price"></label>
                 </div>
-            
+
                 <div class="form-group">
-                    <label for="customer_name"> <b>Customer Name:</b> 
-                    <input type="text" name="customer_name" id="customer_name" placeholder="Input Customer name"></label>
-                    <label for="citizen_id"> <b>Customer Citizen ID:</b>  
-                    <input type="text" name="citizen_id" id="citizen_id" placeholder="Input Customer citizen id"></label>
+                    <label for="customer_name"> <b>Customer Name:</b> <input type="text" placeholder="Input Customer name"></label>
+                    <label for="citizen_id"> <b>Customer Citizen ID:</b>  <input type="text" placeholder="Input Customer citizen id"></label>
                 </div>
-            
+    
                 <div class="form-group">
-                    <label for="phone"> <b>Customer Phone no:</b> 
-                    <input type="text"  name="phone" id="phone" placeholder="Input Customer phone no."></label>
-                    <label for="start_date"> <b>Start Date:</b>  
-                    <input type="date"  name="start_date" id="start_date" placeholder=""></label>
+                    <label for="phone"> <b>Customer Phone no:</b>  <input type="text" placeholder="Input Customer phone no."></label>
+                    <label for="start_date"> <b>Start Date:</b>  <input type="date" placeholder=""></label>
                 </div>
-            
+    
                 <div class="form-group">
-                    <label for="email"> <b>Customer E-mail:</b>  
-                    <input type="email" name="email" id="email" placeholder="Input Customer Email"></label>
-                    <label for="return_date"> <b>return Date:</b>  
-                    <input type="date"  name="return_date" id="return_date" placeholder=""></label>
+                    <label for="phone"> <b>Customer Phone no:</b>  <input type="text" placeholder="Input PhoneNumber"></label>
+                    <label for="return_date"> <b>return Date:</b>  <input type="date" placeholder=""></label>
                 </div>
-            
+
                 <div class="form-group">
-                    <label for="member"> <b>Member:</b>  <input type="checkbox" placeholder=""></label>
-                    <label for="total_price"> <b>total price:</b>  
-                    <input type="text" name="total_price" id="total_price" placeholder="Total price"></label>
+                    <label for="email"> <b>Customer E-mail:</b>  <input type="email" placeholder="Input E-mail"></label>
+                    <label for="total_price"> <b>total price:</b>  <input type="text" placeholder="Total price"></label>
                 </div>
-            
+
                     <div class="button-container">
                         <button type="button" class="btn" onclick="openPopup('success')">Confirm Payment</button>
                         <div id="successPopup" class="popup">
@@ -408,7 +399,7 @@
                     </div>
             </div>
              <!-- ======================== Static ======================  -->
-            <div class="STATIC" id="Statics">
+            <div id="Statics">
                 <!-- กล่องที่1 newcustomer -->
         <div class="box1">
             <span class="newcustomer">
@@ -652,78 +643,80 @@
             </div>
                 </div>
             <!-- ======================== Profile of Account ======================  -->
-                <div class="profile" id="profile">
-                    <header>
-                        <h1>Staff Profile</h1>
-                    </header>
-                    <div class="profilePicture">
-                        <img
-                        src="..\Photo\Profile.jpg"
-                        alt="Profile Picture"
-                        id="profile-image"
-                        />
-                    </div>
-                    <main>
-                        <div class="information-group">
-                        <label for="userID" class="bold-text">Staff ID:</label>
-                        <input class="dataProfile" name="userID" id="userID" type="text" />
-                        <label for="position" class="bold-text">Position:</label>
-                        <input class="dataProfile" name="position" id="position" type="text" />
-                        </div>
-                        <div class="information-group">
-                        <label for="firstName" class="bold-text">First Name:</label>
-                        <input class="dataProfile" name="firstName" id="firstName" type="text" autocomplete="given-name"/>
-                        <label for="lastName" class="bold-text">Last Name:</label>
-                        <input class="dataProfile" type="text" id="lastName" value="" />
-                        </div>
-                        <div class="information-group">
-                        <label for="gender" class="bold-text">Gender:</label>
-                        <select class="dataProfile" id="gender">
-                            <option value="select" class="bold-text">Select</option>
-                            <option value="male" class="bold-text">Male</option>
-                            <option value="female" class="bold-text">Female</option>
-                        </select>
-                        <label for="birthday" class="bold-text">Birthday:</label>
-                        <input class="dataProfile" type="date" id="birthday" value="" />
-                        </div>
-                        <div class="information-group">
-                        <label for="password" class="bold-text">Password:</label>
-                        <input class="dataProfile" name="password" id="password" type="password" />
-                        <label for="e-mail" class="bold-text">Email:</label>
-                        <input class="dataProfile" type="e-mail" id="e-mail" value="" />
-                        </div>
-                        <div class="information-group">
-                        <label for="phoneNumber" class="bold-text">Phone Number:</label>
-                        <input class="dataProfile" type="tel" id="phoneNumber" value="" />
-                        <label for="joinDate" class="bold-text">Join Date:</label>
-                        <input class="dataProfile" type="date" id="joinDate" value="" />
-                        </div>
-                        <div class="information-group">
-                        <label for="houseNumber" class="bold-text">House Number:</label>
-                        <input class="dataProfile" name="houseNumber" id="houseNumber" type="text" />
-                        <label for="street" class="bold-text">Street:</label>
-                        <input class="dataProfile" name="street" id="street" type="text" />
-                        </div>
-                        <div class="information-group">
-                        <label for="subdistrict" class="bold-text">Subdistrict:</label>
-                        <input class="dataProfile" name="subdistrict" id="subdistrict" type="text" />
-                        <label for="district" class="bold-text">District:</label>
-                        <input class="dataProfile" name="district" id="district" type="text" />
-                        </div>
-                        <div class="information-group">
-                        <label for="province" class="bold-text">Province:</label>
-                        <input class="dataProfile" name="province" id="province" type="text" />
-                        <label for="zipcode" class="bold-text">Zipcode:</label>
-                        <input class="dataProfile" name="zipcode" id="zipcode" type="text" />
-                        </div>
-                        <div class="profile-actions">
-                            <br /> <br />
-                            <a href="index.html" class="editProfile-botton">Edit</a> 
-                        </div>
-                        </div>
-                    </main>
+            <div class="profile" id="profile">
+                <header>
+                    <h1>Staff Profile</h1>
+                </header>
+                <div class="profilePicture">
+                    <img
+                    src="..\Photo\Profile.jpg"
+                    alt="Profile Picture"
+                    id="profile-image"
+                    />
                 </div>
-        </div>
+                <main>
+                    <div class="information-group">
+                    <label for="userID" class="bold-text">Staff ID:</label>
+                    <input class="dataProfile" name="userID" id="userID" type="text" />
+                    <label for="position" class="bold-text">Position:</label>
+                    <input class="dataProfile" name="position" id="position" type="text" />
+                    </div>
+                    <div class="information-group">
+                    <label for="firstName" class="bold-text">First Name:</label>
+                    <input class="dataProfile" name="firstName" id="firstName" type="text" autocomplete="given-name"/>
+                    <label for="lastName" class="bold-text">Last Name:</label>
+                    <input class="dataProfile" type="text" id="lastName" value="" />
+                    </div>
+                    <div class="information-group">
+                    <label for="gender" class="bold-text">Gender:</label>
+                    <select class="dataProfile" id="gender">
+                        <option value="select" class="bold-text">Select</option>
+                        <option value="male" class="bold-text">Male</option>
+                        <option value="female" class="bold-text">Female</option>
+                    </select>
+                    <label for="birthday" class="bold-text">Birthday:</label>
+                    <input class="dataProfile" type="date" id="birthday" value="" />
+                    </div>
+                    <div class="information-group">
+                    <label for="password" class="bold-text">Password:</label>
+                    <input class="dataProfile" name="password" id="password" type="password" />
+                    <label for="confirm_password" class="bold-text">Confirm Password:</label>
+                    <input class="dataProfile" name="confirm_password" id="confirm_password" type="password" />
+                    <span id="password_error" style="color: red; font-size: smaller; display: flex; margin-left: 10px; ">  not match!</span>
+                    </div>
+                    <div class="information-group">
+                    <label for="phoneNumber" class="bold-text">Phone Number:</label>
+                    <input class="dataProfile" type="tel" id="phoneNumber" value="" />
+                    <label for="e-mail" class="bold-text">Email:</label>
+                    <input class="dataProfile" type="e-mail" id="e-mail" value="" />
+                    </div>
+                    <div class="information-group">
+                    <label for="houseNumber" class="bold-text">House Number:</label>
+                    <input class="dataProfile" name="houseNumber" id="houseNumber" type="text" />
+                    <label for="street" class="bold-text">Street:</label>
+                    <input class="dataProfile" name="street" id="street" type="text" />
+                    </div>
+                    <div class="information-group">
+                    <label for="subdistrict" class="bold-text">Subdistrict:</label>
+                    <input class="dataProfile" name="subdistrict" id="subdistrict" type="text" />
+                    <label for="district" class="bold-text">District:</label>
+                    <input class="dataProfile" name="district" id="district" type="text" />
+                    </div>
+                    <div class="information-group">
+                    <label for="province" class="bold-text">Province:</label>
+                    <input class="dataProfile" name="province" id="province" type="text" />
+                    <label for="zipcode" class="bold-text">Zipcode:</label>
+                    <input class="dataProfile" name="zipcode" id="zipcode" type="text" />
+                    </div>
+                    <div class="profile-actions">
+                        <br /> <br />
+                        <a href="index.html" class="editProfile-botton">Edit</a> 
+                    </div>
+                    </div>
+                </main>
+            </div>
+        
+
             <!-- ======================== Addbook ======================  -->
             <div id="Addbook">
             </div>

@@ -42,7 +42,7 @@ subMenu.addEventListener("mouseleave", function(e) {
 });
 // ================================================================================================
 // Gemini ทำให้
-function showPage(pageId) {
+/*function showPage(pageId) {
   // ซ่อนหน้าทั้งหมด
   const allPages = document.querySelectorAll(".content > div"); //:ซ้อนหน้าช่วง content เป็นต้นไป
   for (const page of allPages) {
@@ -54,7 +54,7 @@ function showPage(pageId) {
   if (targetPage) {
       targetPage.style.display = "block";
   }
-}
+}*/
 // หน้า Profile
 // เพิ่มข้อความลงในช่องให้กรอก
 let userID = document.getElementById("userID");
@@ -101,7 +101,7 @@ showPage('home');  //  แสดงหน้าแรก ("home") ตั้ง�
 
 //========  ตรงนี้คือส่วนน Home ค้าบ======================
 // JavaScript Code
-let images = [
+/*let images = [
   '../logo/announcement1.jpg',
   '../logo/announcement2.jpg',
   '../logo/announcement3.jpg'
@@ -163,7 +163,7 @@ document.addEventListener('keydown', function(event) {
       nextImage(); // เรียกใช้ฟังก์ชันเปลี่ยนภาพไปยังภาพถัดไป
   }
 });
-
+*/
 
 // ========================= ส่วน LENDING ===========================
 function openPopup(status) {

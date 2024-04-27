@@ -1,3 +1,19 @@
+<?php
+session_start();
+
+require_once('../php/db_connection.php');
+
+if (isset($_SESSION['userID'])) {
+
+    $userID = $_SESSION['userID'];
+    $sql = "SELECT * FROM employee WHERE UserID = '$userID';";
+    $result = $conn->query($sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,19 +28,19 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <style>
-    .transparent-button {
-        background-color: transparent;
-        border: none;
-        position: relative;
-        display: block;
-        width: 100%;
-        display: flex;
-        text-decoration: none;
-        color: var(--color-orange);
-        /* สีของ text */
-        font-size: 16px;
-        /* ขนาดของตัวอักษร */
-    }
+.transparent-button {
+    background-color: transparent;
+    border: none;
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--color-orange);
+    /* สีของ text */
+    font-size: 16px;
+    /* ขนาดของตัวอักษร */
+}
 </style>
 
 <body>
@@ -151,17 +167,66 @@
             <div class="content">
                 <!-- ======================== Customers ======================  -->
                 <div id="Customers">
+                    <!-- Add a form for entering customer ID -->
                     <div class="customer-search">
-
-                        <label>
-                            <input type="text" id="customerID" placeholder="Enter customer ID">
-
-                        </label>
-
-                        <div class="button-container">
-                            <button type="submit" class="btn btn-primary">Enter</button>
-                        </div>
+                        <form method="POST" action="customer_info.php">
+                            <label>
+                                <input type="text" name="customerID" id="customerID" placeholder="Enter customer ID">
+                            </label>
+                            <div class="button-container">
+                                <button type="submit" class="btn btn-primary">Enter</button>
+                            </div>
+                        </form>
                     </div>
+
+                    <div class="information-container">
+                        <table class="customer-table">
+                            <thead>
+                                <tr>
+                                    <th>Customer ID</th>
+                                    <th>Book ID</th>
+                                    <th>Borrowing ID</th>
+                                    <th>Start Date</th>
+                                    <th>Return Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+            // Check if the form is submitted
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Include the database connection file
+                require_once('db_connection.php');
+
+                // Validate and sanitize input
+                $customerID = mysqli_real_escape_string($conn, $_POST['customerID']);
+
+                // Fetch customer information from the database
+                $sql = "SELECT * FROM your_table_name WHERE customerID = '$customerID'";
+                $result = $conn->query($sql);
+
+                // Display customer information in the table
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row['customerID'] . "</td>";
+                        echo "<td>" . $row['bookID'] . "</td>";
+                        echo "<td>" . $row['borrowingID'] . "</td>";
+                        echo "<td>" . $row['startDate'] . "</td>";
+                        echo "<td>" . $row['returnDate'] . "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='5'>No records found</td></tr>";
+                }
+
+                // Close database connection
+                $conn->close();
+            }
+            ?>
+                            </tbody>
+                        </table>
+                    </div>
+
 
                     <div class="information-container">
                         <div style="text-align: center;">
@@ -218,14 +283,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="..\static\js\main.js"></script>
     <script>
-        $(function () {
-            $('.bars li .bar').each(function (key, bar) {
-                var percentage = $(this).data('percentage');
-                $(this).animate({
-                    'height': percentage + ''
-                }, 1000);
-            });
+    $(function() {
+        $('.bars li .bar').each(function(key, bar) {
+            var percentage = $(this).data('percentage');
+            $(this).animate({
+                'height': percentage + ''
+            }, 1000);
         });
+    });
     </script>
 </body>
 

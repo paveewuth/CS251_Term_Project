@@ -137,15 +137,21 @@ input[type="date"] {
 
 /* กำหนดขนาดและสไตล์ของ dropdown */
 select#sex {
-    background-image: linear-gradient(to right, #E07D54, #304f6d);
-    color: #fff;
+  
+    color: #000000;
     padding: 12px 20px;
     border: none;
     border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     width: auto; /* ปรับความกว้างให้เป็นขนาดเท่ากับเนื้อหาภายใน */
+    width: calc(50% - 10px);
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
 }
 
 

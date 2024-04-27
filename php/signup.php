@@ -39,7 +39,7 @@ VALUES ('$firstName', '$lastName', '$email', '$password', '$sex', '$birthday', '
 
 if ($conn->query($sql) === TRUE) {
   $_SESSION['userID'] = $conn->insert_id; // เก็บค่า userID ที่ได้จากการเพิ่มข้อมูลล่าสุด
-  header("Location: display2.php");
+  header("Location: ../html/signin.html");
   exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

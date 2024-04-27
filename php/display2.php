@@ -35,40 +35,57 @@ if (isset($_SESSION['userID'])) {
         }
 
         .employee-card {
-            background-color: #fff;
-            /* Card background color */
-            border-radius: 15px;
-            /* Rounded border */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            /* Shadow effect */
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 20px auto; /* ใช้ auto ทั้งสองข้างเพื่อจัดให้อยู่ตรงกลาง */
+    max-width: 1000px; /* เปลี่ยน width เป็น max-width เพื่อให้สามารถขยายหรือย่อขนาดได้ */
+    width: 100%; /* เพิ่มคำสั่งนี้เพื่อให้ .employee-card มีขนาดเท่ากับ width ของ container ที่อยู่ภายนอก */
+    display: flex;
+    flex-direction: column; /* จัดเรียงเนื้อหาเป็นคอลัมน์ */
+    justify-content: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
+    align-items: center; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+}
 
-        .employee-card h4 {
-            margin-bottom: 20px;
-        }
-
-        .employee-card .label {
-            color: #304F6D;
-            font-weight: bold;
-        }
-
-        .employee-card .value {
-            margin-bottom: 10px;
-        }
-
-        .employee-card .icon {
-            margin-right: 10px;
-        }
-        h4 {
-    text-align: center;
+.employee-card h4 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #E07D54; /* Title color */
 }
 
-        
+.label {
+    color: #304F6D;
+    font-weight: bold;
+    margin-bottom: 5px;
+    width: calc(100% - 10px); /* ลบ 10px เพื่อความเหมาะสม */
+}
+
+.value {
+    width: calc(auto - 10px);
+    padding: 10px 50px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.btn {
+    background-image: linear-gradient(to right, #E07D54, #304f6d);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: auto; /* ปรับความกว้างให้เป็นขนาดเท่ากับเนื้อหาภายใน */
+    text-align: center;
+    margin-top: 20px; /* เพิ่มช่องว่างด้านบนของปุ่ม */
+   
+}
+
     </style>
 </head>
 
@@ -92,7 +109,10 @@ if (isset($_SESSION['userID'])) {
                             <p class="value"><?php echo $row["email"]; ?></p>
                             <p class="label"><i class="fas fa-lock icon"></i>Password:</p>
                             <p class="value">********</p>
+                            <p class="label"><i class="fas fa-map-marker-alt icon"></i>Zipcode:</p>
+                            <p class="value"><?php echo $row["zipcode"]; ?></p>
                         </div>
+                    
                         <div class="col-md-6">
                             <p class="label"><i class="fas fa-phone icon"></i>Phone Number:</p>
                             <p class="value"><?php echo $row["phoneNumber"]; ?></p>
@@ -108,12 +128,10 @@ if (isset($_SESSION['userID'])) {
                             <p class="value"><?php echo $row["subdistrict"]; ?></p>
                             <p class="label"><i class="fas fa-map-marker-alt icon"></i>Province:</p>
                             <p class="value"><?php echo $row["province"]; ?></p>
-                            <p class="label"><i class="fas fa-map-marker-alt icon"></i>Zipcode:</p>
-                            <p class="value"><?php echo $row["zipcode"]; ?></p>
-                            <a href="..\html\signin.html" class="btn btn-primary btn-block">Back to Login</a>
                         </div>
+                        
                     </div>
-                    
+                    <a href="..\html\signin.html" class="btn">Back to Login</a>
                 </div>
             </div>
         </div>

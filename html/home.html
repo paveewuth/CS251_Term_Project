@@ -25,74 +25,70 @@
     }
 </style>
 <body >
-<!-- =============== Sidebar ================ -->
-<div class="container">
-    <div class="sidebar">
-        <ul>
-            <li>
-                <a href="#">
-                    <span class="icon">
-                        <img src="..\logo\CS251_Logo.png" alt="" class="logo-img">
-                    </span>
-                    <span class="title">"Abdul's Literary Lendings"</span>
-                </a>
-            </li>
+    <!-- =============== Sidebar ================ -->
+    <div class="container">
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon">
+                            <img src="..\logo\CS251_Logo.png" alt="" class="logo-img">
+                        </span>
+                        <span class="title">"Abdul's Literary Lendings"</span>
+                    </a>
+                </li>
 
-            <li>
-                <a href="home.html" onclick="showPage('home')">
-                    <span class="icon">
-                        <i class="bx bxs-home"></i>
-                    </span>
-                    <span class="title">Home</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="#" onclick="showPage('bookList')">
-                    <span class="icon">
-                        <i class="bx bxs-book"></i>
-                    </span>
-                    <span class="title">Books</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="lending.html" onclick="showPage('Lendings')">
-                    <span class="icon">
-                        <i class="bx bxs-book-reader"></i>
-                    </span>
-                    <span class="title">Lendings</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="addbook.html" onclick="showPage('Addbook')">
-                    <span class="icon">
-                      <i class='bx bxs-book-add'></i>
-                    </span>
-                    <span class="title">Addbook</span>
-                </a>
-            </li>
-            
-            <li>
-                <a href="customer.html" onclick="showPage('Customers')">
-                    <span class="icon">
+                
+                <li>
+                    <a href="home.html">
+                      <span class="icon">
+                        <i class="bx bx-home"></i>
+                      </span>
+                      <button class="title transparent-button">Home</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="book.html">
+                      <span class="icon">
+                        <i class="bx bx-book"></i>
+                      </span>
+                      <button class="title transparent-button">Books</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="lending.html">
+                      <span class="icon">
+                        <i class="bx bx-book-reader"></i>
+                      </span>
+                      <button class="title transparent-button">Lendings</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="addbook.html">
+                        <span class="icon">
+                          <i class='bx bxs-book-add'></i>
+                        </span>
+                        <button class="title transparent-button">Addbook</button>
+                    </a>
+                </li>
+                  <li>
+                    <a href="customer.html">
+                      <span class="icon">
                         <i class="bx bx-body"></i>
-                    </span>
-                    <span class="title">Customers</span>
-                </a>
-            </li>
-
-            <li>
-                <a href="static.html" onclick="showPage('Statics')">
-                    <span class="icon">
-                       <i class="bx bx-stats"></i>
-                    </span>
-                    <span class="title">Statics</span>
-                </a>
-            </li>
-        </ul>
-    </div>
+                      </span>
+                      <button class="title transparent-button">Customers</button>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="static.html">
+                      <span class="icon">
+                        <i class="bx bx-stats"></i>
+                      </span>
+                      <button class="title transparent-button">Statics</button>
+                    </a>
+                  </li>
+            </ul>
+        </div>
         <!-- ========================= Main ==================== -->
         <div class="main">
             <div class="topbar">
@@ -106,7 +102,7 @@
                         <i class="bx bx-search"></i>
                     </label>
                 </div>    
-                                      <!-- ========================= Profile Dropdown  ==================== -->
+                   <!-- ========================= Profile Dropdown  ==================== -->
                 <div class="user">
                     <img src="..\Photo\Profile.jpg" alt="" class="profile-dropdown" onclick="toggleMenu()">
                 </div>
@@ -146,128 +142,66 @@
                 
             </div>
             <div class="content">
-  <!-- ======================== Book ======================  -->
-  <div class="list" id="bookList">
-    <h1>Book List</h1>
-    <div class="container">
-        <!-- เล่มที่ 1  -->
-        <div class="book">
-            <img src="..\Photo\fairytail1.jpg" alt="หนังสือ 1">
-            <div class="book-info">
-                <h2>Faury Tail 1</h2>
-                <p>Writer : Hiro Mashima</p>
-                <p>Rental : 60 Bath</p>
-                <p>Type    : Fantasi</p>
-                <a href="index.htm" class="more-info-btn">More</a> 
-            </div>
-        </div>
-        <!-- เล่มที่ 2  -->
-        <div class="book">
-            <img src="..\Photo\fairytail11.jpg" alt="หนังสือ 2">
-            <div class="book-info">
-                <h2>Faury Tail 11</h2>
-                <p>Writer : Hiro Mashima</p>
-                <p>Rental : 60 Bath</p>
-                <p>Type    : Fantasi</p>
-                <a href="index.html" class="more-info-btn">More</a> 
-            </div>
-        </div>
-        <!-- เล่มที่ 3  -->
-        <div class="book">
-            <img src="..\Photo\fairytail27.jpg" alt="หนังสือ 3">
-            <div class="book-info">
-                <h2>Faury Tail 27</h2>
-                <p>Writer : Hiro Mashima</p>
-                <p>Rental : 60 Bath</p>
-                <p>Type    : Fantasi</p>
-                <a href="index.html" class="more-info-btn">More</a> 
-            </div>
-        </div>
-        <!-- เล่มที่ 4  -->
-        <div class="book">
-            <img src="..\Photo\fairytail29.jpg" alt="หนังสือ 4">
-            <div class="book-info">
-                <h2>Faury Tail 29</h2>
-                <p>Writer : Hiro Mashima</p>
-                <p>Rental : 60 Bath</p>
-                <p>Type    : Fantasi</p>
-                <a href="index.html" class="more-info-btn">More</a> 
-            </div>
-        </div>
-        <!-- เล่มที่ 5  -->
-        <div class="book">
-            <img src="..\Photo\fairytail33.jpg" alt="หนังสือ 5">
-            <div class="book-info">
-                <h2>Faury Tail 33</h2>
-                <p>Writer : Hiro Mashima</p>
-                <p>Rental : 60 Bath</p>
-                <p>Type    : Fantasi</p>
-                <a href="index.html" class="more-info-btn">More</a> 
-            </div>
-        </div>
-        <!-- เล่มที่ 6  -->
-        <div class="book">
-            <img src="..\Photo\fairytail51.jpg" alt="หนังสือ 6">
-            <div class="book-info">
-                <h2>Faury Tail 51</h2>
-                <p>Writer : Hiro Mashima</p>
-                <p>Rental : 60 Bath</p>
-                <p>Type    : Fantasi</p>
-                <a href="index.html" class="more-info-btn">More</a> 
-            </div>
-        </div>
-        <!-- เล่มที่ 7  -->
-        <div class="book">
-            <img src="..\Photo\fairytail58.jpg" alt="หนังสือ 7">
-            <div class="book-info">
-                <h2>Faury Tail 58</h2>
-                <p>Writer : Hiro Mashima</p>
-                <p>Rental : 60 Bath</p>
-                <p>Type    : Fantasi</p>
-                <a href="index.html" class="more-info-btn">More</a> 
-            </div>
-        </div>
-        <!-- เล่มที่ 8  -->
-        <div class="book">
-            <img src="..\Photo\fairytail59.jpg" alt="หนังสือ 8">
-            <div class="book-info">
-                <h2>Faury Tail 59</h2>
-                <p>Writer : Hiro Mashima</p>
-                <p>Rental : 60 Bath</p>
-                <p>Type    : Fantasi</p>
-                <a href="index.html" class="more-info-btn">More</a> 
-            </div>
-        </div>
-        <!-- เล่มที่ 9  -->
-        <div class="book">
-            <img src="..\Photo\fairytail61.jpg" alt="หนังสือ 9">
-            <div class="book-info">
-                <h2>Faury Tail 61</h2>
-                <p>Writer : Hiro Mashima</p>
-                <p>Rental : 60 Bath</p>
-                <p>Type    : Fantasi</p>
-                <a href="index.html" class="more-info-btn">More</a> 
-            </div>
-        </div>
-        <!-- เล่มที่ 10  -->
-        <div class="book">
-            <img src="..\Photo\fairytail63.jpg" alt="หนังสือ 10">
-            <div class="book-info">
-                <h2>Faury Tail 63</h2>
-                <p>Writer : Hiro Mashima</p>
-                <p>Rental : 60 Bath</p>
-                <p>Type    : Fantasi</p>
-                <a href="index.html" class="more-info-btn">More</a> 
-            </div>
-        </div>
-        <!-- เพิ่มหนังสือเพิ่มเติมตามต้องการ -->
-    </div>
-    <div class="pagination">
-        <a href="#" class="prev-page">หน้าก่อนหน้า</a>
-        <span class="current-page">หน้า 1</span>
-        <a href="#" class="next-page">หน้าถัดไป</a>
-      </div>
-</div>
+                <!-- ======================== Home ======================  -->
+                <div id="home">
+                    <h6 style="background-color: lightblue;">Welcome to Abdul's Literary Lendings</h6>
+                    <section class="announcement-section">
+                        <h2>Announcements</h2>
+                        <br /> 
+                        <div class="announcement-box">
+                            <!-- รูปภาพประกาศ -->
+                            <div class="announcement-image">
+                                <img src="../photo/announcement1.jpg" alt="Announcement 1">
+                            </div>
+                            <div class="announcement-image">
+                                <img src="../photo/announcement2.jpg" alt="Announcement 2">
+                            </div>
+                            <div class="announcement-image">
+                                <img src="../photo/announcement3.jpg" alt="Announcement 3">
+                            </div>
+                    
+                            <!-- เพิ่มลูกศรซ้ายและขวา -->
+                            <div class="arrow left-arrow" onclick="prevImage()">
+                                <i class="bx bx-chevron-left"></i>
+                            </div>
+                            <div class="arrow right-arrow" onclick="nextImage()">
+                                <i class="bx bx-chevron-right"></i>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="featured-books-section">
+                        <h2>Featured Books</h2>
+                        <div class="featured-books-container">
+                            <div class="book-card">
+                                <img src="../photo/book1.jpg" alt="Book 1">
+                                <h3>ONE PIECE วันพีซ เล่ม 96</h3>
+                                <p>Author: EIICHIRO ODA (เออิจิโระ โอดะ)</p>
+                            </div>
+                            <div class="book-card">
+                                <img src="../photo/book2.jpg" alt="Book 2">
+                                <h3>ONE PIECE เล่ม 51 (ฉบับสมบูรณ์)</h3>
+                                <p>Author: EIICHIRO ODA (เออิจิโระ โอดะ)</p>
+                            </div>
+                            <div class="book-card">
+                                <img src="../photo/book3.jpg" alt="Book 3">
+                                <h3>ONE PIECE เล่ม 51 (ฉบับสมบูรณ์)</h3>
+                                <p>Author: EIICHIRO ODA (เออิจิโระ โอดะ)</p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+                
+
+
+                <!-- ======================== Book ======================  -->
+                
+             <!-- ======================== Customers ======================  -->
+             
+            <!-- ======================== Lendings ======================  -->
+            
+             <!-- ======================== Static ======================  -->
+            
            <!-- ======================== Profile of Account ======================  -->
            <div class="profile" id="profile">
             <header>

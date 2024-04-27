@@ -7,25 +7,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>"Abdul's Literary Lendings"</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="..\static\css\style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     <!-- ======= boxicons ====== -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <style>
+        /* Additional CSS styles for table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
-<style>
-    .transparent-button {
-        background-color: transparent;
-        border: none;
-        position: relative;
-        display: block;
-        width: 100%;
-        display: flex;
-        text-decoration: none;
-        color: var(--color-orange);
-        /* สีของ text */
-        font-size: 16px;
-        /* ขนาดของตัวอักษร */
-    }
-</style>
 
 <body>
     <!-- =============== Sidebar ================ -->
@@ -121,7 +124,7 @@
 
                         </div>
                         <hr>
-                        <a href="#profile" class="sub-menu-link" onclick="showPage('profile')">
+                        <a href="staffprofile.html" class="sub-menu-link" onclick="showPage('profile')">
                             <i class='bx bx-user'></i>
                             <p>Profile</p>
                             <span>></span>
@@ -148,72 +151,87 @@
                 </div>
 
             </div>
-            <div class="content">
-                <!-- ======================== Customers ======================  -->
-                <div id="Customers">
+            <!-- ======================== Customers ======================  -->
+            <div id="Customers">
+                <form action="customer.php" method="POST">
                     <div class="customer-search">
-                        <form action="../php/fetch_data.php" method="POST">
-                            <label>
-                                <input type="text" name="customerID" id="customerID" placeholder="Enter customer ID">
-                            </label>
-                            <div class="button-container">
-                                <button type="submit" class="btn btn-primary">Enter</button>
-                            </div>
-                        </form>
+                        <label>
+                            <input type="text" name="customerID" id="customerID" placeholder="Enter customer ID" required>
+                        </label>
+                        <div class="button-container">
+                            <button type="submit" class="btn btn-primary">Enter</button>
+                        </div>
                     </div>
-
-                    <!-- The table to display the fetched data will be here -->
-                    <?php include '../php/fetch_data.php'; ?>
-                </div>
-
+                </form>
                 <div class="information-container">
                     <div style="text-align: center;">
                         <h2>Information</h2>
-                        <img src="..\customer_profile\icon.jpg" style="width:160px;height:220px;">
-                        <!-- แปะรูปพนักงาน -->
                     </div>
 
-                    <div class="info-group">
-                        <label for="firstName"> <b>First name:</b> <input type="text" placeholder="#Customer name"></label>
-                        <label for="lastName"> <b>Last name:</b> <input type="text" placeholder="#Customer lastname"></label>
-                    </div>
-
-                    <div class="info-group">
-                        <label for="citizen_id"> <b>Citizen ID:</b> <input type="text" placeholder="#citizenId"></label>
-                        <label for="customer_id"> <b>Customer ID:</b> <input type="text" placeholder="#customerId"></label>
-                    </div>
-
-                    <div class="info-group">
-                        <label for="phone"> <b>Phone number:</b> <input type="text" placeholder="#PhoneNumber"></label>
-                        <label for="balance"> <b>Balance:</b> <input type="text" placeholder="#Balance"></label>
-                    </div>
-
-                    <div class="info-group">
-                        <label for="customer_type"> <b>Customer type:</b> <input type="text" placeholder="#member/not member"></label>
-                    </div>
-
-                    <div class="info-group">
-                        <label for="memStart"> <b>Member start:</b> <input type="text" placeholder="#Date"></label>
-                        <label for="memExp"> <b>Member end:</b> <input type="text" placeholder="#Date"></label>
-                    </div>
+                    <?php
+                    if(isset($_POST['customerID'])) {
+                        require_once('../php/db_connection.php');
+                        $customerID = $_POST['customerID'];
+                        $sql = "SELECT * FROM customer WHERE customerID = '$customerID'";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            $row = $result->fetch_assoc();
+                    ?>
+                            <table>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Value</th>
+                                </tr>
+                                <tr>
+                                    <td>First Name</td>
+                                    <td><?php echo htmlspecialchars($row["firstName"]); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Last Name</td>
+                                    <td><?php echo htmlspecialchars($row["lastName"]); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Citizen ID</td>
+                                    <td><?php echo htmlspecialchars($row["citizenID"]); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Customer ID</td>
+                                    <td><?php echo htmlspecialchars($row["customerID"]); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Phone Number</td>
+                                    <td><?php echo htmlspecialchars($row["phoneNumber"]); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Customer Type</td>
+                                    <td><?php echo htmlspecialchars($row["customerType"]); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Member Start</td>
+                                    <td><?php echo htmlspecialchars($row["memberStart"]); ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Member End</td>
+                                    <td><?php echo htmlspecialchars($row["memberEnd"]); ?></td>
+                                </tr>
+                            </table>
+                    <?php
+                        } else {
+                            echo "<p>No customer found</p>";
+                        }
+                        $conn->close();
+                    }
+                    ?>
                 </div>
             </div>
-            </main>
+            <!-- ======================================= End =============================================  -->
         </div>
-
-
-        <!-- ======================== Addbook ======================  -->
-        <div id="Addbook">
-        </div>
-        <!-- ======================================= End =============================================  -->
     </div>
-    </div>
-
 
     <!-- =========== Scripts =========  -->
     <script src="statistics.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="..\static\js\main.js"></script>
+    <script src="../static/js/main.js"></script>
     <script>
         $(function() {
             $('.bars li .bar').each(function(key, bar) {

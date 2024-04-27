@@ -298,6 +298,7 @@ body {
 
 
 /* Styles for Announcement Section */
+/* Styles for Announcement Section */
 .announcement-section {
   margin-top: 30px;
 }
@@ -307,22 +308,17 @@ body {
   color: #304f6d;
 }
 
-
 .announcement-box p {
   margin-bottom: 10px;
 }
 
-
 /* Styles for Announcement Box */
 .announcement-box {
-  position: relative; /* เพื่อให้เป็นตำแหน่งอ้างอิงของลูกศร */
-  height: 400px;
-  
+  position: relative;
   background-color: #e2f3fd;
-  padding: 50px;
+  padding: 200px 600px; /* Adjust the padding as needed */
   border-radius: 10px;
   overflow: hidden;
-  position: relative; /* เพื่อให้เป็นตำแหน่งอ้างอิงของลูกศร */
 }
 
 /* Styles for Left Arrow */
@@ -347,8 +343,6 @@ body {
   color: #333; /* กำหนดสีของลูกศร */
 }
 
-
-
 .announcement-image {
   position: absolute;
   top: 50%; /* ย้ายจุดมุมบนของ .announcement-image ไปที่ 50% ของ .announcement-box */
@@ -358,12 +352,7 @@ body {
   height: 100%; /* กำหนดความสูงของ .announcement-image */
   max-width: 95%; /* ไม่ให้ .announcement-image เกินขอบพื้นที่ที่กำหนด */
   max-height: 90%; /* ไม่ให้ .announcement-image เกินขอบพื้นที่ที่กำหนด */
-  
 }
-
-
-
-
 
 /* Styles for Featured Books Section */
 .featured-books-section {
@@ -716,6 +705,7 @@ color: #899481;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   width: 80%;
   margin: 0 auto;
+  
   
 }
 

@@ -9,7 +9,7 @@
     <!-- ======= Styles ====== -->
     <link rel="stylesheet" href="..\static\css\style.css">
     <!-- ======= boxicons ====== -->
-    <link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
 <style>
     .transparent-button {
@@ -20,11 +20,14 @@
         width: 100%;
         display: flex;
         text-decoration: none;
-        color: var(--color-orange); /* สีของ text */
-        font-size: 16px; /* ขนาดของตัวอักษร */
+        color: var(--color-orange);
+        /* สีของ text */
+        font-size: 16px;
+        /* ขนาดของตัวอักษร */
     }
 </style>
-<body >
+
+<body>
     <!-- =============== Sidebar ================ -->
     <div class="container">
         <div class="sidebar">
@@ -38,55 +41,55 @@
                     </a>
                 </li>
 
-                
+
                 <li>
-                    <a href="home.html">
-                      <span class="icon">
-                        <i class="bx bx-home"></i>
-                      </span>
-                      <button class="title transparent-button">Home</button>
+                    <a href="#" onclick="event.preventDefault();">
+                        <span class="icon">
+                            <i class="bx bx-home"></i>
+                        </span>
+                        <button class="title transparent-button">Home</button>
                     </a>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <a href="book.html">
-                      <span class="icon">
-                        <i class="bx bx-book"></i>
-                      </span>
-                      <button class="title transparent-button">Books</button>
+                        <span class="icon">
+                            <i class="bx bx-book"></i>
+                        </span>
+                        <button class="title transparent-button">Books</button>
                     </a>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <a href="lending.html">
-                      <span class="icon">
-                        <i class="bx bx-book-reader"></i>
-                      </span>
-                      <button class="title transparent-button">Lendings</button>
+                        <span class="icon">
+                            <i class="bx bx-book-reader"></i>
+                        </span>
+                        <button class="title transparent-button">Lendings</button>
                     </a>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <a href="addbook.html">
                         <span class="icon">
-                          <i class='bx bxs-book-add'></i>
+                            <i class='bx bxs-book-add'></i>
                         </span>
                         <button class="title transparent-button">Addbook</button>
                     </a>
                 </li>
-                  <li>
-                    <a href="customer.html">
-                      <span class="icon">
-                        <i class="bx bx-body"></i>
-                      </span>
-                      <button class="title transparent-button">Customers</button>
+                <li>
+                    <a href="customer.php">
+                        <span class="icon">
+                            <i class="bx bx-body"></i>
+                        </span>
+                        <button class="title transparent-button">Customers</button>
                     </a>
-                  </li>
-                  <li>
+                </li>
+                <li>
                     <a href="static.html">
-                      <span class="icon">
-                        <i class="bx bx-stats"></i>
-                      </span>
-                      <button class="title transparent-button">Statics</button>
+                        <span class="icon">
+                            <i class="bx bx-stats"></i>
+                        </span>
+                        <button class="title transparent-button">Statics</button>
                     </a>
-                  </li>
+                </li>
             </ul>
         </div>
         <!-- ========================= Main ==================== -->
@@ -95,14 +98,14 @@
                 <div class="toggle">
                     <i class="bx bx-menu" id="btn"></i>
                 </div>
-    
+
                 <div class="search">
                     <label>
                         <input type="text" placeholder="Search here">
                         <i class="bx bx-search"></i>
                     </label>
-                </div>    
-                    <!-- ========================= Profile Dropdown  ==================== -->
+                </div>
+                <!-- ========================= Profile Dropdown  ==================== -->
                 <div class="user">
                     <img src="..\Photo\Profile.jpg" alt="" class="profile-dropdown" onclick="toggleMenu()">
                 </div>
@@ -114,7 +117,7 @@
 
                         </div>
                         <hr>
-                        <a href="#profile" class="sub-menu-link" onclick="showPage('profile')">
+                        <a href="staffprofile.html" class="sub-menu-link" onclick="showPage('profile')">
                             <i class="bx bx-profile"></i>
                             <p>Profile</p>
                             <span>></span>
@@ -124,14 +127,14 @@
                             <p>Addbook</p>
                             <span>></span>
                         </a>
-                        <a href="" class="sub-menu-link" >
+                        <a href="" class="sub-menu-link">
                             <i class="bx bx-log-out"></i>
                             <p>Logout</p>
                             <span>></span>
                         </a>
                     </div>
                 </div>
-                
+
             </div>
             <div class="content">
                 <!-- ======================== Home ======================  -->
@@ -139,19 +142,19 @@
                     <h6 style="background-color: lightblue;">Welcome to Abdul's Literary Lendings</h6>
                     <section class="announcement-section">
                         <h2>Announcements</h2>
-                        <br /> 
+                        <br />
                         <div class="announcement-box">
                             <!-- รูปภาพประกาศ -->
-                            <div class="announcement-image">
+                            <div class="announcement-image" style="display: block;">
                                 <img src="../photo/announcement1.jpg" alt="Announcement 1">
                             </div>
-                            <div class="announcement-image">
+                            <div class="announcement-image" style="display: none;">
                                 <img src="../photo/announcement2.jpg" alt="Announcement 2">
                             </div>
-                            <div class="announcement-image">
+                            <div class="announcement-image" style="display: none;">
                                 <img src="../photo/announcement3.jpg" alt="Announcement 3">
                             </div>
-                    
+                        
                             <!-- เพิ่มลูกศรซ้ายและขวา -->
                             <div class="arrow left-arrow" onclick="prevImage()">
                                 <i class="bx bx-chevron-left"></i>
@@ -160,6 +163,37 @@
                                 <i class="bx bx-chevron-right"></i>
                             </div>
                         </div>
+                        
+                        <script>
+                            let currentImageIndex = 0;
+                            const announcementImages = document.querySelectorAll('.announcement-image');
+
+                            function changeImage(index) {
+                                announcementImages[currentImageIndex].style.display = 'none'; // Hide the current image
+                                currentImageIndex = index;
+                                announcementImages[currentImageIndex].style.display = 'block'; // Show the new image
+                            }
+
+                            // Function to go to the previous image
+                            function prevImage() {
+                                let newIndex = (currentImageIndex - 1 + announcementImages.length) % announcementImages.length;
+                                changeImage(newIndex);
+                            }
+
+                            // Function to go to the next image
+                            function nextImage() {
+                                let newIndex = (currentImageIndex + 1) % announcementImages.length;
+                                changeImage(newIndex);
+                            }
+
+                            // Start the image loop when the page loads
+                            window.addEventListener('load', function () {
+                                // Hide all images except the first one
+                                for (let i = 1; i < announcementImages.length; i++) {
+                                    announcementImages[i].classList.remove('active');
+                                }
+                            });
+                        </script>
                     </section>
                     <section class="featured-books-section">
                         <h2>Featured Books</h2>
@@ -183,542 +217,7 @@
                     </section>
 
                 </div>
-                
-
-
-                <!-- ======================== Book ======================  -->
-                <div class="list" id="bookList">
-                    <h1>Book List</h1>
-                    <div class="container">
-                        <!-- เล่มที่ 1  -->
-                        <div class="book">
-                            <img src="..\Photo\fairytail1.jpg" alt="หนังสือ 1">
-                            <div class="book-info">
-                                <h2>Faury Tail 1</h2>
-                                <p>Writer : Hiro Mashima</p>
-                                <p>Rental : 60 Bath</p>
-                                <p>Type    : Fantasi</p>
-                                <a href="index.htm" class="more-info-btn">More</a> 
-                            </div>
-                        </div>
-                        <!-- เล่มที่ 2  -->
-                        <div class="book">
-                            <img src="..\Photo\fairytail11.jpg" alt="หนังสือ 2">
-                            <div class="book-info">
-                                <h2>Faury Tail 11</h2>
-                                <p>Writer : Hiro Mashima</p>
-                                <p>Rental : 60 Bath</p>
-                                <p>Type    : Fantasi</p>
-                                <a href="index.html" class="more-info-btn">More</a> 
-                            </div>
-                        </div>
-                        <!-- เล่มที่ 3  -->
-                        <div class="book">
-                            <img src="..\Photo\fairytail27.jpg" alt="หนังสือ 3">
-                            <div class="book-info">
-                                <h2>Faury Tail 27</h2>
-                                <p>Writer : Hiro Mashima</p>
-                                <p>Rental : 60 Bath</p>
-                                <p>Type    : Fantasi</p>
-                                <a href="index.html" class="more-info-btn">More</a> 
-                            </div>
-                        </div>
-                        <!-- เล่มที่ 4  -->
-                        <div class="book">
-                            <img src="..\Photo\fairytail29.jpg" alt="หนังสือ 4">
-                            <div class="book-info">
-                                <h2>Faury Tail 29</h2>
-                                <p>Writer : Hiro Mashima</p>
-                                <p>Rental : 60 Bath</p>
-                                <p>Type    : Fantasi</p>
-                                <a href="index.html" class="more-info-btn">More</a> 
-                            </div>
-                        </div>
-                        <!-- เล่มที่ 5  -->
-                        <div class="book">
-                            <img src="..\Photo\fairytail33.jpg" alt="หนังสือ 5">
-                            <div class="book-info">
-                                <h2>Faury Tail 33</h2>
-                                <p>Writer : Hiro Mashima</p>
-                                <p>Rental : 60 Bath</p>
-                                <p>Type    : Fantasi</p>
-                                <a href="index.html" class="more-info-btn">More</a> 
-                            </div>
-                        </div>
-                        <!-- เล่มที่ 6  -->
-                        <div class="book">
-                            <img src="..\Photo\fairytail51.jpg" alt="หนังสือ 6">
-                            <div class="book-info">
-                                <h2>Faury Tail 51</h2>
-                                <p>Writer : Hiro Mashima</p>
-                                <p>Rental : 60 Bath</p>
-                                <p>Type    : Fantasi</p>
-                                <a href="index.html" class="more-info-btn">More</a> 
-                            </div>
-                        </div>
-                        <!-- เล่มที่ 7  -->
-                        <div class="book">
-                            <img src="..\Photo\fairytail58.jpg" alt="หนังสือ 7">
-                            <div class="book-info">
-                                <h2>Faury Tail 58</h2>
-                                <p>Writer : Hiro Mashima</p>
-                                <p>Rental : 60 Bath</p>
-                                <p>Type    : Fantasi</p>
-                                <a href="index.html" class="more-info-btn">More</a> 
-                            </div>
-                        </div>
-                        <!-- เล่มที่ 8  -->
-                        <div class="book">
-                            <img src="..\Photo\fairytail59.jpg" alt="หนังสือ 8">
-                            <div class="book-info">
-                                <h2>Faury Tail 59</h2>
-                                <p>Writer : Hiro Mashima</p>
-                                <p>Rental : 60 Bath</p>
-                                <p>Type    : Fantasi</p>
-                                <a href="index.html" class="more-info-btn">More</a> 
-                            </div>
-                        </div>
-                        <!-- เล่มที่ 9  -->
-                        <div class="book">
-                            <img src="..\Photo\fairytail61.jpg" alt="หนังสือ 9">
-                            <div class="book-info">
-                                <h2>Faury Tail 61</h2>
-                                <p>Writer : Hiro Mashima</p>
-                                <p>Rental : 60 Bath</p>
-                                <p>Type    : Fantasi</p>
-                                <a href="index.html" class="more-info-btn">More</a> 
-                            </div>
-                        </div>
-                        <!-- เล่มที่ 10  -->
-                        <div class="book">
-                            <img src="..\Photo\fairytail63.jpg" alt="หนังสือ 10">
-                            <div class="book-info">
-                                <h2>Faury Tail 63</h2>
-                                <p>Writer : Hiro Mashima</p>
-                                <p>Rental : 60 Bath</p>
-                                <p>Type    : Fantasi</p>
-                                <a href="index.html" class="more-info-btn">More</a> 
-                            </div>
-                        </div>
-                        <!-- เพิ่มหนังสือเพิ่มเติมตามต้องการ -->
-                    </div>
-                    <div class="pagination">
-                        <a href="#" class="prev-page">หน้าก่อนหน้า</a>
-                        <span class="current-page">หน้า 1</span>
-                        <a href="#" class="next-page">หน้าถัดไป</a>
-                      </div>
-                </div>
-             <!-- ======================== Customers ======================  -->
-             <div id="Customers">
-                <div class="customer-search">
-                    
-                    <label>
-                        <input type="text" id="customerID" placeholder="Enter customer ID">
-                       
-                    </label>
-                    
-                    <div class="button-container">
-                        <button type="submit" class="btn btn-primary">Enter</button>
-                    </div>
-                </div>
-                
-                <div class = "information-container">
-                    <div style="text-align: center;">
-                    <h2>Information</h2> 
-                    <img src="..\customer_profile\icon.jpg" style="width:160px;height:220px;"> <!-- แปะรูปพนักงาน -->
-                    </div>
-
-                    <div class="info-group">
-                        <label for="firstName"> <b>First name:</b> <input type="text" placeholder="#Customer name"></label>
-                        <label for="lastName"> <b>Last name:</b>  <input type="text" placeholder="#Customer lastname"></label>
-                    </div>
-
-                    <div class="info-group">
-                        <label for="citizen_id"> <b>Citizen ID:</b>  <input type="text" placeholder="#citizenId"></label>
-                        <label for="customer_id"> <b>Customer ID:</b>  <input type="text" placeholder="#customerId"></label>
-                    </div>
-
-                    <div class="info-group">
-                        <label for="phone"> <b>Phone number:</b>  <input type="text" placeholder="#PhoneNumber"></label>
-                        <label for="balance"> <b>Balance:</b>  <input type="text" placeholder="#Balance"></label>
-                    </div>
-
-                    <div class="info-group">
-                        <label for="customer_type"> <b>Customer type:</b>  <input type="text" placeholder="#member/not member"></label>
-                    </div>
-
-                    <div class="info-group">
-                        <label for="memStart"> <b>Member start:</b>  <input type="text" placeholder="#Date"></label>
-                        <label for="memExp"> <b>Member end:</b>  <input type="text" placeholder="#Date"></label>
-                    </div>
-                </div>
-                
-            </div>
-            <!-- ======================== Lendings ======================  -->
-            <div class="Lending" id="Lendings">
-                <h2>Lendings information</h2><br>
-                <div class="form-group">
-                    <label for="book_id"> <b>Book ID:</b> <input type="text" placeholder="Input Book ID"></label>
-                    <label for="book_price"> <b>Book Price:</b>  <input type="text" placeholder="Input Book price"></label>
-                </div>
-
-                <div class="form-group">
-                    <label for="customer_name"> <b>Customer Name:</b> <input type="text" placeholder="Input Customer name"></label>
-                    <label for="citizen_id"> <b>Customer Citizen ID:</b>  <input type="text" placeholder="Input Customer citizen id"></label>
-                </div>
-    
-                <div class="form-group">
-                    <label for="phone"> <b>Customer Phone no:</b>  <input type="text" placeholder="Input Customer phone no."></label>
-                    <label for="start_date"> <b>Start Date:</b>  <input type="date" placeholder=""></label>
-                </div>
-    
-                <div class="form-group">
-                    <label for="phone"> <b>Customer Phone no:</b>  <input type="text" placeholder="Input PhoneNumber"></label>
-                    <label for="return_date"> <b>return Date:</b>  <input type="date" placeholder=""></label>
-                </div>
-
-                <div class="form-group">
-                    <label for="email"> <b>Customer E-mail:</b>  <input type="email" placeholder="Input E-mail"></label>
-                    <label for="total_price"> <b>total price:</b>  <input type="text" placeholder="Total price"></label>
-                </div>
-
-                    <div class="button-container">
-                        <button type="button" class="btn" onclick="openPopup('success')">Confirm Payment</button>
-                        <div id="successPopup" class="popup">
-                            <img src="../logo/checkmark.png" alt="">
-                            <h2>Payment Successful</h2>
-                            <p>Money transfer has been completed!</p>
-                            <button type="button" class="btn1" onclick="closePopup()">OK</button>
-                        </div>
-                        <div id="failurePopup" class="popup">
-                            <h2>Payment Failed</h2>
-                            <p>Something went wrong!</p>
-                            <button type="button" class="btn1" onclick="closePopup()">OK</button>
-                        </div>
-                        <div id="overlay" class="overlay"></div>
-                    </div>
-            </div>
-             <!-- ======================== Static ======================  -->
-            <div id="Statics">
-                <!-- กล่องที่1 newcustomer -->
-        <div class="box1">
-            <span class="newcustomer">
-                <b>New Customers</b>
-            </span>
-            <p class="count" id="customer_count">
-                <b>268</b>
-            </p>
-            <span class="selecttime" id="statDate">
-                Since last week
-            </span>
-            <div class="chart1">
-                <div class="outer">
-                
-                    <div class="inner">
-
-                    </div>
-
-                </div>
-            </div> <svg class="backgroundchart" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                    <linearGradient id="GradientColor">
-                        <stop offset="0%" stop-color="#e91e63" />
-                        <stop offset="100%" stop-color="#673ab7" />
-                    </linearGradient>
-                </defs>
-                <circle class="backgroundcircle" cx="50" cy="50" r="38" stroke-linecap="round" />
-            </svg>
-            <svg class="chartcustomer" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                    <linearGradient id="GradientColor">
-                        <stop offset="0%" stop-color="#e91e63" />
-                        <stop offset="100%" stop-color="#673ab7" />
-                    </linearGradient>
-                </defs>
-                <circle class="customercircle" cx="50" cy="50" r="38" stroke-linecap="round" />
-            </svg>
-            <div class="chartpercentage" id="customerpercent">
-                <b>58</b>
-            </div>
-        
-
-
-
-
-        </div>
-        
-        <!-- กล่องที่สอง onlineorder -->
-        <div class="box2">
-            <span class="onlineorder">
-                <b>Online Orders</b>
-            </span>
-            <p class="count" id="ordercount">
-                <b>8715</b>
-            </p>
-            <span class="selecttime" id="statDate">
-                Since last month
-            </span>
-            <div class="chart1">
-                <div class="outer">
-                
-                    <div class="inner">
-
-                    </div>
-
-                </div>
-            </div><svg class="backgroundchart" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                    <linearGradient id="GradientColor">
-                        <stop offset="0%" stop-color="#e91e63" />
-                        <stop offset="100%" stop-color="#673ab7" />
-                    </linearGradient>
-                </defs>
-                <circle class="backgroundcircle" cx="50" cy="50" r="38" stroke-linecap="round" />
-            </svg>
-            <svg class="chartorder" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                    <linearGradient id="GradientColor">
-                        <stop offset="0%" stop-color="#e91e63" />
-                        <stop offset="100%" stop-color="#673ab7" />
-                    </linearGradient>
-                </defs>
-                <circle class="ordercircle" cx="50" cy="50" r="38" stroke-linecap="round" />
-            </svg>
-            <div class="chartpercentage" id="customerpercent">
-                <b>80</b>
-            </div>
-
-
-
-        </div>
-
-        <!-- กล่องที่ 3 revenue -->
-        <div class="box3">
-            <span class="revenue">
-                <b>Revenue</b>
-            </span>
-            <p class="count" id="revenue_count">
-                <b>$</b><b>929</b>
-            </p>
-            <span class="selecttime" id="statDate">
-            From This week
-            </span>
-            <div class="chart1">
-                <div class="outer">
-                
-                    <div class="inner">
-
-                    </div>
-
-                </div>
-            </div> <svg class="backgroundchart" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                    <linearGradient id="GradientColor">
-                        <stop offset="0%" stop-color="#e91e63" />
-                        <stop offset="100%" stop-color="#673ab7" />
-                    </linearGradient>
-                </defs>
-                <circle class="backgroundcircle" cx="50" cy="50" r="38" stroke-linecap="round" />
-            </svg>
-            <svg class="chartrevenue" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                    <linearGradient id="GradientColor">
-                        <stop offset="0%" stop-color="#e91e63" />
-                        <stop offset="100%" stop-color="#673ab7" />
-                    </linearGradient>
-                </defs>
-                <circle class="revenuecircle" cx="50" cy="50" r="38" stroke-linecap="round" />
-            </svg>
-            <div class="chartpercentage" id="customerpercent">
-                <b>77</b>
-            </div>
-
-
-
-        </div>
-
-        <!-- กล่องที่ 4 dailyaverage -->
-
-        <div class="box4">
-            <span class="dailyaverage">
-                <b>Daily Average</b>
-            </span>
-            <p class="count" id="average_count">
-                <b>$</b><b>78
-
-                </b>
-            </p>
-            <span class="selecttime" id="statDate">
-                Revenue Today
-            </span>
-            <div class="chart1">
-                <div class="outer">
-                
-                    <div class="inner">
-
-                    </div>
-
-                </div>
-            </div>
-            <svg class="backgroundchart" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                    <linearGradient id="GradientColor">
-                        <stop offset="0%" stop-color="#e91e63" />
-                        <stop offset="100%" stop-color="#673ab7" />
-                    </linearGradient>
-                </defs>
-                <circle class="backgroundcircle" cx="50" cy="50" r="38" stroke-linecap="round" />
-            </svg>
-            <svg class="chartaverage" xmlns="http://www.w3.org/2000/svg" version="1.1" width="160px" height="160px">
-                <defs>
-                    <linearGradient id="GradientColor">
-                        <stop offset="0%" stop-color="#e91e63" />
-                        <stop offset="100%" stop-color="#673ab7" />
-                    </linearGradient>
-                </defs>
-                <circle class="averagecircle" cx="50" cy="50" r="38" stroke-linecap="round" />
-            </svg>
-            <div class="chartpercentage" id="customerpercent">
-                <b>35</b>
-            </div>
-
-
-
-        </div>
-        
-        <!-- กล่องที่ 5 กราฟ sales analytics  -->
-
-        <div class="box5">
-            <span class="analytics">
-                <b>Sales Analytics</b>
-            </span>
-            <div class="barchart">
-                <ul class="x">
-                    <li><span>200</span></li>
-                    <li><span>150</span></li>
-                    <li><span>100</span></li>
-                    <li><span>50</span></li>
-                    <li><span>0</span></li>
-                </ul>
-                <ul class="bars">
-                    <li><div class="bar" id="totalborrow" data-percentage="10"></div><span id="totaldate">1JAN</span></li>
-                    <li><div class="bar" id="totalborrow" data-percentage="20"></div><span id="totaldate">1FEB</span></li>
-                    <li><div class="bar" id="totalborrow" data-percentage="40"></div><span id="totaldate">1MAR</span></li>
-                    <li><div class="bar" id="totalborrow" data-percentage="80"></div><span id="totaldate">1APR</span></li>
-                    <li><div class="bar" id="totalborrow" data-percentage="100"></div><span id="totaldate">1MAY</span></li>
-                    <li><div class="bar" id="totalborrow" data-percentage="120"></div><span id="totaldate">1JUN</span></li>
-                    <li><div class="bar" id="totalborrow" data-percentage="160"></div><span id="totaldate">1JUL</span></li>
-                    <li><div class="bar" id="totalborrow" data-percentage="180"></div><span id="totaldate">1AUG</span></li>
-                </ul>
-            </div>
-
-            
-                
-        </div>
-
-        <!-- กล่องที่ 6 donutchart  -->
-
-        <div class="box6">
-            <span class="donut">
-                <b>Donut Chart</b>
-            </span>
-            <div class="donutchart"></div>
-                <div class="donutdata">
-            
-                <ul class="segment1">
-                        <li  id="totalCategory">Series1</li>    
-                    </ul>
-                    <ul class="segment2">
-                        <li  id="totalCategory">Series2</li>    
-                    </ul>
-                    <ul class="segment3">
-                        <li  id="totalCategory">Series3</li>    
-                    </ul>
-                    <ul class="segment4">
-                        <li  id="totalCategory">Series4</li>    
-                    </ul>
-            
-            
-                </div>
-            </div>
-                </div>
-            <!-- ======================== Profile of Account ======================  -->
-            <div class="profile" id="profile">
-                <header>
-                    <h1>Staff Profile</h1>
-                </header>
-                <div class="profilePicture">
-                    <img
-                    src="..\Photo\Profile.jpg"
-                    alt="Profile Picture"
-                    id="profile-image"
-                    />
-                </div>
-                <main>
-                    <div class="information-group">
-                    <label for="userID" class="bold-text">Staff ID:</label>
-                    <input class="dataProfile" name="userID" id="userID" type="text" />
-                    <label for="position" class="bold-text">Position:</label>
-                    <input class="dataProfile" name="position" id="position" type="text" />
-                    </div>
-                    <div class="information-group">
-                    <label for="firstName" class="bold-text">First Name:</label>
-                    <input class="dataProfile" name="firstName" id="firstName" type="text" autocomplete="given-name"/>
-                    <label for="lastName" class="bold-text">Last Name:</label>
-                    <input class="dataProfile" type="text" id="lastName" value="" />
-                    </div>
-                    <div class="information-group">
-                    <label for="gender" class="bold-text">Gender:</label>
-                    <select class="dataProfile" id="gender">
-                        <option value="select" class="bold-text">Select</option>
-                        <option value="male" class="bold-text">Male</option>
-                        <option value="female" class="bold-text">Female</option>
-                    </select>
-                    <label for="birthday" class="bold-text">Birthday:</label>
-                    <input class="dataProfile" type="date" id="birthday" value="" />
-                    </div>
-                    <div class="information-group">
-                    <label for="password" class="bold-text">Password:</label>
-                    <input class="dataProfile" name="password" id="password" type="password" />
-                    <label for="confirm_password" class="bold-text">Confirm Password:</label>
-                    <input class="dataProfile" name="confirm_password" id="confirm_password" type="password" />
-                    <span id="password_error" style="color: red; font-size: smaller; display: flex; margin-left: 10px; ">  not match!</span>
-                    </div>
-                    <div class="information-group">
-                    <label for="phoneNumber" class="bold-text">Phone Number:</label>
-                    <input class="dataProfile" type="tel" id="phoneNumber" value="" />
-                    <label for="e-mail" class="bold-text">Email:</label>
-                    <input class="dataProfile" type="e-mail" id="e-mail" value="" />
-                    </div>
-                    <div class="information-group">
-                    <label for="houseNumber" class="bold-text">House Number:</label>
-                    <input class="dataProfile" name="houseNumber" id="houseNumber" type="text" />
-                    <label for="street" class="bold-text">Street:</label>
-                    <input class="dataProfile" name="street" id="street" type="text" />
-                    </div>
-                    <div class="information-group">
-                    <label for="subdistrict" class="bold-text">Subdistrict:</label>
-                    <input class="dataProfile" name="subdistrict" id="subdistrict" type="text" />
-                    <label for="district" class="bold-text">District:</label>
-                    <input class="dataProfile" name="district" id="district" type="text" />
-                    </div>
-                    <div class="information-group">
-                    <label for="province" class="bold-text">Province:</label>
-                    <input class="dataProfile" name="province" id="province" type="text" />
-                    <label for="zipcode" class="bold-text">Zipcode:</label>
-                    <input class="dataProfile" name="zipcode" id="zipcode" type="text" />
-                    </div>
-                    <div class="profile-actions">
-                        <br /> <br />
-                        <a href="index.html" class="editProfile-botton">Edit</a> 
-                    </div>
-                    </div>
                 </main>
-            </div>
-        
-
-            <!-- ======================== Addbook ======================  -->
-            <div id="Addbook">
             </div>
             <!-- ======================================= End =============================================  -->
         </div>
@@ -730,12 +229,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="..\static\js\main.js"></script>
     <script>
-        $(function(){
-            $('.bars li .bar').each(function(key,bar){
+        $(function () {
+            $('.bars li .bar').each(function (key, bar) {
                 var percentage = $(this).data('percentage');
                 $(this).animate({
-                    'height' : percentage + ''
-                },1000);
+                    'height': percentage + ''
+                }, 1000);
             });
         });
     </script>

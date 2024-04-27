@@ -1,23 +1,12 @@
 <?php
 session_start();
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "database";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once('db_connection.php');
 
 if (isset($_SESSION['userID'])) {
 
     $userID = $_SESSION['userID'];
-    $sql = "SELECT * FROM Employee WHERE UserID = '$userID';";
+    $sql = "SELECT * FROM employee WHERE UserID = '$userID';";
     $result = $conn->query($sql);
 
     if (mysqli_num_rows($result) > 0) {
@@ -28,25 +17,25 @@ if (isset($_SESSION['userID'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Information</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background: linear-gradient(135deg, #202020, #424242);
-            /* Dark gradient background */
-            color: #fff;
-            /* Text color */
-            padding: 50px;
+            font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #E6E1DD; /* Primary background color */
         }
 
         .employee-card {
-            background-color: #2c2c2c;
+            background-color: #fff;
             /* Card background color */
             border-radius: 15px;
             /* Rounded border */
@@ -61,6 +50,7 @@ if (isset($_SESSION['userID'])) {
         }
 
         .employee-card .label {
+            color: #304F6D;
             font-weight: bold;
         }
 
@@ -71,6 +61,14 @@ if (isset($_SESSION['userID'])) {
         .employee-card .icon {
             margin-right: 10px;
         }
+        h4 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #E07D54; /* Title color */
+}
+
+        
     </style>
 </head>
 
@@ -86,8 +84,8 @@ if (isset($_SESSION['userID'])) {
                             <p class="value"><?php echo $row["firstName"]; ?></p>
                             <p class="label"><i class="fas fa-user icon"></i>Last Name:</p>
                             <p class="value"><?php echo $row["lastName"]; ?></p>
-                            <p class="label"><i class="fas fa-venus-mars icon"></i>Gender:</p>
-                            <p class="value"><?php echo $row["gender"]; ?></p>
+                            <p class="label"><i class="fas fa-venus-mars icon"></i>sex:</p>
+                            <p class="value"><?php echo $row["sex"]; ?></p>
                             <p class="label"><i class="fas fa-calendar-alt icon"></i>Birthday:</p>
                             <p class="value"><?php echo $row["birthday"]; ?></p>
                             <p class="label"><i class="fas fa-envelope icon"></i>Email:</p>
@@ -112,12 +110,15 @@ if (isset($_SESSION['userID'])) {
                             <p class="value"><?php echo $row["province"]; ?></p>
                             <p class="label"><i class="fas fa-map-marker-alt icon"></i>Zipcode:</p>
                             <p class="value"><?php echo $row["zipcode"]; ?></p>
+                            <a href="..\html\signin.html" class="btn btn-primary btn-block">Back to Login</a>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </div>
+ 
 
 </body>
 

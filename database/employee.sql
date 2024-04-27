@@ -1,0 +1,20 @@
+CREATE TABLE `employee` (
+  `userID` int(11) NOT NULL AUTO_INCREMENT,
+  `firstName` varchar(30) NOT NULL,
+  `lastName` varchar(30) NOT NULL,
+  `sex` enum('M','F') NOT NULL,
+  `birthday` date NOT NULL,
+  `phoneNumber` varchar(10) NOT NULL,
+  `salary` decimal(10,2) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `houseNumber` varchar(8) NOT NULL,
+  `street` varchar(20) NOT NULL,
+  `district` varchar(20) NOT NULL,
+  `subdistrict` varchar(20) NOT NULL,
+  `province` varchar(20) NOT NULL,
+  `zipcode` varchar(5) NOT NULL,
+  PRIMARY KEY (`userID`),
+  CONSTRAINT `CONSTRAINT_1` CHECK (char_length(`phoneNumber`) = 10),
+  CONSTRAINT `CONSTRAINT_2` CHECK (char_length(`zipcode`) = 5)
+) ENGINE=InnoDB AUTO_INCREMENT=1003 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci

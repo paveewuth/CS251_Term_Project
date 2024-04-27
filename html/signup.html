@@ -21,7 +21,6 @@
         <h1><br /> <br /> Abdul's Literary Lendings</h1>
         <h2>Sign Up for Staff</h2>
         <br /> 
-        <!--ตรงบรรทัดล่างนี้แก้ได้เลยน้า เราตั้งไว้เผื่อให้ข้อมูลเซฟอันนี้จะค่ของ js แต่ถ้าเพื่อนทำ php เปลี่ยนตรงนี้ได้เยยน้าา-->
         <form action="../php/signup.php" method="POST" onsubmit="return validatePasswordMatch();">
 
             <div class="form-group">
@@ -42,8 +41,12 @@
                 <label for="confirmPassword">Confirm Password</label>
                 <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
                 
-                <label for="gender">Gender</label>
-                <input type="text" id="gender" name="gender" placeholder="Gender" required>
+                <label for="sex">Sex</label>
+                <select id="sex" name="sex" required>
+                    <option value="">Select Sex</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="birthday">Birthday</label>

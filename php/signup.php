@@ -1,23 +1,13 @@
 <?php
-// กำหนดค่าสำหรับการเชื่อมต่อฐานข้อมูล
-$servername = "localhost"; // เชื่อมต่อกับ MySQL ที่อยู่ในเครื่องเดียวกับ PHP
-$username = "root"; // ชื่อผู้ใช้ MySQL
-$password = ""; // รหัสผ่าน MySQL
-$dbname = "database"; // ชื่อฐานข้อมูลที่คุณต้องการใช้
+session_start();
+require_once('db_connection.php');
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check connection
-if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
-}
 // รับข้อมูลจากฟอร์มลงทะเบียน
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $email = $_POST['email'];
 $password = $_POST['password']; // โปรดทราบว่าต้องมีการเข้ารหัสรหัสผ่านก่อนเก็บลงในฐานข้อมูล
-$gender = $_POST['gender'];
+$sex = $_POST['sex'];
 $birthday = $_POST['birthday'];
 $phoneNumber = $_POST['phoneNumber'];
 $houseNumber = $_POST['houseNumber'];
@@ -32,7 +22,7 @@ $salary = $_POST['salary'];
 echo "First Name: $firstName<br>";
 echo "Last Name: $lastName<br>";
 echo "Email: $email<br>";
-echo "Gender: $gender<br>";
+echo "sex: $sex<br>";
 echo "Birthday: $birthday<br>";
 echo "Phone Number: $phoneNumber<br>";
 echo "House Number: $houseNumber<br>";
@@ -44,11 +34,13 @@ echo "Zipcode: $zipcode<br>";
 echo "Salary: $salary<br>";
 
 // เตรียมคำสั่ง SQL สำหรับการเพิ่มข้อมูล
-$sql = "INSERT INTO employee (firstName, lastName, email, password, gender, birthday, phoneNumber, houseNumber, street, district, subdistrict, province, zipcode, salary)
-VALUES ('$firstName', '$lastName', '$email', '$password', '$gender', '$birthday', '$phoneNumber', '$houseNumber', '$street', '$district', '$subdistrict', '$province', '$zipcode', '$salary')";
+$sql = "INSERT INTO employee (firstName, lastName, email, password, sex, birthday, phoneNumber, houseNumber, street, district, subdistrict, province, zipcode, salary)
+VALUES ('$firstName', '$lastName', '$email', '$password', '$sex', '$birthday', '$phoneNumber', '$houseNumber', '$street', '$district', '$subdistrict', '$province', '$zipcode', '$salary')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+  $_SESSION['userID'] = $conn->insert_id; // เก็บค่า userID ที่ได้จากการเพิ่มข้อมูลล่าสุด
+  header("Location: display2.php");
+  exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }

@@ -134,3 +134,22 @@ input[type="date"] {
     text-decoration: underline;
     color: #899481; /* Link hover color (highlight color 2) */
 }
+
+/* กำหนดขนาดและสไตล์ของ dropdown */
+select#sex {
+    background-image: linear-gradient(to right, #E07D54, #304f6d);
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    width: auto; /* ปรับความกว้างให้เป็นขนาดเท่ากับเนื้อหาภายใน */
+}
+
+
+/* เพิ่มสไตล์เพื่อปรับความกว้างของ label เพื่อให้ติดกันในบรรทัดเดียวกัน */
+label {
+    width: 48%;
+}

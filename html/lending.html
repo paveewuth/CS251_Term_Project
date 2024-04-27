@@ -147,6 +147,7 @@
             </div>
             <div class="content">
 <!-- ======================== Lendings ======================  -->
+<form action="../php/lendings.php" method="post">
 <div class="Lending" id="Lendings">
     <h2>Lendings information</h2><br>
     <div class="form-group">
@@ -178,13 +179,14 @@
     </div>
 
     <div class="form-group">
-        <label for="member"> <b>Member:</b>  <input type="checkbox" placeholder=""></label>
+        <label for="member"> <b>Member:</b>  
+        <input type="checkbox" name="is_member" id="is_member" placeholder=""></label>
         <label for="total_price"> <b>total price:</b>  
         <input type="text" name="total_price" id="total_price" placeholder="Total price"></label>
     </div>
 
         <div class="button-container">
-            <button type="button" class="btn" onclick="openPopup('success')">Confirm Payment</button>
+            <button type="submit" class="btn" onclick="openPopup('success')">Confirm Payment</button>  
             <div id="successPopup" class="popup">
                 <img src="../logo/checkmark.png" alt="">
                 <h2>Payment Successful</h2>
@@ -199,6 +201,7 @@
             <div id="overlay" class="overlay"></div>
         </div>
 </div>
+</form>
             <!-- ======================== Profile of Account ======================  -->
             <div class="profile" id="profile">
                 <header>

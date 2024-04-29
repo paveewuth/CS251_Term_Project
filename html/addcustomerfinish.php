@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -165,15 +167,20 @@
                 </form>
                 <div class="information-container">
                     <div style="text-align: center;">
-                        <h2>Information</h2>
+                        <h2>Successfully added customers</h2>
                     </div>
+                    <div class="check" style="display: flex; justify-content: center; align-items: center;">
+    <img src="..\Photo\checked.png" alt="checked" id="checked" style="width: 50px; height: 50px;">
+</div>
 
                     <?php
-               
-    if(isset($_POST['customerID'])) {
-        require_once('../php/db_connection.php');
-        $customerID = $_POST['customerID'];
+              
 
+              if(isset($_POST['customerID']) || isset($_SESSION['customerID'])) {
+
+           if(isset($_POST['customerID'])  ) { $customerID = $_POST['customerID'];}
+           if( isset($_SESSION['customerID']) ) { $customerID = $_SESSION['customerID'];}
+        require_once('../php/db_connection.php');
         // Check if the customer exists in the customer table
         $sql_customer = "SELECT * FROM customer WHERE customerID = '$customerID'";
         $result_customer = $conn->query($sql_customer);

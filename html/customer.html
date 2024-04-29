@@ -33,7 +33,7 @@
         <div class="sidebar">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="index.html">
                         <span class="icon">
                             <img src="..\logo\CS251_Logo.png" alt="" class="logo-img">
                         </span>
@@ -60,7 +60,7 @@
                 </li>
 
                 <li>
-                    <a href="#lending">
+                    <a href="lending.html">
                         <span class="icon">
                             <i class="bx bxs-book-reader"></i>
                         </span>
@@ -78,7 +78,7 @@
                 </li>
 
                 <li>
-                    <a href="#" onclick="event.preventDefault();">
+                    <a href="customer.html">
                         <span class="icon">
                             <i class="bx bx-body"></i>
                         </span>
@@ -161,45 +161,64 @@
                             </div>
                         </div>
                     </form>
+                    <form action="../php/addcustomer.php" method="POST">
                     <div class="information-container">
                         <div style="text-align: center;">
-                            <h2>Information</h2>
+                            <h2>New customer</h2><br>
                         </div>
-
                         <div class="info-group">
                             <label for="firstName"> <b>First name:</b> <input type="text"
-                                    placeholder="#Customer name"></label>
+                                name="firstName" id="firstName" placeholder="Customer name"></label>
                             <label for="lastName"> <b>Last name:</b> <input type="text"
-                                    placeholder="#Customer lastname"></label>
+                                name="lastName" id="lastName"    placeholder="Customer lastname"></label>
                         </div>
 
                         <div class="info-group">
-                            <label for="citizen_id"> <b>Citizen ID:</b> <input type="text"
-                                    placeholder="#citizenId"></label>
-                            <label for="customer_id"> <b>Customer ID:</b> <input type="text"
-                                    placeholder="#customerId"></label>
+                            <label for="citizen_id"> <b>Citizen ID:</b> <input type="text" name="citizen_id" id="citizen_id"
+                                    placeholder="citizenId"></label>
+                            <!-- <label for="customer_id"> <b>Customer ID:</b> <input type="text"
+                                    placeholder="customerId"></label> -->
+                                    <label for="phone"> <b>Phone number:</b> <input type="text" name="phone" id="phone" placeholder="PhoneNumber"></label>
                         </div>
 
                         <div class="info-group">
-                            <label for="phone"> <b>Phone number:</b> <input type="text"
-                                    placeholder="#PhoneNumber"></label>
-                            <label for="balance"> <b>Balance:</b> <input type="text" placeholder="#Balance"></label>
+                            
+                            <label for="customer_type"> <b>Customer type:</b>
+                                <select name="customer_type" id="customer_type">
+                                    <option value="not_member">Not Member</option>
+                                    <option value="member">Member</option>
+                                </select>
+                            </label>
                         </div>
 
-                        <div class="info-group">
-                            <label for="customer_type"> <b>Customer type:</b> <input type="text"
-                                    placeholder="#member/not member"></label>
-                        </div>
 
-                        <div class="info-group">
-                            <label for="memStart"> <b>Member start:</b> <input type="text" placeholder="#Date"></label>
-                            <label for="memExp"> <b>Member end:</b> <input type="text" placeholder="#Date"></label>
+                        
+                        <div class="info-group" id="member_info" style="display: none;">
+                            <label for="memStart"> <b>Member start:</b> <input type="date" name="memStart" id="memStart"></label>
+                            <label for="memExp"> <b>Member end:</b> <input type="date" name="memExp" id="memExp"></label>
+                        </div>
+                        
+                        <div class="button-container">
+                            <button type="submit" class="btn btn-primary" >add</button>
                         </div>
                     </div>
+
+                    </div>
+                </form>
                 </div>
                 </main>
             </div>
 
+            <script>
+                document.getElementById('customer_type').addEventListener('change', function() {
+                    var memberInfo = document.getElementById('member_info');
+                    if (this.value === 'member') {
+                        memberInfo.style.display = 'block';
+                    } else {
+                        memberInfo.style.display = 'none';
+                    }
+                });
+            </script>
 
             <!-- ======================== Addbook ======================  -->
             <div id="Addbook">

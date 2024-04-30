@@ -51,7 +51,7 @@
                 </li>
 
                 <li>
-                    <a href="book.html">
+                    <a href="book.php">
                         <span class="icon">
                             <i class="bx bxs-book"></i>
                         </span>
@@ -103,20 +103,22 @@
                     <i class="bx bx-menu" id="btn"></i>
                 </div>
 
-                <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <i class="bx bx-search"></i>
-                    </label>
-                </div>
+<div class="search">
+    <form id="searchForm" action="searchbook.php" method="post">
+        <label>
+            <input id="searchInput" type="text" name="search" placeholder="Search here">
+            <i class="bx bx-search"></i>
+        </label>
+    </form>
+</div>
                 <!-- ========================= Profile Dropdown  ==================== -->
                 <div class="user">
-                    <img src="..\Photo\Profile.jpg" alt="" class="profile-dropdown" onclick="toggleMenu()">
+                    <img src="..\Photo\Profile.png" alt="" class="profile-dropdown" onclick="toggleMenu()">
                 </div>
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="submenu">
                         <div class="user-info">
-                            <img src="..\Photo\Profile.jpg" alt="">
+                            <img src="..\Photo\Profile.png" alt="">
                             <h3>Lio Ronaldo<br>Manager</h3>
 
                         </div>

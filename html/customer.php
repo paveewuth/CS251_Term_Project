@@ -54,7 +54,7 @@
                 </li>
 
                 <li>
-                    <a href="book.html">
+                    <a href="book.php">
                         <span class="icon">
                             <i class="bx bx-book"></i>
                         </span>
@@ -81,7 +81,7 @@
                 </li>
 
                 <li>
-                    <a href="#" onclick="event.preventDefault();">
+                    <a href="customer.html">
                         <span class="icon">
                             <i class="bx bx-body"></i>
                         </span>
@@ -106,15 +106,17 @@
                     <i class="bx bx-menu" id="btn"></i>
                 </div>
 
-                <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <i class="bx bx-search"></i>
-                    </label>
-                </div>
+<div class="search">
+    <form id="searchForm" action="searchbook.php" method="post">
+        <label>
+            <input id="searchInput" type="text" name="search" placeholder="Search here">
+            <i class="bx bx-search"></i>
+        </label>
+    </form>
+</div>
                 <!-- ========================= Profile Dropdown  ==================== -->
                 <div class="user">
-                    <img src="..\Photo\Profile.jpg" alt="" class="profile-dropdown" onclick="toggleMenu()">
+                    <img src="..\Photo\Profile.png" alt="" class="profile-dropdown" onclick="toggleMenu()">
                 </div>
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="submenu">
@@ -183,27 +185,23 @@
 ?>
             <table>
                 <tr>
-                    <th>Attribute</th>
-                    <th>Value</th>
-                </tr>
-                <tr>
-                    <td>First Name</td>
+                    <th>First Name</th>
                     <td><?php echo htmlspecialchars($row["firstName"]); ?></td>
                 </tr>
                 <tr>
-                    <td>Last Name</td>
+                    <th>Last Name</th>
                     <td><?php echo htmlspecialchars($row["lastName"]); ?></td>
                 </tr>
                 <tr>
-                    <td>Citizen ID</td>
+                    <th>Citizen ID</th>
                     <td><?php echo htmlspecialchars($row["citizenID"]); ?></td>
                 </tr>
                 <tr>
-                    <td>Customer ID</td>
+                    <th>Customer ID</th>
                     <td><?php echo htmlspecialchars($row["customerID"]); ?></td>
                 </tr>
                 <tr>
-                    <td>Phone Number</td>
+                    <th>Phone Number</th>
                     <td><?php echo htmlspecialchars($row["phoneNumber"]); ?></td>
                 </tr>
         <?php
@@ -215,22 +213,22 @@
                         $row_member = $result_member->fetch_assoc();
         ?>
                         <tr>
-                            <td>Customer Type</td>
+                            <th>Customer Type</th>
                             <td>Member</td>
                         </tr>
                         <tr>
-                            <td>Member Start</td>
+                            <th>Member Start</th>
                             <td><?php echo htmlspecialchars($row_member["memStart"]); ?></td>
                         </tr>
                         <tr>
-                            <td>Member End</td>
+                            <th>Member End</th>
                             <td><?php echo htmlspecialchars($row_member["memExp"]); ?></td>
                         </tr>
         <?php
                     } else {
         ?>
                         <tr>
-                            <td>Customer Type</td>
+                            <th>Customer Type</th>
                             <td>General</td>
                         </tr>
         <?php
@@ -247,7 +245,7 @@
 
                 </div>
                 <br> <div class="button-container">
-                    <a href="customer.html" class="btn btn-primary">Back</a>
+                    <a href="customer.html" class="btn btn-primary" style="text-decoration: none; color: white;">Back</a>
                 </div>
             </div>
             <!-- ======================================= End =============================================  -->

@@ -413,11 +413,11 @@ color: #899481;
 }
 
 .announcement-box img:nth-child(2) {
-  animation-delay: 10s; /* เริ่มเล่นภาพถัดไปหลังจาก 10 วินาที */
+  animation-delay: 5s; /* เริ่มเล่นภาพถัดไปหลังจาก 10 วินาที */
 }
 
 .announcement-box img:nth-child(3) {
-  animation-delay: 20s; /* เริ่มเล่นภาพถัดไปหลังจาก 20 วินาที */
+  animation-delay: 10s; /* เริ่มเล่นภาพถัดไปหลังจาก 20 วินาที */
 }
 
 
@@ -428,11 +428,14 @@ color: #899481;
 
 
 /* ============================== BOOK ============================= */
+
+
+
 .container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* ระยะห่างระหว่าง .book */
+  flex-wrap: wrap; /* ให้เรียงแนวนอนเมื่อเต็มแถวแล้วขึ้นบรรทัดใหม่ */
 }
+
 .list h1{
   text-align: center;
   font-size: 40px;
@@ -443,45 +446,75 @@ color: #899481;
   color: transparent; /* ทำให้เนื้อหาใน <h6> มองไม่เห็น */
 }
 
-.book {
-  width: 300px; /* กำหนดขนาดคงที่ของ .book */
-  display: flex;
-  align-items: center;
-  border: 2px solid #ffffff; /* เพิ่มเส้นขอบ */
+/* Book container */
+.content-book {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  margin: 20px auto;
+  max-width: 1020px;
+  align-items: center; 
+}
+
+/* Book list */
+/* Book list */
+.list {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 1000px; /* ขยายขนาดใหญ่ขึ้น */
+  align-items: center; 
+}
+
+
+/* Book */
+.book {
+  display: flex;
+  align-items: left;
+  border: 2px solid #dddddd;
+  border-radius: 10px;
   margin-bottom: 20px;
-  border-radius: 10px; /* เพิ่มขอบมน */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 18px;
+  margin-right: 10px;
 }
 
 .book img {
-  width: 120px; /* ปรับขนาดของรูป */
-  margin-right: 30px; /* ระยะห่างระหว่างรูปและข้อมูล */
-  box-shadow: 0 4px 6px rgba(1, 1, 1, 1); /* เพิ่มเงา */
+  width: 120px;
+  margin-right: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .book-info {
-  flex-grow: 1; /* ขยายข้อมูลเต็มพื้นที่ */
+  flex-grow: 1;
 }
 
 .book-info h2 {
-  margin-top: 0; /* ไม่มีช่องว่างด้านบน */
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .book-info p {
-  margin: 5px 0; /* ระยะห่างของข้อมูล */
+  margin: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
+
 /* สไตล์สำหรับปุ่ม "ข้อมูลเพิ่มเติม" */
 .more-info-btn {
   background-color: #304f6d;
   color: #fff;
-  padding: 8px 15px;
+  padding: 3px 8px;
   border-radius: 5px;
   text-decoration: none; /* ลบขีดเส้นใต้ข้อความ */
-  display: inline-block;
   transition: background-color 0.3s; /* เพิ่มเอฟเฟคการเปลี่ยนสี */
   position: relative; /* เพิ่ม */
   box-shadow: 0 4px 6px rgba(35, 35, 35, 0.1); /* เพิ่มเงา */
+  margin-bottom: 10px; /* เพิ่มระยะห่างด้านล่างของปุ่ม */
+  display: inline-block; /* ให้ปุ่มแสดงเป็นบล็อกอินไลน์ */
 }
 /* เมื่อโฮเวอร์ที่ปุ่ม "ข้อมูลเพิ่มเติม" */
 .more-info-btn:hover {
@@ -517,7 +550,7 @@ color: #899481;
   padding: 40px;
   border-radius: 10px;
   box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.1);
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -643,6 +676,13 @@ color: #899481;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 9998;
 }
+
+.button-container-new {
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: right;
+}
 /* ============================== Customers ============================= */
 .customer-search {
   display: flex;
@@ -698,6 +738,8 @@ color: #899481;
   justify-content: center;
   align-items: center;
 }
+
+
 .information-container {
   background-color: #fff;
   padding: 40px;
@@ -773,9 +815,8 @@ table {
 }
 
 th, td {
-  padding: 12px 16px;
+  padding: 8px ;
   text-align: left;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 th {
@@ -1024,8 +1065,7 @@ tr:last-child td {
   padding: 0;
   width: 50px;
   height: 100%;
-  display: inline-block;
-
+  float: left;
   
 }
 
@@ -1034,6 +1074,7 @@ tr:last-child td {
   height: 50px;
   position: relative;
   bottom: -10px;
+
 }
 
 .x span{

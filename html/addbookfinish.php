@@ -1,3 +1,7 @@
+
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,25 +11,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>"Abdul's Literary Lendings"</title>
     <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="..\static\css\addbook.css">
     <link rel="stylesheet" href="..\static\css\style.css">
+ 
     <!-- ======= boxicons ====== -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
-<style>
-    .transparent-button {
-        background-color: transparent;
-        border: none;
-        position: relative;
-        display: block;
-        width: 100%;
-        display: flex;
-        text-decoration: none;
-        color: var(--color-orange);
-        /* สีของ text */
-        font-size: 16px;
-        /* ขนาดของตัวอักษร */
-    }
-</style>
 
 <body>
     <!-- =============== Sidebar ================ -->
@@ -33,7 +24,7 @@
         <div class="sidebar">
             <ul>
                 <li>
-                    <a href="index.html">
+                    <a href="#">
                         <span class="icon">
                             <img src="..\logo\CS251_Logo.png" alt="" class="logo-img">
                         </span>
@@ -44,7 +35,7 @@
                 <li>
                     <a href="index.html">
                         <span class="icon">
-                            <i class="bx bx-home"></i>
+                            <i class="bx bxs-home"></i>
                         </span>
                         <span class="title">Home</span>
                     </a>
@@ -53,7 +44,7 @@
                 <li>
                     <a href="book.php">
                         <span class="icon">
-                            <i class="bx bx-book"></i>
+                            <i class="bx bxs-book"></i>
                         </span>
                         <span class="title">Books</span>
                     </a>
@@ -150,87 +141,45 @@
                 </div>
 
             </div>
+
+            <!-- ========================= Add book  ==================== -->
+          
+
             <div class="content">
-                <!-- ======================== Customers ======================  -->
-                <div id="Customers">
-                    <form action="customer.php" method="POST">
-                        <div class="customer-search">
-                            <label>
-                                <input type="text" id="customerID" name="customerID" placeholder="Enter customer ID">
-                            </label>
-                            <div class="button-container">
-                                <button type="submit" class="btn btn-primary" >Enter</button>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="../php/addcustomer.php" method="POST">
-                    <div class="information-container">
-                        <div style="text-align: center;">
-                            <h2>New customer</h2><br>
-                        </div>
-                        <div class="info-group">
-                            <label for="firstName"> <b>First name:</b> <input type="text"
-                                name="firstName" id="firstName" placeholder="Customer name" required></label>
-                            <label for="lastName"> <b>Last name:</b> <input type="text"
-                                name="lastName" id="lastName"    placeholder="Customer lastname" required></label>
-                        </div>
+    <div class="check" style="display: flex; justify-content: center; align-items: center;">
+        <img src="..\Photo\checked.png" alt="checked" id="checked" style="width: 50px; height: 50px;">
+    </div><br>
+    <h1>Add Book Successfully</h1><br>
+    <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;">
+    <img src="<?php echo $_SESSION['bookCover']; ?>" style="width: 200px; height: 280px;">
+    </div><br>
+    <table>
+    <tr>
+        <th>Book Name</th>
+        <td><?php echo $_SESSION['bookName']; ?></td>
+    </tr>
+    <tr>
+        <th>Book ID</th>
+        <td><?php echo $_SESSION['bookID']; ?></td>
+    </tr>
+    <tr>
+        <th>Book Price</th>
+        <td><?php echo $_SESSION['bookPrice']; ?></td>
+    </tr>
+    <tr>
+        <th>Author</th>
+        <td><?php echo $_SESSION['author']; ?></td>
+    </tr>
+    <tr>
+        <th>Category</th>
+        <td><?php echo  $_SESSION['category']; ?></td>
+    </tr>
+</table>
 
-                        <div class="info-group">
-                            <label for="citizen_id"> <b>Citizen ID:</b> <input type="text" name="citizen_id" id="citizen_id"
-                                    placeholder="citizenId" required></label>
-                                    <span id="citizen_id_error" style="color: red;"></span>
-                                    <label for="phone"> <b>Phone number:</b> <input type="text" name="phone" id="phone" placeholder="PhoneNumber" required></label>
-                        </div>
-
-                        <div class="info-group">
-                            
-                            <label for="customer_type"> <b>Customer type:</b>
-                                <select name="customer_type" id="customer_type">
-                                    <option value="not_member">Not Member</option>
-                                    <option value="member">Member</option>
-                                </select>
-                            </label>
-                        </div>
-
-
-                        
-                        <div class="info-group" id="member_info" style="display: none;">
-                            <label for="memStart"> <b>Member start:</b> <input type="date" name="memStart" id="memStart" required></label>
-                            <label for="memExp"> <b>Member end:</b> <input type="date" name="memExp" id="memExp" required></label>
-                        </div>
-                        
-                        <div class="button-container">
-                            <button type="submit" class="btn btn-primary" >add</button>
-                        </div>
-                    </div>
-
-                    </div>
-                </form>
+</div>
+                <div class="button-container">
+                    <a href="addbook.html" class="btn btn-primary" style="text-decoration: none; color: white;">Back</a>
                 </div>
-                </main>
-            </div>
-
-            <script>
-                document.getElementById('customer_type').addEventListener('change', function() {
-                    var memberInfo = document.getElementById('member_info');
-                    if (this.value === 'member') {
-                        memberInfo.style.display = 'block';
-                    } else {
-                        memberInfo.style.display = 'none';
-                    }
-                });
-
-                document.getElementById("citizen_id").addEventListener("input", function() {
-        var citizen_id = this.value;
-        var error_message = "";
-        
-        if (citizen_id.length !== 13 || isNaN(citizen_id)) {
-            error_message = "Citizen ID must be 13 digits long and contain only numbers.";
-        }
-
-        document.getElementById("citizen_id_error").textContent = error_message;
-    });
-            </script>
 
             <!-- ======================== Addbook ======================  -->
             <div id="Addbook">
@@ -241,6 +190,23 @@
 
 
     <!-- =========== Scripts =========  -->
+    <script>
+        function validateForm() {
+            var bookId = document.getElementById("bookid").value;
+            var bookPrice = document.getElementById("bookprice").value;
+            var number = document.getElementById("number").value;
+            var description = document.getElementById("description").value;
+            var date = document.getElementById("date").value;
+            var author = document.getElementById("author").value;
+    
+            if (bookId == "" || bookPrice == "" || number == "" || description == "" || date == "" || author == "") {
+                alert("Please fill in all fields");
+                return false;
+            }
+    
+            return true;
+        }
+    </script>
     <script src="statistics.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="..\static\js\main.js"></script>

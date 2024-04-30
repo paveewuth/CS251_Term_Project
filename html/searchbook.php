@@ -33,7 +33,7 @@
         <div class="sidebar">
             <ul>
                 <li>
-                    <a href="index.html">
+                    <a href="#">
                         <span class="icon">
                             <img src="..\logo\CS251_Logo.png" alt="" class="logo-img">
                         </span>
@@ -44,7 +44,7 @@
                 <li>
                     <a href="index.html">
                         <span class="icon">
-                            <i class="bx bx-home"></i>
+                            <i class="bx bxs-home"></i>
                         </span>
                         <span class="title">Home</span>
                     </a>
@@ -53,9 +53,9 @@
                 <li>
                     <a href="book.php">
                         <span class="icon">
-                            <i class="bx bx-book"></i>
+                            <i class="bx bxs-book"></i>
                         </span>
-                        <span class="title">Books</span>
+                        <span class="title">book</span>
                     </a>
                 </li>
 
@@ -118,7 +118,7 @@
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="submenu">
                         <div class="user-info">
-                            <img src="..\Photo\Profile.jpg" alt="">
+                            <img src="..\Photo\Profile.png" alt="">
                             <h3>Lio Ronaldo<br>Manager</h3>
 
                         </div>
@@ -150,87 +150,63 @@
                 </div>
 
             </div>
-            <div class="content">
-                <!-- ======================== Customers ======================  -->
-                <div id="Customers">
-                    <form action="customer.php" method="POST">
-                        <div class="customer-search">
-                            <label>
-                                <input type="text" id="customerID" name="customerID" placeholder="Enter customer ID">
-                            </label>
-                            <div class="button-container">
-                                <button type="submit" class="btn btn-primary" >Enter</button>
-                            </div>
-                        </div>
-                    </form>
-                    <form action="../php/addcustomer.php" method="POST">
-                    <div class="information-container">
-                        <div style="text-align: center;">
-                            <h2>New customer</h2><br>
-                        </div>
-                        <div class="info-group">
-                            <label for="firstName"> <b>First name:</b> <input type="text"
-                                name="firstName" id="firstName" placeholder="Customer name" required></label>
-                            <label for="lastName"> <b>Last name:</b> <input type="text"
-                                name="lastName" id="lastName"    placeholder="Customer lastname" required></label>
-                        </div>
+                            <!-- ======================== Book ======================  -->
+                            <div class="content-book">
+    <div class="list" id="bookList">
+        <h1>Book List</h1>
+        <div class="container">
+        <?php
+require_once('../php/db_connection.php');
 
-                        <div class="info-group">
-                            <label for="citizen_id"> <b>Citizen ID:</b> <input type="text" name="citizen_id" id="citizen_id"
-                                    placeholder="citizenId" required></label>
-                                    <span id="citizen_id_error" style="color: red;"></span>
-                                    <label for="phone"> <b>Phone number:</b> <input type="text" name="phone" id="phone" placeholder="PhoneNumber" required></label>
-                        </div>
+// Check if the search input is submitted
+if(isset($_POST['search'])) {
+    $searchInput = $_POST['search'];
+    // Prepare SQL query to fetch book details along with author and category
+    $sql = "SELECT cartoonbook.*, author.Author, category.Category
+            FROM cartoonbook
+            LEFT JOIN author ON cartoonbook.bookID = author.bookID
+            LEFT JOIN category ON cartoonbook.bookID = category.bookID
+            WHERE cartoonbook.bookName = '$searchInput'";
 
-                        <div class="info-group">
-                            
-                            <label for="customer_type"> <b>Customer type:</b>
-                                <select name="customer_type" id="customer_type">
-                                    <option value="not_member">Not Member</option>
-                                    <option value="member">Member</option>
-                                </select>
-                            </label>
-                        </div>
+    // Execute the query
+    $result = $conn->query($sql);
 
-
-                        
-                        <div class="info-group" id="member_info" style="display: none;">
-                            <label for="memStart"> <b>Member start:</b> <input type="date" name="memStart" id="memStart" required></label>
-                            <label for="memExp"> <b>Member end:</b> <input type="date" name="memExp" id="memExp" required></label>
-                        </div>
-                        
-                        <div class="button-container">
-                            <button type="submit" class="btn btn-primary" >add</button>
-                        </div>
-                    </div>
-
-                    </div>
-                </form>
+    // Check if any matching books found
+    if ($result->num_rows > 0) {
+        // Loop through the results
+        while ($row = $result->fetch_assoc()) {
+            ?>
+            <div class="book">
+                <img src="<?php echo $row["bookcover"]; ?>" >
+                <div class="book-info">
+                    <h2><?php echo $row["bookName"]; ?></h2>
+                    <p>Writer: <?php echo $row["Author"]; ?></p>
+                    <p>Type: <?php echo $row["Category"]; ?></p>
+                    <p>Rental: <?php echo $row["price"]; ?> Bath</p>
+                    <a href="book.php" class="more-info-btn">Status</a><br>
+                    <a href="lending.html" class="more-info-btn">Lending</a>
                 </div>
-                </main>
             </div>
-
-            <script>
-                document.getElementById('customer_type').addEventListener('change', function() {
-                    var memberInfo = document.getElementById('member_info');
-                    if (this.value === 'member') {
-                        memberInfo.style.display = 'block';
-                    } else {
-                        memberInfo.style.display = 'none';
-                    }
-                });
-
-                document.getElementById("citizen_id").addEventListener("input", function() {
-        var citizen_id = this.value;
-        var error_message = "";
-        
-        if (citizen_id.length !== 13 || isNaN(citizen_id)) {
-            error_message = "Citizen ID must be 13 digits long and contain only numbers.";
+            <?php
         }
+    } else {
+        // Display a message if no matching books found
+        echo "No books found with the given search term.";
+    }
+}
+?>
 
-        document.getElementById("citizen_id_error").textContent = error_message;
-    });
-            </script>
+
+        </div>
+        <div class="pagination">
+            <a href="#" class="prev-page">หน้าก่อนหน้า</a>
+            <span class="current-page">หน้า 1</span>
+            <a href="#" class="next-page">หน้าถัดไป</a>
+        </div>
+    </div>
+</div>
+
+
 
             <!-- ======================== Addbook ======================  -->
             <div id="Addbook">

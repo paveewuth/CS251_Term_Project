@@ -168,18 +168,18 @@ document.addEventListener('keydown', function(event) {
 // ========================= ส่วน LENDING ===========================
 function openPopup(status) {
   // ตรวจสอบว่าข้อมูลถูกกรอกครบหรือไม่
-  var bookID = document.querySelector('input[name="book_id"]').value;
-  var bookPrice = document.querySelector('input[name="book_price"]').value;
-  var customerName = document.querySelector('input[name="customer_name"]').value;
-  var citizenID = document.querySelector('input[name="citizen_id"]').value;
-  var phone = document.querySelector('input[name="phone"]').value;
-  var startDate = document.querySelector('input[name="start_date"]').value;
-  var email = document.querySelector('input[name="email"]').value;
-  var returnDate = document.querySelector('input[name="return_date"]').value;
-  var totalPrice = document.querySelector('input[name="total_price"]').value;
+  // var bookID = document.querySelector('input[name="book_id"]').value;
+  // var bookPrice = document.querySelector('input[name="book_price"]').value;
+  // var customerName = document.querySelector('input[name="customer_name"]').value;
+  // var citizenID = document.querySelector('input[name="citizen_id"]').value;
+  // var phone = document.querySelector('input[name="phone"]').value;
+  // var startDate = document.querySelector('input[name="start_date"]').value;
+  // var email = document.querySelector('input[name="email"]').value;
+  // var returnDate = document.querySelector('input[name="return_date"]').value;
+  // var totalPrice = document.querySelector('input[name="total_price"]').value;
 
   // ตรวจสอบว่ามีข้อมูลทุกอย่างถูกกรอกหรือไม่
-  if (bookID && bookPrice && customerName && citizenID && phone && startDate && email && returnDate && totalPrice) {
+  // if (bookID && bookPrice && customerName && citizenID && phone && startDate && email && returnDate && totalPrice) {
     if (status === "success") {
       // แสดงป๊อปอัพสำหรับสถานะ "success"
       document.getElementById("successPopup").style.display = "block";
@@ -191,10 +191,10 @@ function openPopup(status) {
       // แสดง overlay เพื่อบังคับให้ผู้ใช้ใช้ป๊อปอัพเท่านั้น
       document.getElementById("overlay").style.display = "block";
     }
-  } else {
-    // แจ้งเตือนให้กรอกข้อมูลให้ครบ
-    alert("Please fill in all fields before proceeding.");
-  }
+  // } else {
+  //   // แจ้งเตือนให้กรอกข้อมูลให้ครบ
+  //   alert("Please fill in all fields before proceeding.");
+ // }
 }
 
 // ฟังก์ชันปิดป๊อปอัพ
@@ -219,3 +219,10 @@ function checkPasswords() {
 
 const confirmPasswordInput = document.getElementById('confirm_password');
 confirmPasswordInput.addEventListener('input', checkPasswords);
+
+document.getElementById("searchInput").addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+      event.preventDefault(); // Prevent default form submission
+      document.getElementById("searchForm").submit(); // Submit the form
+  }
+});

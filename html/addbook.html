@@ -7,7 +7,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>"Abdul's Literary Lendings"</title>
     <!-- ======= Styles ====== -->
+    <link rel="stylesheet" href="..\static\css\addbook.css">
     <link rel="stylesheet" href="..\static\css\style.css">
+ 
     <!-- ======= boxicons ====== -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
@@ -36,7 +38,7 @@
                 </li>
 
                 <li>
-                    <a href="book.html">
+                    <a href="book.php">
                         <span class="icon">
                             <i class="bx bxs-book"></i>
                         </span>
@@ -88,15 +90,17 @@
                     <i class="bx bx-menu" id="btn"></i>
                 </div>
 
-                <div class="search">
-                    <label>
-                        <input type="text" placeholder="Search here">
-                        <i class="bx bx-search"></i>
-                    </label>
-                </div>
+<div class="search">
+    <form id="searchForm" action="searchbook.php" method="post">
+        <label>
+            <input id="searchInput" type="text" name="search" placeholder="Search here">
+            <i class="bx bx-search"></i>
+        </label>
+    </form>
+</div>
                 <!-- ========================= Profile Dropdown  ==================== -->
                 <div class="user">
-                    <img src="..\Photo\Profile.jpg" alt="" class="profile-dropdown" onclick="toggleMenu()">
+                    <img src="..\Photo\Profile.png" alt="" class="profile-dropdown" onclick="toggleMenu()">
                 </div>
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="submenu">
@@ -135,112 +139,57 @@
             </div>
 
             <!-- ========================= Add book  ==================== -->
-            <br>
-            <h1>Add book</h1>
+          
+           
             <div class="content">
-                <form>
-                    <div class="grid">
-                        <div class="row">
-                            <div class="col-wd-6 col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <p>Book ID</p>
-                                    <input type="text" id="bookid" name="bookid" class="form-control"
-                                        placeholder="Input Bookid" required>
-                                </div>
-                            </div>
-                            <div class="col-wd-5 col-md-5 col-sm-5" style="padding-left: 80px;">
-                                <br>
-                                <div class="form-group">
-                                    <p>Book cover</p>
-                                    <form action="/action_page.php">
-                                        <input type="file" id="myFile" name="filename">
-                                    </form>
-                                </div>
-                            </div>
+                <h1>Add Book</h1>
+                <form action="../php/addbook.php" method="POST">
+                    <div class="form-group">
+                        <p>Book Cover</p>
+                        <input type="text" id="bookcover" name="bookcover" class="form-control" placeholder="Input Bookcover" required>
+                        <p>Book Name</p>
+                        <input type="text" id="bookname" name="bookname" class="form-control" placeholder="Input Bookname" required>
+                        <p>Book ID</p>
+                        <input type="text" id="bookid" name="bookid" class="form-control" placeholder="Input Bookid" required>
+                        <p>Book Price</p>
+                        <input type="number" id="bookprice" name="bookprice" class="form-control" placeholder="Input Bookprice" required>
+                        <p>Author</p>
+                        <input type="text" id="author" name="author" class="form-control" placeholder="Input Author" required>
+                    </div>
 
-                        </div><br>
-                        <div class="row">
-                            <div class="col-wd-6 col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <p>Book Price</p>
-                                    <input type="bookprice" id="bookprice" name="bookprice" class="form-control"
-                                        placeholder="Input Bookprice" required>
-                                </div>
-                            </div>
-                            <div class="col-wd-4 col-md-4 col-sm-4" style="padding-left: 80px;">
-                                <div class="form-group">
-                                    <p>Number of page</p>
-                                    <input type="number" id="number" name="number" class="form-control"
-                                        placeholder="Input number of page" required>
-                                </div>
-                            </div>
-                        </div><br>
-                        <div class="row">
-                            <div class="col-wd-6 col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <p>Description of this book</p>
-                                    <input type="description" id="description" name="description" class="form-control"
-                                        placeholder="Input Description" required>
-                                </div>
-                            </div>
-                            <div class="col-wd-4 col-md-4 col-sm-4" style="padding-left: 80px;">
-                                <div class="form-group">
-                                    <p>Date</p>
-                                    <input type="date" id="date" name="date" class="form-control"
-                                        placeholder="Input date" required>
-                                </div><br>
-                            </div>
-                        </div><br>
-                        <div class="row">
-                            <div class="col-wd-6 col-md-6 col-sm-6">
-                                <div class="form-group">
-                                    <p>Author</p>
-                                    <input type="author" id="author" name="author" class="form-control"
-                                        placeholder="Input Author" required>
-                                </div>
-                            </div>
-                            <div class="col-wd-4 col-md-4 col-sm-4" style="padding-left: 100px;">
-                                <br>
-                                <div class="button-container">
-                                    <button>Next</button>
-                                </div><br>
-                            </div>
-                        </div><br>
-                        <div class="row">
-                            <div class="col-wd-6 col-md-6 col-sm-6">
-                                <p>Category</p>
-                                <div class="form-group">
-                                    <input type="checkbox" id="romance" name="checkboxGroup" value="romance" />
-                                    <label for="romance">Romance</label>
-
-                                    <input type="checkbox" id="fantasy" name="checkboxGroup" value="fantasy" />
-                                    <label for="fantasy">Fantasy</label>
-
-                                    <input type="checkbox" id="drama" name="checkboxGroup" value="drama" />
-                                    <label for="drama">Drama</label>
-
-                                    <input type="checkbox" id="horror" name="checkboxGroup" value="horror" />
-                                    <label for="horror">Horror</label>
-
-                                    <input type="checkbox" id="boyLove" name="checkboxGroup" value="boyLove" />
-                                    <label for="boyLove">BoyLove</label>
-
-                                    <input type="checkbox" id="girlLove" name="checkboxGroup" value="girlLove" />
-                                    <label for="girlLove">GirlLove</label>
-
-                                    <input type="checkbox" id="scifi" name="checkboxGroup" value="scifi" />
-                                    <label for="scifi">Sci-fi</label>
-
-                                    <input type="checkbox" id="detective" name="checkboxGroup" value="detective" />
-                                    <label for="detective">Detective</label>
-                                </div>
-                            </div>
-                        </div><br>
+                    <div class="form-group">
+                        <p>Category</p>
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="romance" name="checkboxGroup" value="romance" />
+                            <label for="romance">Romance</label>
+                            
+                            <input type="checkbox" id="fantasy" name="checkboxGroup" value="fantasy" />
+                            <label for="fantasy">Fantasy</label>
+                            
+                            <input type="checkbox" id="drama" name="checkboxGroup" value="drama" />
+                            <label for="drama">Drama</label>
+                    
+                            <input type="checkbox" id="horror" name="checkboxGroup" value="horror" />
+                            <label for="horror">Horror</label>
+                    
+                            <input type="checkbox" id="boyLove" name="checkboxGroup" value="boyLove" />
+                            <label for="boyLove">BoyLove</label>
+                    
+                            <input type="checkbox" id="girlLove" name="checkboxGroup" value="girlLove" />
+                            <label for="girlLove">GirlLove</label>
+                    
+                            <input type="checkbox" id="scifi" name="checkboxGroup" value="scifi" />
+                            <label for="scifi">Sci-fi</label>
+                    
+                            <input type="checkbox" id="detective" name="checkboxGroup" value="detective" />
+                            <label for="detective">Detective</label>
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit" class="btn btn-primary" >Create Account</button>
                     </div>
                 </form>
-                </main>
             </div>
-
 
             <!-- ======================== Addbook ======================  -->
             <div id="Addbook">
@@ -251,6 +200,23 @@
 
 
     <!-- =========== Scripts =========  -->
+    <script>
+        function validateForm() {
+            var bookId = document.getElementById("bookid").value;
+            var bookPrice = document.getElementById("bookprice").value;
+            var number = document.getElementById("number").value;
+            var description = document.getElementById("description").value;
+            var date = document.getElementById("date").value;
+            var author = document.getElementById("author").value;
+    
+            if (bookId == "" || bookPrice == "" || number == "" || description == "" || date == "" || author == "") {
+                alert("Please fill in all fields");
+                return false;
+            }
+    
+            return true;
+        }
+    </script>
     <script src="statistics.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="..\static\js\main.js"></script>

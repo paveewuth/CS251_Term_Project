@@ -33,7 +33,7 @@
         <div class="sidebar">
             <ul>
                 <li>
-                    <a href="index.html">
+                    <a href="#">
                         <span class="icon">
                             <img src="..\logo\CS251_Logo.png" alt="" class="logo-img">
                         </span>
@@ -44,7 +44,7 @@
                 <li>
                     <a href="index.html">
                         <span class="icon">
-                            <i class="bx bx-home"></i>
+                            <i class="bx bxs-home"></i>
                         </span>
                         <span class="title">Home</span>
                     </a>
@@ -53,7 +53,7 @@
                 <li>
                     <a href="book.php">
                         <span class="icon">
-                            <i class="bx bx-book"></i>
+                            <i class="bx bxs-book"></i>
                         </span>
                         <span class="title">Books</span>
                     </a>
@@ -151,86 +151,17 @@
 
             </div>
             <div class="content">
-                <!-- ======================== Customers ======================  -->
-                <div id="Customers">
-                    <form action="customer.php" method="POST">
-                        <div class="customer-search">
-                            <label>
-                                <input type="text" id="customerID" name="customerID" placeholder="Enter customer ID">
-                            </label>
-                            <div class="button-container">
-                                <button type="submit" class="btn btn-primary" >Enter</button>
-                            </div>
+                <!-- ======================== Lendings ======================  -->
+                    <div class="Lending" id="Lendings">
+                        <h2>All lending</h2><br>
+                        <div class="button-container-new" style="text-align: right;">
+                            <a href="lending.html" class="btn btn-primary" style="text-decoration: none; color: white;">New lending</a>
                         </div>
-                    </form>
-                    <form action="../php/addcustomer.php" method="POST">
-                    <div class="information-container">
-                        <div style="text-align: center;">
-                            <h2>New customer</h2><br>
-                        </div>
-                        <div class="info-group">
-                            <label for="firstName"> <b>First name:</b> <input type="text"
-                                name="firstName" id="firstName" placeholder="Customer name" required></label>
-                            <label for="lastName"> <b>Last name:</b> <input type="text"
-                                name="lastName" id="lastName"    placeholder="Customer lastname" required></label>
-                        </div>
-
-                        <div class="info-group">
-                            <label for="citizen_id"> <b>Citizen ID:</b> <input type="text" name="citizen_id" id="citizen_id"
-                                    placeholder="citizenId" required></label>
-                                    <span id="citizen_id_error" style="color: red;"></span>
-                                    <label for="phone"> <b>Phone number:</b> <input type="text" name="phone" id="phone" placeholder="PhoneNumber" required></label>
-                        </div>
-
-                        <div class="info-group">
-                            
-                            <label for="customer_type"> <b>Customer type:</b>
-                                <select name="customer_type" id="customer_type">
-                                    <option value="not_member">Not Member</option>
-                                    <option value="member">Member</option>
-                                </select>
-                            </label>
-                        </div>
-
-
-                        
-                        <div class="info-group" id="member_info" style="display: none;">
-                            <label for="memStart"> <b>Member start:</b> <input type="date" name="memStart" id="memStart" required></label>
-                            <label for="memExp"> <b>Member end:</b> <input type="date" name="memExp" id="memExp" required></label>
-                        </div>
-                        
-                        <div class="button-container">
-                            <button type="submit" class="btn btn-primary" >add</button>
-                        </div>
-                    </div>
 
                     </div>
-                </form>
-                </div>
                 </main>
             </div>
 
-            <script>
-                document.getElementById('customer_type').addEventListener('change', function() {
-                    var memberInfo = document.getElementById('member_info');
-                    if (this.value === 'member') {
-                        memberInfo.style.display = 'block';
-                    } else {
-                        memberInfo.style.display = 'none';
-                    }
-                });
-
-                document.getElementById("citizen_id").addEventListener("input", function() {
-        var citizen_id = this.value;
-        var error_message = "";
-        
-        if (citizen_id.length !== 13 || isNaN(citizen_id)) {
-            error_message = "Citizen ID must be 13 digits long and contain only numbers.";
-        }
-
-        document.getElementById("citizen_id_error").textContent = error_message;
-    });
-            </script>
 
             <!-- ======================== Addbook ======================  -->
             <div id="Addbook">

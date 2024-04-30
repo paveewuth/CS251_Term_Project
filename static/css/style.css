@@ -767,6 +767,9 @@ color: #899481;
     width: 50%;
 }
 /* ============================== Statics ============================= */
+.STATIC{
+  transform: translateX(-10%);
+}
 .box1 {
   background: #E6E1DD;
   font-family: 'Ubuntu', sans-serif;
@@ -1287,4 +1290,181 @@ select {
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 /* ============================== addbook ============================= */
+.kk{
+  text-align: center;
+  color: var(--color-blue);
+}
 
+.form-group input {
+  margin: 20px 0;
+  width: 100%;
+  padding: 10px;
+}
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="text"],
+.form-group input[type="bookprice"],
+.form-group input[type="author"],
+.form-group input[type="description"] {
+  width: 75%; /* Adjust the width as needed */
+  padding: 10px 20px; /* Add horizontal padding */
+  border: 1px solid #ccc;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  font-size: 14px;
+  display: block; /* Make the fields block elements */
+}
+
+.grid {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.grid:before,
+.grid:after,
+.row:before,
+.row:after {
+    content: " ";
+    display: table;
+}
+
+.grid:after,
+.row:after {clear: both;}
+
+[class*='col-']{
+    width: 100%;
+    float: left;
+    min-height: 1px;
+}
+
+.col {
+    padding: 1em;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    color: #7b674d;
+}
+
+.checkbox input[type="checkbox"] {
+  display: none;
+  visibility: hidden;
+}
+
+.checkbox label {
+  position: relative;
+  padding-left: 2em;
+  padding-right: 1em;
+  line-height: 2;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+.checkbox label:before {
+  box-sizing: border-box;
+  content: " ";
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+  display: block;
+  width: 1.4em;
+  height: 1.4em;
+  border: 2px solid #0b07ee;
+  border-radius: 6px;
+  z-index: -1;
+}
+
+.checkbox input[type=checkbox]:checked + label {
+  padding-left: 1em;
+  color: #3308f2;
+}
+.checkbox input[type=checkbox]:checked + label:before {
+  top: 0;
+  width: 100%;
+  height: 2em;
+  background: #b7e6c9;
+  border-color: #2cbc63;
+}
+
+.checkbox label,
+.checkbox label::before {
+  transition: 0.25s all ease;
+}
+
+.add-btn {
+  background-image: linear-gradient(to right, #E07D54, #304f6d); /* Linear gradient */
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 20px; /* Increase border-radius for more curvature */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add box-shadow for depth */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-btn:hover {
+  background-image: linear-gradient(to right, #af8672, #1b3045); /* Darker gradient on hover */
+  color: #fff;
+}
+
+.add-btn:active {
+  background-color: #98573C; /* Button active color (even darker shade of secondary) */
+}
+
+.add-button-container {
+  display: flex;
+  align-items: center;
+}
+
+
+
+@media screen and (min-width:320px){
+
+    .col-wd-1 {width: 8.33333%;}
+    .col-wd-2 {width: 16.66667%;}
+    .col-wd-3 {width: 25%;}
+    .col-wd-4 {width: 33.33333%;}
+    .col-wd-5 {width: 41.66667%;}
+    .col-wd-6 {width: 50%;}
+    .col-wd-7 {width: 58.33333%;}
+    .col-wd-8 {width: 66.66667%;}
+    .col-wd-9 {width: 75%;}
+    .col-wd-10 {width: 83.33333%;}
+    .col-wd-11 {width: 91.66667%;}
+    .col-wd-12 {width: 100%;}
+
+}
+
+@media screen and (min-width:640px){
+
+    .col-md-1 {width: 8.33333%;}
+    .col-md-2 {width: 16.66667%;}
+    .col-md-3 {width: 25%;}
+    .col-md-4 {width: 33.33333%;}
+    .col-md-5 {width: 41.66667%;}
+    .col-md-6 {width: 50%;}
+    .col-md-7 {width: 58.33333%;}
+    .col-md-8 {width: 66.66667%;}
+    .col-md-9 {width: 75%;}
+    .col-md-10 {width: 83.33333%;}
+    .col-md-11 {width: 91.66667%;}
+    .col-md-12 {width: 100%;}
+
+}
+
+@media screen and (min-width:960px){
+
+    .col-sm-1 {width: 8.33333%;}
+    .col-sm-2 {width: 16.66667%;}
+    .col-sm-3 {width: 25%;}
+    .col-sm-4 {width: 33.33333%;}
+    .col-sm-5 {width: 41.66667%;}
+    .col-sm-6 {width: 50%;}
+    .col-sm-7 {width: 58.33333%;}
+    .col-sm-8 {width: 66.66667%;}
+    .col-sm-9 {width: 75%;}
+    .col-sm-10 {width: 83.33333%;}
+    .col-sm-11 {width: 91.66667%;}
+    .col-sm-12 {width: 100%;}
+
+}

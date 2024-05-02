@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="..\static\css\style.css">
     <!-- ======= boxicons ====== -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <style>
     .transparent-button {
@@ -60,7 +61,7 @@
                 </li>
 
                 <li>
-                    <a href="lending.php" >
+                    <a href="lending.php">
                         <span class="icon">
                             <i class="bx bx-book-reader"></i>
                         </span>
@@ -152,46 +153,28 @@
             </div>
 
                 <!-- ======================== Lendings ======================  -->
-             <div class="content">
-                <form action="../php/lendings.php" method="post">
-                    <div class="Lending" id="Lendings">
-                        <h2>Lendings information</h2><br>
-                        <div class="form-group">
-                            <label for="book_id"> <b>Book ID:</b>
-                                <input type="text" name="book_id" id="book_id" placeholder="Input Book ID"></label>
-                            <label for="customerID"> <b>Customer ID:</b>
-                                <input type="text" name="customerID" id="customerID"
-                                    placeholder="Input Customer ID"></label>
-                        </div>
+                <div class="content">
+    <div class="Lending" id="Lendings">
+        <h2>All lending</h2><br>
 
-
-                        <div class="form-group">
-                            <label for="start_date"> <b>Start Date:</b>
-                                <input type="date" name="start_date" id="start_date" placeholder=""></label>
-                                <label for="return_date"> <b>return Date:</b>
-                                    <input type="date" name="return_date" id="return_date" placeholder=""></label>
-                        </div>
-
-
-                        <div class="button-container">
-                            <button type="submit" class="btn" onclick="openPopup('success')">Confirm Payment</button>
-                            <div id="successPopup" class="popup">
-                                <img src="../logo/checkmark.png" alt="">
-                                <h2>Payment Successful</h2>
-                                <p>Money transfer has been completed!</p>
-                                <button type="button" class="btn1" onclick="closePopup()">OK</button>
-                            </div>
-                            <div id="failurePopup" class="popup">
-                                <h2>Payment Failed</h2>
-                                <p>Something went wrong!</p>
-                                <button type="button" class="btn1" onclick="closePopup()">OK</button>
-                            </div>
-                            <div id="overlay" class="overlay"></div>
-                        </div>
-                    </div>
-                </form>
-                </main>
-            </div>
+        <!-- เริ่มตาราง Borrowing -->
+        <table id="borrowingTable">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Book ID</th>
+                    <th>Start Date</th>
+                    <th>Return Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- ข้อมูลในตารางจะถูกแสดงที่นี่ -->
+            </tbody>
+        </table>
+        <!-- สิ้นสุดตาราง Borrowing -->
+    </div>
+</div>
 
 
             <!-- ======================== Addbook ======================  -->
@@ -215,6 +198,59 @@
                 }, 1000);
             });
         });
+
+            // เรียกใช้งานฟังก์ชันเมื่อหน้าเว็บโหลดเสร็จ
+    window.onload = function() {
+        // เรียกฟังก์ชันสำหรับดึงข้อมูล borrowing
+        fetchBorrowingData();
+    }
+
+    // ฟังก์ชันสำหรับดึงข้อมูล borrowing และแสดงในตาราง
+    function fetchBorrowingData() {
+        fetch('../php/fetch_borrowing_data.php')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.querySelector('#borrowingTable tbody');
+                tbody.innerHTML = '';
+
+                // สร้างแถวข้อมูลสำหรับแต่ละการยืมหนังสือ
+                data.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                        <td>${row.customerID}</td>
+                        <td>${row.bookID}</td>
+                        <td>${row.startDate}</td>
+                        <td>${row.returnDate}</td>
+                        <td>
+                        <button onclick="deleteRow('${row.customerID}', '${row.bookID}')" class="return-button"> Return
+                        </button>
+
+                    `;
+                    tbody.appendChild(tr);
+                });
+            });
+    }
+
+    // ฟังก์ชันสำหรับลบแถวในตาราง borrowing
+    function deleteRow(customerID, bookID) {
+        if (confirm('Are you sure you want to delete this row?')) {
+            fetch('../php/delete_borrowing_row.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ customerID, bookID })
+            })
+            .then(response => {
+                if (response.ok) {
+                    // เมื่อลบแถวเสร็จสิ้น ให้ดึงข้อมูลใหม่และแสดงในตาราง
+                    fetchBorrowingData();
+                } else {
+                    alert('Error deleting row');
+                }
+            });
+        }
+    }
     </script>
 </body>
 

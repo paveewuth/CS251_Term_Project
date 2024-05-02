@@ -171,37 +171,45 @@
                         <div class="info-group">
                             <label for="firstName"> <b>First name:</b> <input type="text"
                                 name="firstName" id="firstName" placeholder="Customer name" required></label>
+                            </div>        
+                        <div class="info-group">
                             <label for="lastName"> <b>Last name:</b> <input type="text"
                                 name="lastName" id="lastName"    placeholder="Customer lastname" required></label>
-                        </div>
-
-                        <div class="info-group">
+                        </div>   
+                        <div class="info-group">      
                             <label for="citizen_id"> <b>Citizen ID:</b> <input type="text" name="citizen_id" id="citizen_id"
                                     placeholder="citizenId" required></label>
                                     <span id="citizen_id_error" style="color: red;"></span>
+                                </div>   
+                                <div class="info-group">
                                     <label for="phone"> <b>Phone number:</b> <input type="text" name="phone" id="phone" placeholder="PhoneNumber" required></label>
-                        </div>
-
-                        <div class="info-group">
-                            
-                            <label for="customer_type"> <b>Customer type:</b>
+                                </div>
+                                <div class="info-group">   
+                                    <label for="customer_type"> <b>Customer type:</b>
                                 <select name="customer_type" id="customer_type">
                                     <option value="not_member">Not Member</option>
                                     <option value="member">Member</option>
                                 </select>
                             </label>
                         </div>
+                        
+                        
 
 
                         
                         <div class="info-group" id="member_info" style="display: none;">
+                            <div class="info-group"> 
                             <label for="memStart"> <b>Member start:</b> <input type="date" name="memStart" id="memStart" required></label>
+                            </div>
+                            <div class="info-group"> 
                             <label for="memExp"> <b>Member end:</b> <input type="date" name="memExp" id="memExp" required></label>
+                            </div>
                         </div>
                         
                         <div class="button-container">
                             <button type="submit" class="btn btn-primary" >add</button>
                         </div>
+                    </div>
                     </div>
 
                     </div>

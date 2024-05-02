@@ -26,13 +26,6 @@ VALUES ('$firstName', '$lastName', '$email', '$password', '$sex', '$birthday', '
 if ($conn->query($sql) === TRUE) {
 /////////////////////////////////////////////// เด่วต้องถามอั้ยหยาาา ///////////////////////////
   $userID = $conn->insert_id;
-      // เพิ่มข้อมูลลงในตาราง category
-      $category_staff = "INSERT INTO category (bookID, Category) VALUES ('$userID', '$categoryString')";
-      $conn->query($category_sql);
-
-  // เพิ่มข้อมูลลงในตาราง author
-  $author_manger = "INSERT INTO author (bookID, Author) VALUES ('$userID', '$author')";
-  $conn->query($author_sql);
 
   $_SESSION['userID'] = $conn->insert_id; // เก็บค่า userID ที่ได้จากการเพิ่มข้อมูลล่าสุด
   header("Location: ../html/signin.html");

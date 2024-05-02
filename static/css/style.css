@@ -503,6 +503,41 @@ color: #899481;
   font-size: 14px;
 }
 
+/* Book */
+.addbook {
+  display: flex;
+  align-items: center;
+  border: 2px solid #dddddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-right: 10px;
+}
+
+.addbook img {
+  width: 60px;
+  height: 90px;
+  margin-right: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.addbook-info {
+  flex-grow: 1;
+}
+
+.addbook-info h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 10px;
+}
+
+.addbook-info p {
+  margin: 0;
+  margin-bottom: 5px;
+  font-size: 10px;
+}
 /* สไตล์สำหรับปุ่ม "ข้อมูลเพิ่มเติม" */
 .more-info-btn {
   background-color: #304f6d;
@@ -551,7 +586,9 @@ color: #899481;
   border-radius: 10px;
   box-shadow: 4px 5px 15px rgba(0, 0, 0, 0.1);
   width: 90%;
-  margin: 0 auto;
+  margin: 10px auto; 
+  justify-content: center;
+  align-items: center;
 }
 
 .Lending h2 {
@@ -562,8 +599,9 @@ color: #899481;
 .Lending .form-group {
   margin-bottom: 15px;
   display: flex;
-  justify-content: space-between;
-  margin-left: 10%;
+  margin: 10px auto; 
+  justify-content: center;
+  align-items: center;
 }
 
 .form-group label,
@@ -757,53 +795,38 @@ color: #899481;
 }
 
 .info-group {
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   display: flex;
-  justify-content: space-between;
-  margin-left: 10%;
+  justify-content: center; /* จัดให้ input อยู่ตรงกลางตามแนวนอน */
+  align-items: center; /* จัดให้ input ตรงกลางตามแนวตั้ง */
 }
 
-/* ลดระยะห่างระหว่าง label และ input ในบรรทัดเดียวกัน */
-.info-group label,
-.info-group input {
-  margin-right: 0px; /* ปรับค่าตามที่ต้องการ */
-}
 .info-group label {
-  display: block;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
-  flex-basis: calc(50% - 10px);
+  width: 30%; /* ปรับความกว้างของ label เพื่อให้ติดกันในบรรทัดเดียวกัน */
   margin-left: 10px;
 }
+
 .info-group input[type="text"],
 .info-group input[type="number"],
 .info-group input[type="date"],
-.info-group select#customer_type
- {
-    width: calc(50% - 10px);
-    padding: 12px 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 14px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+.info-group select#customer_type {
+  width: calc(100% - 20px); /* ปรับความกว้างของ input fields */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+/* ปรับระยะห่างระหว่าง label และ input */
+.info-group label,
+.info-group input {
+  margin-right: 10px; /* ปรับระยะห่างตามที่ต้องการ */
 }
 
 
-/* เพิ่มความกว้างของ label เพื่อให้ติดกันในบรรทัดเดียวกัน */
-.info-group label {
-    width: 50%;
-}
-
-/* ปรับความกว้างของ input เพื่อให้ติดกันในบรรทัดเดียวกัน */
-.info-group input[type="text"],
-.info-group input[type="number"],
-.info-group input[type="date"],
-.info-group select#customer_type
-{
-    width: 50%;
-}
 /* ตกแต่งตาราง */
 table {
   border-collapse: separate;
@@ -1350,4 +1373,19 @@ select {
      text-decoration: none; /* ลบเส้นใต้ */
 }
 /* ============================== addbook ============================= */
+
+.return-button {
+  background-color: #5c7d9e;
+  background-image: linear-gradient(to right, #4d6e90, #304f6d);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.return-button:hover {
+  background-color: #304f6d;
+}
+
 

@@ -26,6 +26,13 @@ if ($conn->query($sql) === TRUE) {
     $author_sql = "INSERT INTO author (bookID, Author) VALUES ('$bookID', '$author')";
     $conn->query($author_sql);
 
+    if (isset($_SESSION['userID'])) {
+        $userID = $_SESSION['userID'];
+    $access_sql = "INSERT INTO book_access (bookID, userID) VALUES ('$bookID', '$userID')";
+    $conn->query($access_sql);
+    }
+
+
     // ตั้งค่า session
     $_SESSION['bookName'] = $bookName;
     $_SESSION['bookID'] = $bookID;
@@ -40,6 +47,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
+
 
 // ปิดการเชื่อมต่อฐานข้อมูล
 $conn->close();

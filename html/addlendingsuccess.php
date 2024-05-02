@@ -1,4 +1,8 @@
-
+<?php
+session_start();
+$bookID = $_SESSION['bookID'];
+$customerID = $_SESSION['customerID'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,12 +60,12 @@
                         <span class="icon">
                             <i class="bx bx-book"></i>
                         </span>
-                        <span class="title">book</span>
+                        <span class="title">Books</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="lending.php">
+                    <a href="lending.php" >
                         <span class="icon">
                             <i class="bx bx-book-reader"></i>
                         </span>
@@ -151,14 +155,16 @@
                 </div>
 
             </div>
-                            <!-- ======================== Book ======================  -->
-                            <div class="content-book">
-    <div class="list" id="bookList">
-        <h1>Book List</h1>
-        <div class="container">
-        <?php
+
+                <!-- ======================== Lendings ======================  -->
+             <div class="content">
+                    <div class="Lending" id="Lendings">
+                        <h2>Payment </h2><br>
+                        <div class="form-group">
+                        <?php
 require_once('../php/db_connection.php');
 
+    // Prepare SQL query to fetch book details along with author and category
 // คิวรีเพื่อดึงข้อมูลหนังสือพร้อมผู้เขียนและประเภท
 $sql_books_info = "SELECT cb.*, a.Author, c.Category,
                    CASE
@@ -168,49 +174,77 @@ $sql_books_info = "SELECT cb.*, a.Author, c.Category,
                    FROM cartoonbook cb
                    LEFT JOIN author a ON cb.bookID = a.bookID
                    LEFT JOIN category c ON cb.bookID = c.bookID
-                   LEFT JOIN borrowing l ON cb.bookID = l.bookID";
+                   LEFT JOIN borrowing l ON cb.bookID = l.bookID
+                   WHERE cb.bookID = '$bookID'";
 
-$result_books_info = $conn->query($sql_books_info);
 
-if ($result_books_info->num_rows > 0) {
-    while($row = $result_books_info->fetch_assoc()) {
+    // Execute the query
+    $result = $conn->query($sql_books_info);
+
+    // Check if any matching books found
+    if ($result->num_rows > 0) {
+        // Loop through the results
+        while ($row = $result->fetch_assoc()) {
+            ?>
+            <div class="addbook">
+            
+                
+                
+                <div class="book-info">
+                <h2><?php echo $row["bookName"]; ?></h2> 
+                    <img src="<?php echo $row["bookcover"]; ?>" style="width: 150px; height: auto; margin-bottom: 40px">
+                    <img src="../photo/qr.jpg" alt="Book Cover"style="width: 250px; height: auto; margin-bottom: 20px"><br>
+                    <div style="text-align: center;">
+                    <?php
+        // Check if customerId exists in member table
+        $sql_check_customer = "SELECT * FROM member WHERE customerID = '$customerID'";
+        $result_check_customer = $conn->query($sql_check_customer);
+
+        if ($result_check_customer->num_rows > 0) {
+            // Customer is a member, reduce rental price by 10%
+            $price = $row["price"] * 0.9; // 10% discount
+            echo "<p style='text-align: center;'>Rental: $price Bath (10% discount for members)</p>";
+        } else {
+            // Customer is not a member, display regular rental price
+            echo "<p style='text-align: center;'>Rental: " . $row["price"] . " Bath</p>";
+        }
         ?>
-<div class="book">
-    <img src="<?php echo $row["bookcover"]; ?>" >
-    <div class="book-info">
-        <h2><?php echo $row["bookName"]; ?></h2>
-        <p>Writer: <?php echo $row["Author"]; ?></p>
-        <p>Type: <?php echo $row["Category"]; ?></p>
-        <p>Rental: <?php echo $row["price"]; ?> Bath</p>
-        <?php if($row["status_color"] == 'green'): ?>
-            <a class="more-info-btn" style="background-color: <?php echo $row["status_color"]; ?>">Available</a>
-            <form action="addlending.php" method="POST">
-                <input type="hidden" name="bookId" value="<?php echo $row['bookID']; ?>">
-                <button type="submit" class="more-info-btn">Lending</button>
-            </form>
-        <?php else: ?>
-            <a class="more-info-btn" style="background-color: <?php echo $row["status_color"]; ?>">Available</a>
-        <?php endif; ?>
-         
-    </div>
-</div>
-
-        <?php
+                    </div>
+                </div>
+        
+            </div>
+            
+             <?php
+        }
+    } else {
+        // Display a message if no matching books found
+        echo "No books found with the given search term.";
     }
-} else {
-    echo "0 results";
-}
-?>
 
-        </div>
-        <div class="pagination">
-            <a href="#" class="prev-page">หน้าก่อนหน้า</a>
-            <span class="current-page">หน้า 1</span>
-            <a href="#" class="next-page">หน้าถัดไป</a>
-        </div>
-    </div>
-</div>
+?></div>
 
+
+                        <div class="button-container">
+                            <button type="submit" class="btn" onclick="openPopup('success')">completed</button>
+                            <div id="successPopup" class="popup">
+                                <img src="../logo/checkmark.png" alt="">
+                                <h2>Payment Successful</h2>
+                                <p>Money transfer has been completed!</p>
+                                <button type="button" class="btn1" onclick="closePopup()">OK</button>
+                            </div>
+                            <div id="failurePopup" class="popup">
+                                <h2>Payment Failed</h2>
+                                <p>Something went wrong!</p>
+                                <button type="button" class="btn1" onclick="closePopup()">OK</button>
+                            </div>
+                            <div id="overlay" class="overlay"></div>
+                        </div>
+
+                        <div class="container" id="bookDetails" >
+
+                    </div>
+                </main>
+            </div>
 
 
             <!-- ======================== Addbook ======================  -->
@@ -221,6 +255,11 @@ if ($result_books_info->num_rows > 0) {
     </div>
 
 
+
+ 
+
+
+        </div>
     <!-- =========== Scripts =========  -->
     <script src="statistics.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -234,6 +273,13 @@ if ($result_books_info->num_rows > 0) {
                 }, 1000);
             });
         });
+
+    function showBookDetails(book_id) {
+        // แสดงส่วนของ HTML ที่ต้องการเมื่อคลิกปุ่ม "Show Book Details"
+        document.getElementById('bookDetails').style.display = 'block';
+    }
+</script>
+
     </script>
 </body>
 

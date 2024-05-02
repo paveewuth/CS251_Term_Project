@@ -171,7 +171,7 @@ $sql_books_info = "SELECT cb.*, a.Author, c.Category,
                    FROM cartoonbook cb
                    LEFT JOIN author a ON cb.bookID = a.bookID
                    LEFT JOIN category c ON cb.bookID = c.bookID
-                   LEFT JOIN lendings l ON cb.bookID = l.bookID
+                   LEFT JOIN borrowing l ON cb.bookID = l.bookID
                    WHERE cb.bookName = '$searchInput'";
 
     // Execute the query

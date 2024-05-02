@@ -17,9 +17,14 @@ $sql_customer = "INSERT INTO customer (phoneNumber, firstName, lastName, citizen
 if ($conn->query($sql_customer) === TRUE) {
     // ดึงค่า customerID ที่เพิ่มล่าสุด
     $customerID = $conn->insert_id;
-
     // สร้าง session สำหรับเก็บค่า customerID
     $_SESSION['customerID'] = $customerID;
+
+    if (isset($_SESSION['userID'])) {
+        $userID = $_SESSION['userID'];
+    $access_sql = "INSERT INTO customer_access (customerID, userID) VALUES ('$customerID', '$userID')";
+    $conn->query($access_sql);
+    }
 
     // ตรวจสอบว่าเป็น member หรือ not member
     if ($customerType === 'member') {
@@ -48,6 +53,7 @@ if ($conn->query($sql_customer) === TRUE) {
             echo "Error: " . $sql_general . "<br>" . $conn->error;
         }
     }
+    
 } else {
     // แสดงข้อผิดพลาดหากมีปัญหาในการเพิ่มข้อมูล
     echo "Error: " . $sql_customer . "<br>" . $conn->error;

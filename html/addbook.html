@@ -31,7 +31,7 @@
                 <li>
                     <a href="index.html">
                         <span class="icon">
-                            <i class="bx bxs-home"></i>
+                            <i class="bx bx-home"></i>
                         </span>
                         <span class="title">Home</span>
                     </a>
@@ -40,16 +40,16 @@
                 <li>
                     <a href="book.php">
                         <span class="icon">
-                            <i class="bx bxs-book"></i>
+                            <i class="bx bx-book"></i>
                         </span>
                         <span class="title">Books</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="lending.html">
+                    <a href="lending.php">
                         <span class="icon">
-                            <i class="bx bxs-book-reader"></i>
+                            <i class="bx bx-book-reader"></i>
                         </span>
                         <span class="title">Lendings</span>
                     </a>
@@ -58,7 +58,7 @@
                 <li>
                     <a href="#" onclick="event.preventDefault();">
                         <span class="icon">
-                            <i class='bx bxs-book-add'></i>
+                            <i class='bx bx-book-add'></i>
                         </span>
                         <span class="title">Addbook</span>
                     </a>
@@ -105,12 +105,12 @@
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="submenu">
                         <div class="user-info">
-                            <img src="..\Photo\Profile.jpg" alt="">
+                            <img src="..\Photo\Profile.png" alt="">
                             <h3>Lio Ronaldo<br>Manager</h3>
 
                         </div>
                         <hr>
-                        <a href="staffprofile.html" class="sub-menu-link" onclick="showPage('profile')">
+                        <a href="staffprofile.php" class="sub-menu-link" onclick="showPage('profile')">
                             <i class='bx bx-user'></i>
                             <p>Profile</p>
                             <span>></span>
@@ -128,7 +128,7 @@
                             <span>></span>
                         </a>
 
-                        <a href="" class="sub-menu-link">
+                        <a href="signin.html" class="sub-menu-link">
                             <i class="bx bx-log-out"></i>
                             <p> Logout</p>
                             <span>></span>
@@ -138,58 +138,57 @@
 
             </div>
 
-            <!-- ========================= Add book  ==================== -->
-          
-           
-            <div class="content">
-                <h1>Add Book</h1>
-                <form action="../php/addbook.php" method="POST">
-                    <div class="form-group">
-                        <p>Book Cover</p>
-                        <input type="text" id="bookcover" name="bookcover" class="form-control" placeholder="Input Bookcover" required>
-                        <p>Book Name</p>
-                        <input type="text" id="bookname" name="bookname" class="form-control" placeholder="Input Bookname" required>
-                        <p>Book ID</p>
-                        <input type="text" id="bookid" name="bookid" class="form-control" placeholder="Input Bookid" required>
-                        <p>Book Price</p>
-                        <input type="number" id="bookprice" name="bookprice" class="form-control" placeholder="Input Bookprice" required>
-                        <p>Author</p>
-                        <input type="text" id="author" name="author" class="form-control" placeholder="Input Author" required>
-                    </div>
+ <!-- ========================= Add book  ==================== -->
+<div class="content">
+    <h1>Add Book</h1>
+    <form action="../php/addbook.php" method="POST">
+        <div class="form-group">
+            <p>Book Cover</p>
+            <input type="text" id="bookcover" name="bookcover" class="form-control" placeholder="Input Bookcover" required>
+            <p>Book Name</p>
+            <input type="text" id="bookname" name="bookname" class="form-control" placeholder="Input Bookname" required>
+            <p>Book ID</p>
+            <input type="text" id="bookid" name="bookid" class="form-control" placeholder="Input Bookid" required>
+            <p>Book Price</p>
+            <input type="number" id="bookprice" name="bookprice" class="form-control" placeholder="Input Bookprice" required>
+            <p>Author</p>
+            <input type="text" id="author" name="author" class="form-control" placeholder="Input Author" required>
+        </div>
 
-                    <div class="form-group">
-                        <p>Category</p>
-                        <div class="checkbox-container">
-                            <input type="checkbox" id="romance" name="checkboxGroup" value="romance" />
-                            <label for="romance">Romance</label>
-                            
-                            <input type="checkbox" id="fantasy" name="checkboxGroup" value="fantasy" />
-                            <label for="fantasy">Fantasy</label>
-                            
-                            <input type="checkbox" id="drama" name="checkboxGroup" value="drama" />
-                            <label for="drama">Drama</label>
-                    
-                            <input type="checkbox" id="horror" name="checkboxGroup" value="horror" />
-                            <label for="horror">Horror</label>
-                    
-                            <input type="checkbox" id="boyLove" name="checkboxGroup" value="boyLove" />
-                            <label for="boyLove">BoyLove</label>
-                    
-                            <input type="checkbox" id="girlLove" name="checkboxGroup" value="girlLove" />
-                            <label for="girlLove">GirlLove</label>
-                    
-                            <input type="checkbox" id="scifi" name="checkboxGroup" value="scifi" />
-                            <label for="scifi">Sci-fi</label>
-                    
-                            <input type="checkbox" id="detective" name="checkboxGroup" value="detective" />
-                            <label for="detective">Detective</label>
-                        </div>
-                    </div>
-                    <div class="button-container">
-                        <button type="submit" class="btn btn-primary" >Create Account</button>
-                    </div>
-                </form>
+        <div class="form-group">
+            <p>Category</p>
+            <div class="checkbox-container">
+                <input type="checkbox" id="romance" name="checkboxGroup[]" value="romance" />
+                <label for="romance">Romance</label>
+
+                <input type="checkbox" id="fantasy" name="checkboxGroup[]" value="fantasy" />
+                <label for="fantasy">Fantasy</label>
+
+                <input type="checkbox" id="drama" name="checkboxGroup[]" value="drama" />
+                <label for="drama">Drama</label>
+
+                <input type="checkbox" id="horror" name="checkboxGroup[]" value="horror" />
+                <label for="horror">Horror</label>
+
+                <input type="checkbox" id="boyLove" name="checkboxGroup[]" value="boyLove" />
+                <label for="boyLove">BoyLove</label>
+
+                <input type="checkbox" id="girlLove" name="checkboxGroup[]" value="girlLove" />
+                <label for="girlLove">GirlLove</label>
+
+                <input type="checkbox" id="scifi" name="checkboxGroup[]" value="scifi" />
+                <label for="scifi">Sci-fi</label>
+
+                <input type="checkbox" id="detective" name="checkboxGroup[]" value="detective" />
+                <label for="detective">Detective</label>
             </div>
+        </div>
+        <div class="button-container">
+            <button type="submit" class="btn btn-primary">Create Account</button>
+        </div>
+    </form>
+</div>
+
 
             <!-- ======================== Addbook ======================  -->
             <div id="Addbook">

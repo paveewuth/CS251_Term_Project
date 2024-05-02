@@ -44,7 +44,7 @@
                 <li>
                     <a href="index.html">
                         <span class="icon">
-                            <i class="bx bxs-home"></i>
+                            <i class="bx bx-home"></i>
                         </span>
                         <span class="title">Home</span>
                     </a>
@@ -53,16 +53,16 @@
                 <li>
                     <a href="book.php">
                         <span class="icon">
-                            <i class="bx bxs-book"></i>
+                            <i class="bx bx-book"></i>
                         </span>
                         <span class="title">book</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="lending.html">
+                    <a href="lending.php">
                         <span class="icon">
-                            <i class="bx bxs-book-reader"></i>
+                            <i class="bx bx-book-reader"></i>
                         </span>
                         <span class="title">Lendings</span>
                     </a>
@@ -71,7 +71,7 @@
                 <li>
                     <a href="addbook.html">
                         <span class="icon">
-                            <i class='bx bxs-book-add'></i>
+                            <i class='bx bx-book-add'></i>
                         </span>
                         <span class="title">Addbook</span>
                     </a>
@@ -123,7 +123,7 @@
 
                         </div>
                         <hr>
-                        <a href="staffprofile.html" class="sub-menu-link" onclick="showPage('profile')">
+                        <a href="staffprofile.php" class="sub-menu-link" onclick="showPage('profile')">
                             <i class='bx bx-user'></i>
                             <p>Profile</p>
                             <span>></span>
@@ -141,7 +141,7 @@
                             <span>></span>
                         </a>
 
-                        <a href="" class="sub-menu-link">
+                        <a href="signin.html" class="sub-menu-link">
                             <i class="bx bx-log-out"></i>
                             <p> Logout</p>
                             <span>></span>
@@ -162,14 +162,20 @@ require_once('../php/db_connection.php');
 if(isset($_POST['search'])) {
     $searchInput = $_POST['search'];
     // Prepare SQL query to fetch book details along with author and category
-    $sql = "SELECT cartoonbook.*, author.Author, category.Category
-            FROM cartoonbook
-            LEFT JOIN author ON cartoonbook.bookID = author.bookID
-            LEFT JOIN category ON cartoonbook.bookID = category.bookID
-            WHERE cartoonbook.bookName = '$searchInput'";
+// คิวรีเพื่อดึงข้อมูลหนังสือพร้อมผู้เขียนและประเภท
+$sql_books_info = "SELECT cb.*, a.Author, c.Category,
+                   CASE
+                       WHEN l.bookID IS NOT NULL THEN 'red'
+                       ELSE 'green'
+                   END AS status_color
+                   FROM cartoonbook cb
+                   LEFT JOIN author a ON cb.bookID = a.bookID
+                   LEFT JOIN category c ON cb.bookID = c.bookID
+                   LEFT JOIN lendings l ON cb.bookID = l.bookID
+                   WHERE cb.bookName = '$searchInput'";
 
     // Execute the query
-    $result = $conn->query($sql);
+    $result = $conn->query($sql_books_info);
 
     // Check if any matching books found
     if ($result->num_rows > 0) {
@@ -183,11 +189,20 @@ if(isset($_POST['search'])) {
                     <p>Writer: <?php echo $row["Author"]; ?></p>
                     <p>Type: <?php echo $row["Category"]; ?></p>
                     <p>Rental: <?php echo $row["price"]; ?> Bath</p>
-                    <a href="book.php" class="more-info-btn">Status</a><br>
-                    <a href="lending.html" class="more-info-btn">Lending</a>
+                    <?php if($row["status_color"] == 'green'): ?>
+                        <a class="more-info-btn" style="background-color: <?php echo $row["status_color"]; ?>">Available</a>
+                        <form action="lending.php" method="POST">
+                            <input type="hidden" name="bookId" value="<?php echo $row['bookID']; ?>">
+                            <button type="submit" class="more-info-btn">Lending</button>
+                        </form>
+                    <?php else: ?>
+                        <a class="more-info-btn" style="background-color: <?php echo $row["status_color"]; ?>">Available</a>
+                    <?php endif; ?>
+                     
                 </div>
             </div>
-            <?php
+            
+             <?php
         }
     } else {
         // Display a message if no matching books found

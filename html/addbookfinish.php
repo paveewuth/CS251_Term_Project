@@ -1,6 +1,6 @@
 
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@ session_start();
                 <li>
                     <a href="index.html">
                         <span class="icon">
-                            <i class="bx bxs-home"></i>
+                            <i class="bx bx-home"></i>
                         </span>
                         <span class="title">Home</span>
                     </a>
@@ -44,16 +44,16 @@ session_start();
                 <li>
                     <a href="book.php">
                         <span class="icon">
-                            <i class="bx bxs-book"></i>
+                            <i class="bx bx-book"></i>
                         </span>
                         <span class="title">Books</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="lending.html">
+                    <a href="lending.php">
                         <span class="icon">
-                            <i class="bx bxs-book-reader"></i>
+                            <i class="bx bx-book-reader"></i>
                         </span>
                         <span class="title">Lendings</span>
                     </a>
@@ -62,7 +62,7 @@ session_start();
                 <li>
                     <a href="addbook.html">
                         <span class="icon">
-                            <i class='bx bxs-book-add'></i>
+                            <i class='bx bx-book-add'></i>
                         </span>
                         <span class="title">Addbook</span>
                     </a>
@@ -109,12 +109,12 @@ session_start();
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="submenu">
                         <div class="user-info">
-                            <img src="..\Photo\Profile.jpg" alt="">
+                            <img src="..\Photo\Profile.png" alt="">
                             <h3>Lio Ronaldo<br>Manager</h3>
 
                         </div>
                         <hr>
-                        <a href="staffprofile.html" class="sub-menu-link" onclick="showPage('profile')">
+                        <a href="staffprofile.php" class="sub-menu-link" onclick="showPage('profile')">
                             <i class='bx bx-user'></i>
                             <p>Profile</p>
                             <span>></span>
@@ -132,7 +132,7 @@ session_start();
                             <span>></span>
                         </a>
 
-                        <a href="" class="sub-menu-link">
+                        <a href="signin.html" class="sub-menu-link">
                             <i class="bx bx-log-out"></i>
                             <p> Logout</p>
                             <span>></span>

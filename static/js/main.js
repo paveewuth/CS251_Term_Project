@@ -226,3 +226,17 @@ document.getElementById("searchInput").addEventListener("keypress", function(eve
       document.getElementById("searchForm").submit(); // Submit the form
   }
 });
+
+/////////////////////////////////////////////
+// เพิ่มตัวแปรเพื่อเก็บ ID ของ interval เพื่อเรียกใช้ clearInterval() ในกรณีที่ต้องการหยุดการเปลี่ยนภาพ
+let imageInterval;
+
+// เพิ่มฟังก์ชันเพื่อเปลี่ยนภาพไปยังภาพถัดไปทุก 2 วินาที
+function changeImage() {
+  nextImage();
+}
+
+// เริ่มการเปลี่ยนภาพทุก 2 วินาที เมื่อหน้าเว็บโหลดเสร็จ
+window.addEventListener('load', function() {
+  imageInterval = setInterval(changeImage, 1000);
+});

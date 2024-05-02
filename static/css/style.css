@@ -1310,28 +1310,28 @@ select {
     font-size: 14px;
     color: #304F6D;
     font-weight: bold;
-    flex-basis: calc(50% - 10px);
-    margin-left: 10px;
+    flex-basis: calc(30% );
+    margin-left: 90px;
 }
 .bold-text {
   font-weight: bold;
   margin-right: 5px;
 }
+
 .dataProfile {
-  width: 200px; /* กำหนดความกว้าง */
-  height: 25px; /* กำหนดความสูง */
-  font-size: 12px; /* กำหนดขนาดตัวอักษร */
-  padding: 8px; /* กำหนดการเสริม */
-  border: 1px solid #ccc; /* กำหนดเส้นขอบ */
+  width: 200px;
+  font-size: 16px;
+  padding: 8px 20px; /* เพิ่ม padding ด้านบนและด้านล่าง และปรับ padding ด้านซ้ายและด้านขวา */
+  border: 1px solid #ccc;
   margin-right: 5%;
-  /* อื่นๆ ที่คุณต้องการกำหนด */
-  
-    padding: 10px 20px; /* Add horizontal padding */
-    border-radius: 20px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    display: block; /* Make the fields block elements */
-    margin: 2px;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(77, 77, 77, 0.1);
+  display: block;
+  margin: 2px auto; /* แก้ margin เป็น auto เพื่อให้ตำแหน่งอยู่กึ่งกลาง */
+  text-align: center;
 }
+
+
 
 .profile-actions {
   text-align: center;
@@ -1347,6 +1347,7 @@ select {
     cursor: pointer;
     margin-top: 100px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+     text-decoration: none; /* ลบเส้นใต้ */
 }
 /* ============================== addbook ============================= */
 

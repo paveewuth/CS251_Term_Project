@@ -1,3 +1,13 @@
+<?php
+session_start();
+require_once('../php/db_connection.php');
+
+if (isset($_SESSION['userID'])) {
+    $userID = $_SESSION['userID'];
+    $sql = "SELECT * FROM employee WHERE UserID = '$userID';";
+    $result = $conn->query($sql);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +66,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="lending.html">
+                    <a href="lending.php">
                       <span class="icon">
                         <i class="bx bx-book-reader"></i>
                       </span>
@@ -66,7 +76,7 @@
                   <li>
                     <a href="addbook.html">
                         <span class="icon">
-                          <i class='bx bxs-book-add'></i>
+                          <i class='bx bx-book-add'></i>
                         </span>
                         <button class="title transparent-button">Addbook</button>
                     </a>
@@ -111,12 +121,12 @@
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="submenu">
                         <div class="user-info">
-                            <img src="logo.png" alt="">
+                            <img src="..\Photo\Profile.png" alt="">
                             <h3>Lio Ronaldo<br>Manager</h3>
 
                         </div>
                         <hr>
-                        <a href="#profile" class="sub-menu-link" onclick="showPage('profile')">
+                        <a href="staffprofile.php" class="sub-menu-link" onclick="showPage('profile')">
                             <i class="bx bx-profile"></i>
                             <p>Profile</p>
                             <span>></span>
@@ -126,7 +136,7 @@
                             <p>Addbook</p>
                             <span>></span>
                         </a>
-                        <a href="" class="sub-menu-link" >
+                        <a href="signin.html" class="sub-menu-link" >
                             <i class="bx bx-log-out"></i>
                             <p>Logout</p>
                             <span>></span>
@@ -135,80 +145,91 @@
                 </div>
                 
             </div>
-            <div class="content">
             <!-- ======================== Profile of Account ======================  -->
-                <div class="profile" id="profile">
-                    <header>
-                        <h1>Staff Profile</h1>
-                    </header>
-                    <div class="profilePicture">
-                        <img
-                        src="..\Photo\Profile.png"
-                        alt="Profile Picture"
-                        id="profile-image"
-                        />
-                    </div>
-                    <main>
-                        <div class="information-group">
-                        <label for="userID" class="bold-text">Staff ID:</label>
-                        <input class="dataProfile" name="userID" id="userID" type="text" />
-                        <label for="position" class="bold-text">Position:</label>
-                        <input class="dataProfile" name="position" id="position" type="text" />
-                        </div>
-                        <div class="information-group">
-                        <label for="firstName" class="bold-text">First Name:</label>
-                        <input class="dataProfile" name="firstName" id="firstName" type="text" autocomplete="given-name"/>
-                        <label for="lastName" class="bold-text">Last Name:</label>
-                        <input class="dataProfile" type="text" id="lastName" value="" />
-                        </div>
-                        <div class="information-group">
-                        <label for="gender" class="bold-text">Gender:</label>
-                        <select class="dataProfile" id="gender">
-                            <option value="select" class="bold-text">Select</option>
-                            <option value="male" class="bold-text">Male</option>
-                            <option value="female" class="bold-text">Female</option>
-                        </select>
-                        <label for="birthday" class="bold-text">Birthday:</label>
-                        <input class="dataProfile" type="date" id="birthday" value="" />
-                        </div>
-                        <div class="information-group">
-                        <label for="password" class="bold-text">Password:</label>
-                        <input class="dataProfile" name="password" id="password" type="password" />
-                        <label for="confirm_password" class="bold-text">Confirm Password:</label>
-                        <input class="dataProfile" name="confirm_password" id="confirm_password" type="password" />
-                        <span id="password_error" style="color: red; font-size: smaller; display: flex; margin-left: 10px; ">  not match!</span>
-                        </div>
-                        <div class="information-group">
-                        <label for="phoneNumber" class="bold-text">Phone Number:</label>
-                        <input class="dataProfile" type="tel" id="phoneNumber" value="" />
-                        <label for="e-mail" class="bold-text">Email:</label>
-                        <input class="dataProfile" type="e-mail" id="e-mail" value="" />
-                        </div>
-                        <div class="information-group">
-                        <label for="houseNumber" class="bold-text">House Number:</label>
-                        <input class="dataProfile" name="houseNumber" id="houseNumber" type="text" />
-                        <label for="street" class="bold-text">Street:</label>
-                        <input class="dataProfile" name="street" id="street" type="text" />
-                        </div>
-                        <div class="information-group">
-                        <label for="subdistrict" class="bold-text">Subdistrict:</label>
-                        <input class="dataProfile" name="subdistrict" id="subdistrict" type="text" />
-                        <label for="district" class="bold-text">District:</label>
-                        <input class="dataProfile" name="district" id="district" type="text" />
-                        </div>
-                        <div class="information-group">
-                        <label for="province" class="bold-text">Province:</label>
-                        <input class="dataProfile" name="province" id="province" type="text" />
-                        <label for="zipcode" class="bold-text">Zipcode:</label>
-                        <input class="dataProfile" name="zipcode" id="zipcode" type="text" />
-                        </div>
-                        <div class="profile-actions">
-                            <br /> <br />
-                            <a href="index.html" class="editProfile-botton">Edit</a> 
-                        </div>
-                        </div>
-                    </main>
-                </div>
+        <?php
+            if ($result->num_rows > 0) {
+              // Output data of each row
+              $row = $result->fetch_assoc();
+            ?>
+            
+            <div class="content">
+  <div class="profile" id="profile">
+    <header>
+      <h1>Edit Staff Profile</h1>
+    </header>
+    <div class="profilePicture">
+      <img src="..\Photo\Profile.png" alt="Profile Picture" id="profile-image" /><br>
+    </div>
+    <main>
+      <form action="../php/update_employee.php" method="post">
+        <input type="hidden" name="userID" value="<?php echo $row['userID']; ?>">
+        <div class="information-group">
+            <label for="firstName" class="bold-text">First Name:</label>
+            <input class="dataProfile" type="text" id="firstName" name="firstName" value="<?php echo $row['firstName']; ?>" />
+        </div>
+        <div class="information-group">
+            <label for="lastName" class="bold-text">Last Name:</label>
+            <input class="dataProfile" type="text" id="lastName" name="lastName" value="<?php echo $row['lastName']; ?>" />
+        </div>
+        <div class="information-group">
+            <label for="sex" class="bold-text">Sex:</label>
+            <select class="dataProfile" id="sex" name="sex">
+                <option value="M" <?php if ($row['sex'] == 'M') echo 'selected'; ?>>Male</option>
+                <option value="F" <?php if ($row['sex'] == 'F') echo 'selected'; ?>>Female</option>
+            </select>
+        </div>
+
+        <div class="information-group">
+            <label for="birthday" class="bold-text">Birthday:</label>
+            <input class="dataProfile" type="date" id="birthday" name="birthday" value="<?php echo $row['birthday']; ?>" />
+        </div>
+        <div class="information-group">
+            <label for="phoneNumber" class="bold-text">Phone Number:</label>
+            <input class="dataProfile" type="text" id="phoneNumber" name="phoneNumber" value="<?php echo $row['phoneNumber']; ?>" />
+        </div>
+        <div class="information-group">
+            <label for="email" class="bold-text">Email:</label>
+            <input class="dataProfile" type="email" id="email" name="email" value="<?php echo $row['email']; ?>" />
+        </div>
+        <div class="information-group">
+            <label for="houseNumber" class="bold-text">House Number:</label>
+            <input class="dataProfile" type="text" id="houseNumber" name="houseNumber" value="<?php echo $row['houseNumber']; ?>" />
+        </div>
+        <div class="information-group">
+            <label for="street" class="bold-text">Street:</label>
+            <input class="dataProfile" type="text" id="street" name="street" value="<?php echo $row['street']; ?>" />
+        </div>
+        <div class="information-group">
+            <label for="subdistrict" class="bold-text">Subdistrict:</label>
+            <input class="dataProfile" type="text" id="subdistrict" name="subdistrict" value="<?php echo $row['subdistrict']; ?>" />
+        </div>
+        <div class="information-group">
+            <label for="district" class="bold-text">District:</label>
+            <input class="dataProfile" type="text" id="district" name="district" value="<?php echo $row['district']; ?>" />
+        </div>
+        <div class="information-group">
+            <label for="province" class="bold-text">Province:</label>
+            <input class="dataProfile" type="text" id="province" name="province" value="<?php echo $row['province']; ?>" />
+        </div>
+        <div class="information-group">
+            <label for="zipcode" class="bold-text">Zipcode:</label>
+            <input class="dataProfile" type="text" id="zipcode" name="zipcode" value="<?php echo $row['zipcode']; ?>" />
+        </div>
+        <div class="profile-actions">
+            <input type="submit" class="editProfile-botton" value="Save">
+        </div>
+      </form>
+    </main>
+  </div>
+</div>
+            
+            <?php
+            } else {
+              echo "0 results";
+            }
+            $conn->close();
+            ?>
+            
             
 
 

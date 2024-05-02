@@ -9,24 +9,18 @@ $bookID = $_POST['bookid'];
 $bookCover = $_POST['bookcover'];
 $bookPrice = $_POST['bookprice'];
 $author = $_POST['author'];
-$category = $_POST['checkboxGroup']; // หมวดหมู่ของหนังสือ
-
-// ตรวจสอบว่า $category เป็น array หรือไม่
-if (!is_array($category)) {
-    // ถ้าไม่ใช่ array ให้สร้าง array ที่มี $category เป็นสมาชิกเดียว
-    $category = array($category);
-}
+$categories = $_POST['checkboxGroup']; // หมวดหมู่ของหนังสือ
 
 // สร้าง string เพื่อเก็บหมวดหมู่ทั้งหมด โดยคั่นด้วย ,
-$categoryString = implode(",", $category);
+$categoryString = implode(",", $categories);
 
 // เพิ่มข้อมูลลงในตาราง cartoonbook
 $sql = "INSERT INTO cartoonbook (bookID, bookName, price, borrowCount, bookcover) VALUES ('$bookID', '$bookName', '$bookPrice', 0, '$bookCover')";
 if ($conn->query($sql) === TRUE) {
 
     // เพิ่มข้อมูลลงในตาราง category
-    $category_sql = "INSERT INTO category (bookID, Category) VALUES ('$bookID', '$categoryString')";
-    $conn->query($category_sql);
+        $category_sql = "INSERT INTO category (bookID, Category) VALUES ('$bookID', '$categoryString')";
+        $conn->query($category_sql);
 
     // เพิ่มข้อมูลลงในตาราง author
     $author_sql = "INSERT INTO author (bookID, Author) VALUES ('$bookID', '$author')";
@@ -38,7 +32,7 @@ if ($conn->query($sql) === TRUE) {
     $_SESSION['bookCover'] = $bookCover;
     $_SESSION['bookPrice'] = $bookPrice;
     $_SESSION['author'] = $author;
-    $_SESSION['category'] = $category;
+    $_SESSION['category'] = $categoryString;
 
     // ส่งกลับไปยังหน้าที่สร้างเสร็จเรียบร้อย
     header("Location: ../html/addbookfinish.php");

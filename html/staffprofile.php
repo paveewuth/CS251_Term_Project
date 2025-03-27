@@ -4,7 +4,7 @@ require_once('../php/db_connection.php');
 if (isset($_SESSION['userID'])) {
 
     $userID = $_SESSION['userID'];
-    $sql = "SELECT * FROM employee WHERE UserID = '$userID';";
+    $sql = "SELECT * FROM employee WHERE userID = '$userID';";
     $result = $conn->query($sql);
 
 }
